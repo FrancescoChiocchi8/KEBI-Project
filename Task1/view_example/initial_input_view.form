@@ -1,0 +1,127 @@
+{
+  "components": [
+    {
+      "content": "<h1><center>Meal Suggestions System",
+      "label": "HTML",
+      "type": "html",
+      "layout": {
+        "row": "Row_0o4tyem",
+        "columns": null
+      },
+      "id": "Field_0y82qop",
+      "properties": {}
+    },
+    {
+      "values": [
+        {
+          "label": "Standard Guest",
+          "value": "standardGuest"
+        },
+        {
+          "label": "Carnivorous",
+          "value": "carnivorous"
+        },
+        {
+          "label": "Vegetarian",
+          "value": "vegetrian"
+        }
+      ],
+      "label": "What type of guest are you?",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0ijcmiz",
+        "columns": 8
+      },
+      "id": "Field_0k0f963",
+      "key": "radio_bvz1ff",
+      "readonly": false,
+      "disabled": false
+    },
+    {
+      "values": [
+        {
+          "label": "Italian Food Lover",
+          "value": "italanFoodLover"
+        },
+        {
+          "label": "Calorie-Conscious",
+          "value": "calorieConscious"
+        }
+      ],
+      "label": "If you have any preferences, please select them.",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_0ijcmiz",
+        "columns": null
+      },
+      "id": "Field_0crq0hz",
+      "key": "checklist_r3i97"
+    },
+    {
+      "label": "Separator",
+      "type": "separator",
+      "layout": {
+        "row": "Row_1l9cpch",
+        "columns": null
+      },
+      "id": "Field_15kgs3s"
+    },
+    {
+      "values": [
+        {
+          "label": "Nuts",
+          "value": "nuts"
+        },
+        {
+          "label": "Peanuts",
+          "value": "peanuts"
+        },
+        {
+          "label": "Cow's Milk",
+          "value": "cowsMilk"
+        },
+        {
+          "label": "Sheep's Milk",
+          "value": "sheepsMilk"
+        },
+        {
+          "label": "Goat's Milk",
+          "value": "goatsMilk"
+        },
+        {
+          "label": "Shellfish",
+          "value": "shellfish"
+        },
+        {
+          "label": "Wheat",
+          "value": "wheat"
+        },
+        {
+          "label": "Soy",
+          "value": "soy"
+        },
+        {
+          "label": "Eggs",
+          "value": "eggs"
+        }
+      ],
+      "label": "If you have allergies to a particular ingredient, please select it.",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_107z7r5",
+        "columns": null
+      },
+      "id": "Field_06lb22g",
+      "key": "checklist_vin5z4"
+    }
+  ],
+  "type": "default",
+  "id": "Form_1hkg82t",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.20.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}
