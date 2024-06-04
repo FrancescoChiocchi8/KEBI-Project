@@ -1,20 +1,611 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_1tmt101" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" exporter="Camunda Modeler" exporterVersion="5.20.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
-  <decision id="Decision_1belfsn" name="Decision 1">
-    <decisionTable id="DecisionTable_0dc6g3x">
-      <input id="Input_1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0a03vzc" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
+  <decision id="Decision_0w40wr5" name="Guest_Types_Match">
+    <informationRequirement id="InformationRequirement_0tayi2z">
+      <requiredInput href="#InputData_0cmpprl" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1kxwne6" hitPolicy="COLLECT">
+      <input id="Input_1" label="Guest_Type" biodi:width="246">
         <inputExpression id="InputExpression_1" typeRef="string">
-          <text></text>
+          <text>Guest_Type</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0918vuk">
+          <text>"Carnivorous","Vegetarian"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Category_Meals" name="Category_Meals" typeRef="string" biodi:width="192" />
+      <rule id="DecisionRule_0izyize">
+        <inputEntry id="UnaryTests_0jxrqtx">
+          <text>"Carnivorous","Vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ic4fg1">
+          <text>"Formaggi Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lcgnag">
+        <inputEntry id="UnaryTests_14lqvqg">
+          <text>"Carnivorous","Vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u7k4rf">
+          <text>"Trofie Cacio e pepe"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_026e427">
+        <inputEntry id="UnaryTests_05hgdl8">
+          <text>"Carnivorous","Vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_037gxwa">
+          <text>"Spaghetti aglio olio e Peperoncino"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09x3rs5">
+        <inputEntry id="UnaryTests_0m35et8">
+          <text>"Carnivorous","Vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14tfllc">
+          <text>"Patatine fritte"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ysguk0">
+        <inputEntry id="UnaryTests_0f5sfec">
+          <text>"Carnivorous","Vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0elm2m2">
+          <text>"Patate arrosto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1im9m2s">
+        <inputEntry id="UnaryTests_0onz7po">
+          <text>"Carnivorous"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v2sczz">
+          <text>"Affettati Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wubk6l">
+        <inputEntry id="UnaryTests_0jr5up6">
+          <text>"Carnivorous"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_180cant">
+          <text>"Tagliatelle alla Marinara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1w8nl1k">
+        <inputEntry id="UnaryTests_0sarflg">
+          <text>"Carnivorous"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_001te4r">
+          <text>"Lasagne"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u0ccc3">
+        <inputEntry id="UnaryTests_1t9wr34">
+          <text>"Carnivorous"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nmtm0i">
+          <text>"Grigliata di maiale mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qpg2j8">
+        <inputEntry id="UnaryTests_1n21kv8">
+          <text>"Carnivorous"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bl3xzf">
+          <text>"Bistecca alla Fiorentina"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13g2ziu">
+        <inputEntry id="UnaryTests_0otxh7t">
+          <text>"Carnivorous"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gg9j24">
+          <text>"Pesce arrosto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zg35rd">
+        <inputEntry id="UnaryTests_0kijpts">
+          <text>"Vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08ym98l">
+          <text>"Involtini primavera"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_015gm35">
+        <inputEntry id="UnaryTests_17zvq25">
+          <text>"Vegetarian"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nk6xo8">
+          <text>"Melanzane grigliate"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c8156s">
+        <inputEntry id="UnaryTests_1bg8qf9">
+          <text>""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_103flrc">
+          <text>""</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0cmpprl" name="Guest_Type" />
+  <decision id="Decision_1uahnny" name="Menu_List">
+    <variable id="InformationItem_128xk76" name="Menu_List" />
+    <literalExpression id="LiteralExpression_1y37dc3">
+      <text>[
+  "Involtini primavera",
+  "Affettati Misti",
+  "Formaggi Misti",
+  "Tagliatelle alla Marinara",
+  "Rigatoni alla Carbonara",
+  "Trofie cacio e pepe",
+  "Spaghetti aglio olio e peperoncino",
+  "Lasagne",
+  "Grigliata di maiale mista",
+  "Bistecca alla Fiorentina",
+  "Pesce arrosto",
+  "Patatine fritte",
+  "Melanzane grigliate"
+]</text>
+    </literalExpression>
+  </decision>
+  <inputData id="InputData_146gmh2" name="CalorieConscious_level" />
+  <decision id="Decision_1p7f6c4" name="Final_Suggestion">
+    <informationRequirement id="InformationRequirement_1rzbcdd">
+      <requiredDecision href="#Decision_1uahnny" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1mjf0lp">
+      <requiredDecision href="#Decision_0pj8550" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1q75kyk">
+      <input id="InputClause_1p1a0qv" label="Guest_Preferences" biodi:width="192">
+        <inputExpression id="LiteralExpression_1g9w14g" typeRef="">
+          <text>Guest_Preferences</text>
         </inputExpression>
       </input>
-      <output id="Output_1" typeRef="string" />
+      <output id="OutputClause_1y81rp5" label="Suggested_Menu" name="Suggested_Menu" typeRef="" biodi:width="295" />
+      <rule id="DecisionRule_0w59oi0">
+        <inputEntry id="UnaryTests_0dibd6f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m556g7">
+          <text>Menu_List[list contains(Guest_Preferences,item)]</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0uy9197" name="Calories_Match">
+    <informationRequirement id="InformationRequirement_1xg2189">
+      <requiredInput href="#InputData_146gmh2" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1j71cmc" hitPolicy="COLLECT">
+      <input id="InputClause_0kyycww" label="Calorie_Conscious_Level" biodi:width="268">
+        <inputExpression id="LiteralExpression_0i5x8b6" typeRef="integer">
+          <text>Calorie_Conscious_Level</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0pglr8j" label="Filtred_by_Calories" name="Filtred_by_Calories" typeRef="string" biodi:width="280" />
+      <rule id="DecisionRule_0qs1a3z">
+        <inputEntry id="UnaryTests_0nh2uly">
+          <text>[0..3]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01t7xk1">
+          <text>"Involtini primavera"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12w1o44">
+        <inputEntry id="UnaryTests_1hxha01">
+          <text>[0..2]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18iqgcj">
+          <text>"Affettati Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q9a5qz">
+        <inputEntry id="UnaryTests_01kqxq0">
+          <text>[0..1]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06um78r">
+          <text>"Formaggi Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0okhd2s">
+        <inputEntry id="UnaryTests_03j69og">
+          <text>[0..2]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pkgpva">
+          <text>"Tagliatelle alla Marinara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w5jw85">
+        <inputEntry id="UnaryTests_0y42nym">
+          <text>[0..1]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12ves3x">
+          <text>"Rigatoni alla Carbonara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tc2742">
+        <inputEntry id="UnaryTests_1e3mrhu">
+          <text>[0..2]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11dkw6k">
+          <text>"Trofie cacio e pepe"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0052kz2">
+        <inputEntry id="UnaryTests_1q1p1yw">
+          <text>[0..1]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jaqytg">
+          <text>"Lasagne"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1no49ow">
+        <inputEntry id="UnaryTests_1j2iait">
+          <text>[0..1]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vwm494">
+          <text>"Grigliata di maiale mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19uxv6y">
+        <inputEntry id="UnaryTests_1kgk76r">
+          <text>[0..2]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11mtkec">
+          <text>"Bistecca alla Fiorentina"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17f4w5i">
+        <inputEntry id="UnaryTests_1gp6qae">
+          <text>[0..3]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0odifhe">
+          <text>"Pesce arrosto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09dd2yz">
+        <inputEntry id="UnaryTests_1you7oo">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t6ta3y">
+          <text>"Patatine fritte"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eh0ibr">
+        <inputEntry id="UnaryTests_1e96lqc">
+          <text>[0..3]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zipjht">
+          <text>"Melanzane grigliate"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0pj8550" name="Guest_Preferences">
+    <informationRequirement id="InformationRequirement_1y31jri">
+      <requiredDecision href="#Decision_0w40wr5" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1a1onhv">
+      <requiredDecision href="#Decision_0uy9197" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0rdviz3">
+      <requiredDecision href="#Decision_1uahnny" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0mmwryi">
+      <requiredDecision href="#Decision_0he9aea" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1u6ocma">
+      <input id="InputClause_1xy9rmz" label="Category_Meals" biodi:width="276">
+        <inputExpression id="LiteralExpression_0fqdjs6" typeRef="string">
+          <text>Category_Meals</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0u0q8e8" label="Filtred_by_Calories" biodi:width="280">
+        <inputExpression id="LiteralExpression_0b21eqv" typeRef="string">
+          <text>Filtred_by_Calories</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1vvd8qw" label="Filtred_by_Allergies" biodi:width="224">
+        <inputExpression id="LiteralExpression_0u3mke7" typeRef="string">
+          <text>Filtred_by_Allergies</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1jhijc1" label="Guest_Preferences" name="Guest_Preferences" typeRef="" biodi:width="390" />
+      <rule id="DecisionRule_1y7atme">
+        <inputEntry id="UnaryTests_0cfu2mm">
+          <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t8onmt">
+          <text>(count(Filtred_by_Calories) &gt;= 1) and (Filtred_by_Calories[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00250gr">
+          <text>(count(Filtred_by_Allergies) &gt;= 1) and (Filtred_by_Allergies[1] != "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gvzrrv">
+          <text>(Menu_List[list contains(Category_Meals,item)][list contains(Filtred_by_Calories,item)])[list contains(Filtred_by_Allergies,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qxf6bf">
+        <inputEntry id="UnaryTests_0sdr9tz">
+          <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ieit9v">
+          <text>(count(Filtred_by_Calories) = 1) and (Filtred_by_Calories[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f248qb">
+          <text>(count(Filtred_by_Allergies) &gt;= 1) and (Filtred_by_Allergies[1] != "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dp94ag">
+          <text>Menu_List[list contains(Category_Meals,item)][list contains(Filtred_by_Allergies,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0h0u59o">
+        <inputEntry id="UnaryTests_1agved9">
+          <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ndxapt">
+          <text>(count(Filtred_by_Calories) &gt;= 1) and (Filtred_by_Calories[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l4hhas">
+          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0femw9u">
+          <text>Menu_List[list contains(Category_Meals,item)][list contains(Filtred_by_Calories,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i7un6r">
+        <inputEntry id="UnaryTests_1lbjrql">
+          <text>(count(Category_Meals) = 1) and (Category_Meals[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0urqf7w">
+          <text>(count(Filtred_by_Calories) &gt;= 1) and (Filtred_by_Calories[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ec836p">
+          <text>(count(Filtred_by_Allergies) &gt;= 1) and (Filtred_by_Allergies[1] != "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mpekrn">
+          <text>Menu_List[list contains(Filtred_by_Calories,item)][list contains(Filtred_by_Allergies,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qlayf5">
+        <inputEntry id="UnaryTests_09dy6ze">
+          <text>(count(Category_Meals) = 1) and (Category_Meals[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0phb0an">
+          <text>(count(Filtred_by_Calories) &gt;= 1) and (Filtred_by_Calories[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ixleo9">
+          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oi58mh">
+          <text>Menu_List[list contains(Filtred_by_Calories,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cy4nsq">
+        <inputEntry id="UnaryTests_1qes9vx">
+          <text>(count(Category_Meals) = 1) and (Category_Meals[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0umc2az">
+          <text>(count(Filtred_by_Calories) = 1) and (Filtred_by_Calories[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16kd18l">
+          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12xgtk1">
+          <text>Menu_List[list contains(Filtred_by_Allergies,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cdk9hp">
+        <inputEntry id="UnaryTests_13t37c1">
+          <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12ihiga">
+          <text>(count(Filtred_by_Calories) = 1) and (Filtred_by_Calories[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t79sym">
+          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0g81dqr">
+          <text>Menu_List[list contains(Category_Meals,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01nd4y6">
+        <inputEntry id="UnaryTests_0axyhbg">
+          <text>(count(Category_Meals) = 1) and (Category_Meals[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_114n4jy">
+          <text>(count(Filtred_by_Calories) = 1) and (Filtred_by_Calories[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a9n31i">
+          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kyph72">
+          <text>Menu_List</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1qdxkea" name="Allergy_Type" />
+  <decision id="Decision_0he9aea" name="Allergies_Match">
+    <informationRequirement id="InformationRequirement_0ak102h">
+      <requiredInput href="#InputData_1qdxkea" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_11jakks" hitPolicy="COLLECT">
+      <input id="InputClause_0gaacgt" label="Allergy_Type">
+        <inputExpression id="LiteralExpression_1yvixpl" typeRef="string">
+          <text>Allergy_Type</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1amy34g">
+          <text>"Lactose","Gluten"</text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_0ph2she" label="Filtred_by_Allergies" name="Filtred_by_Allergies" typeRef="string" />
+      <rule id="DecisionRule_0loy73i">
+        <inputEntry id="UnaryTests_1duvwu6">
+          <text>"Lactose"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15k9v2e">
+          <text>"Involtini primavera"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ccf7t1">
+        <inputEntry id="UnaryTests_1dcf9jv">
+          <text>"Lactose","Gluten"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00a5kpy">
+          <text>"Affettati Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i3jdi1">
+        <inputEntry id="UnaryTests_1kofepp">
+          <text>"Gluten"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0aj8oam">
+          <text>"Formaggi Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rjb1zd">
+        <inputEntry id="UnaryTests_07epo1v">
+          <text>"Lactose"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_055ju48">
+          <text>"Tagliatelle alla Marinara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kyrutv">
+        <inputEntry id="UnaryTests_0mi1tm1">
+          <text>"Lactose"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0foctgc">
+          <text>"Spaghetti aglio olio e peperoncino"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mmrltu">
+        <inputEntry id="UnaryTests_0o4t2mr">
+          <text>"Lactose","Gluten"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x76wqg">
+          <text>"Grigliata di maiale mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yd0uu1">
+        <inputEntry id="UnaryTests_0t81g0o">
+          <text>"Lactose","Gluten"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wal73q">
+          <text>"Bistecca alla Fiorentina"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1prwitl">
+        <inputEntry id="UnaryTests_0wmi1qi">
+          <text>"Lactose","Gluten"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18t94rw">
+          <text>"Pesce arrosto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18twlra">
+        <inputEntry id="UnaryTests_0z7z9sy">
+          <text>"Lactose","Gluten"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01ngfpn">
+          <text>"Patatine fritte"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tuptm7">
+        <inputEntry id="UnaryTests_0bvqgud">
+          <text>"Lactose","Gluten"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p0739y">
+          <text>"Melanzane grigliate"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19xfvjt">
+        <inputEntry id="UnaryTests_1dj9uaz">
+          <text>""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ket7t6">
+          <text>""</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
-      <dmndi:DMNShape dmnElementRef="Decision_1belfsn">
-        <dc:Bounds height="80" width="180" x="160" y="100" />
+      <dmndi:DMNShape dmnElementRef="Decision_0w40wr5">
+        <dc:Bounds height="80" width="180" x="160" y="370" />
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0qafnm5" dmnElementRef="InputData_0cmpprl">
+        <dc:Bounds height="45" width="125" x="187" y="497" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ozwpda" dmnElementRef="InformationRequirement_0tayi2z">
+        <di:waypoint x="250" y="497" />
+        <di:waypoint x="250" y="470" />
+        <di:waypoint x="250" y="450" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0tk50lz" dmnElementRef="Decision_1uahnny">
+        <dc:Bounds height="80" width="180" x="660" y="230" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1jkhjph" dmnElementRef="InputData_146gmh2">
+        <dc:Bounds height="45" width="125" x="382" y="497" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_144fzin" dmnElementRef="InformationRequirement_1xg2189">
+        <di:waypoint x="445" y="497" />
+        <di:waypoint x="445" y="470" />
+        <di:waypoint x="445" y="450" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0991gi8" dmnElementRef="Decision_1p7f6c4">
+        <dc:Bounds height="80" width="180" x="370" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1lvy8pc" dmnElementRef="InformationRequirement_1rzbcdd">
+        <di:waypoint x="750" y="230" />
+        <di:waypoint x="490" y="180" />
+        <di:waypoint x="490" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0c3ozb4" dmnElementRef="Decision_0uy9197">
+        <dc:Bounds height="80" width="180" x="355" y="370" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0fuu96j" dmnElementRef="Decision_0pj8550">
+        <dc:Bounds height="80" width="180" x="355" y="230" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0ug9g45" dmnElementRef="InformationRequirement_1y31jri">
+        <di:waypoint x="250" y="370" />
+        <di:waypoint x="400" y="330" />
+        <di:waypoint x="400" y="310" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1gud1is" dmnElementRef="InformationRequirement_1a1onhv">
+        <di:waypoint x="445" y="370" />
+        <di:waypoint x="445" y="330" />
+        <di:waypoint x="445" y="310" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1dhol77" dmnElementRef="InformationRequirement_1mjf0lp">
+        <di:waypoint x="445" y="230" />
+        <di:waypoint x="430" y="180" />
+        <di:waypoint x="430" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_09swxjx" dmnElementRef="InformationRequirement_0rdviz3">
+        <di:waypoint x="660" y="270" />
+        <di:waypoint x="555" y="270" />
+        <di:waypoint x="535" y="270" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1qftlbq" dmnElementRef="InputData_1qdxkea">
+        <dc:Bounds height="45" width="125" x="587" y="497" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_15q82v4" dmnElementRef="Decision_0he9aea">
+        <dc:Bounds height="80" width="180" x="560" y="370" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_19dnrao" dmnElementRef="InformationRequirement_0ak102h">
+        <di:waypoint x="650" y="497" />
+        <di:waypoint x="650" y="470" />
+        <di:waypoint x="650" y="450" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_137ahnb" dmnElementRef="InformationRequirement_0mmwryi">
+        <di:waypoint x="650" y="370" />
+        <di:waypoint x="490" y="330" />
+        <di:waypoint x="490" y="310" />
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
