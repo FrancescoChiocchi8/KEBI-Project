@@ -46,14 +46,6 @@
           <text>"Patatine fritte"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1ysguk0">
-        <inputEntry id="UnaryTests_0f5sfec">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0elm2m2">
-          <text>"Patate arrosto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_17swo8p">
         <inputEntry id="UnaryTests_1lm34zs">
           <text>"Carnivorous","Vegetarian"</text>
@@ -208,9 +200,6 @@
     <informationRequirement id="InformationRequirement_1rzbcdd">
       <requiredDecision href="#Decision_1uahnny" />
     </informationRequirement>
-    <informationRequirement id="InformationRequirement_1mjf0lp">
-      <requiredDecision href="#Decision_0pj8550" />
-    </informationRequirement>
     <informationRequirement id="InformationRequirement_1scjsme">
       <requiredDecision href="#Decision_118dwbg" />
     </informationRequirement>
@@ -222,6 +211,9 @@
     </informationRequirement>
     <informationRequirement id="InformationRequirement_1emeij6">
       <requiredDecision href="#Decision_09vgnlj" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1jkxlnj">
+      <requiredDecision href="#Decision_1trk386" />
     </informationRequirement>
     <decisionTable id="DecisionTable_1q75kyk">
       <input id="InputClause_1p1a0qv" label="Guest_Preferences" biodi:width="192">
@@ -422,7 +414,7 @@
       </rule>
     </decisionTable>
   </decision>
-  <decision id="Decision_0pj8550" name="Guest_Preferences">
+  <decision id="Decision_0pj8550" name="Guest_Preferences_Subdecision">
     <informationRequirement id="InformationRequirement_1y31jri">
       <requiredDecision href="#Decision_0w40wr5" />
     </informationRequirement>
@@ -451,7 +443,7 @@
           <text>Filtred_by_Allergies</text>
         </inputExpression>
       </input>
-      <output id="OutputClause_1jhijc1" label="Guest_Preferences" name="Guest_Preferences" typeRef="" biodi:width="390" />
+      <output id="OutputClause_1jhijc1" label="Guest_Preferences_Subdecision" name="Guest_Preferences_Subdecision" typeRef="" biodi:width="390" />
       <rule id="DecisionRule_1y7atme">
         <inputEntry id="UnaryTests_0cfu2mm">
           <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
@@ -698,30 +690,6 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1jx7a8u">
           <text>"Fruit salad"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1cyc3ab">
-        <inputEntry id="UnaryTests_0jwmrsc">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1rvxkld">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0kuk33o">
-        <inputEntry id="UnaryTests_0b1au3f">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_12tqklm">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_02vfu1x">
-        <inputEntry id="UnaryTests_12gds8p">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0x9dewp">
-          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_09zbcf2">
@@ -1314,14 +1282,6 @@
           <text>105</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0cas4in">
-        <inputEntry id="UnaryTests_0kytt59">
-          <text>"Mozzarella cheese"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0zheahv">
-          <text>150</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1u7mbz8">
         <inputEntry id="UnaryTests_1tsbfsa">
           <text>"Minced meat"</text>
@@ -1806,79 +1766,323 @@
       </rule>
     </decisionTable>
   </decision>
+  <inputData id="InputData_11zocm7" name="Course_Type" />
+  <decision id="Decision_0vm84wz" name="Courses_Type_Match">
+    <informationRequirement id="InformationRequirement_131i64t">
+      <requiredInput href="#InputData_11zocm7" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0jln2gv" hitPolicy="COLLECT">
+      <input id="InputClause_1jcl4u6" label="Course">
+        <inputExpression id="LiteralExpression_1h4hx7v" typeRef="string">
+          <text>Course</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0g01ve8">
+          <text>"Appetizer","First Meal","Second Meal","Sidedish","Pizza","Dessert","Drink"</text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_1hpp7iw" label="Course_Meal" name="Course_Meal" typeRef="string">
+        <outputValues id="UnaryTests_12djzct">
+          <text>"Involtini primavera","Affettati Misti","Formaggi Misti","Tagliatelle alla Marinara","Rigatoni alla Carbonara","Trofie cacio e pepe","Spaghetti aglio olio e peperoncino","Lasagne","Grigliata di maiale mista","Bistecca alla Fiorentina","Pesce arrosto","Patatine fritte","Melanzane grigliate","Insalata Mista","Pizza Margherita","Pizza Bianca","Water","Coca-Cola","Fruit salad"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0hxaocw">
+        <inputEntry id="UnaryTests_0gk8mcv">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wehial">
+          <text>"Involtini primavera"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17muwzu">
+        <inputEntry id="UnaryTests_0x35gk6">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1e9292c">
+          <text>"Affettati Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d7phkg">
+        <inputEntry id="UnaryTests_1rja0r6">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12qigqp">
+          <text>"Formaggi Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xnuzxp">
+        <inputEntry id="UnaryTests_0v0rxx7">
+          <text>"First Meal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s29qo0">
+          <text>"Tagliatelle alla Marinara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fyhqhq">
+        <inputEntry id="UnaryTests_1a38c6y">
+          <text>"First Meal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0aycoal">
+          <text>"Rigatoni alla Carbonara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09y63sn">
+        <inputEntry id="UnaryTests_0rtdrbz">
+          <text>"First Meal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x6d376">
+          <text>"Trofie cacio e pepe"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kzpojj">
+        <inputEntry id="UnaryTests_1lg6283">
+          <text>"First Meal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_095owdm">
+          <text>"Spaghetti aglio olio e peperoncino"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_175baet">
+        <inputEntry id="UnaryTests_1ba1m5j">
+          <text>"First Meal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pbdbmf">
+          <text>"Lasagne"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jhle10">
+        <inputEntry id="UnaryTests_09c2hts">
+          <text>"Second Meal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gdlnm6">
+          <text>"Grigliata di maiale mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xidpa7">
+        <inputEntry id="UnaryTests_1pkbiy6">
+          <text>"Second Meal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_035h32q">
+          <text>"Bistecca alla Fiorentina"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qxt17q">
+        <inputEntry id="UnaryTests_0twbevf">
+          <text>"Second Meal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z6k5w6">
+          <text>"Pesce arrosto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01h00rv">
+        <inputEntry id="UnaryTests_0p0m5b4">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01ygm4l">
+          <text>"Patatine fritte"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u7jg7z">
+        <inputEntry id="UnaryTests_150vrc9">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ppp6j8">
+          <text>"Melanzane grigliate"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xsjomu">
+        <inputEntry id="UnaryTests_01sf6yd">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19mekqc">
+          <text>"Insalata Mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rg516a">
+        <inputEntry id="UnaryTests_17uik6f">
+          <text>"Pizza"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bxa1wq">
+          <text>"Pizza Margherita"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uytamk">
+        <inputEntry id="UnaryTests_1h7t9wc">
+          <text>"Pizza"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s706hn">
+          <text>"Pizza Bianca"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1urdipk">
+        <inputEntry id="UnaryTests_0o7qn3g">
+          <text>"Dessert"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gxsbix">
+          <text>"Fruit salad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zydsu2">
+        <inputEntry id="UnaryTests_1kg3m0s">
+          <text>"Drink"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z9izn4">
+          <text>"Water"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1db72ec">
+        <inputEntry id="UnaryTests_10nvh07">
+          <text>"Drink"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b392bx">
+          <text>"Coca-Cola"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kwa72z">
+        <inputEntry id="UnaryTests_160aeq0">
+          <text>""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c7usxb">
+          <text>""</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1trk386" name="Guest_Preferences">
+    <informationRequirement id="InformationRequirement_1d44u1a">
+      <requiredDecision href="#Decision_0vm84wz" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0qfe75t">
+      <requiredDecision href="#Decision_0pj8550" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1ohbv1b">
+      <requiredDecision href="#Decision_1uahnny" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0yy7b5g">
+      <input id="InputClause_0szik4z" label="Course_Meal" biodi:width="262">
+        <inputExpression id="LiteralExpression_0teb2x5" typeRef="string">
+          <text>Course_Meal</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1spokw7" label="Guest_Preferences_Subdecision" biodi:width="372">
+        <inputExpression id="LiteralExpression_0u6l1t2" typeRef="string">
+          <text>Guest_Preferences_Subdecision</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_03iykog" label="Guest_Preferences" name="Guest_Preferences" typeRef="" biodi:width="402" />
+      <rule id="DecisionRule_1nse6q1">
+        <inputEntry id="UnaryTests_1twz40k">
+          <text>(count(Course_Meal) &gt;= 1) and (Course_Meal[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cj06p5">
+          <text>(count(Guest_Preferences_Subdecision) &gt;= 1) and (Guest_Preferences_Subdecision[1] != "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ju6ssr">
+          <text>Menu_List[list contains(Course_Meal,item)][list contains(Guest_Preferences_Subdecision,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1el5pws">
+        <inputEntry id="UnaryTests_012qayv">
+          <text>(count(Course_Meal) &gt;= 1) and (Course_Meal[1] != "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jk584m">
+          <text>(count(Guest_Preferences_Subdecision) = 1) and (Guest_Preferences_Subdecision[1] = "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0903jd3">
+          <text>Menu_List[list contains(Course_Meal,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nldgdb">
+        <inputEntry id="UnaryTests_0wj1s3c">
+          <text>(count(Course_Meal) = 1) and (Course_Meal[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jc2ufc">
+          <text>(count(Guest_Preferences_Subdecision) &gt;= 1) and (Guest_Preferences_Subdecision[1] != "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m017v4">
+          <text>Menu_List[list contains(Guest_Preferences_Subdecision,item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kak7x6">
+        <inputEntry id="UnaryTests_1p0i8xq">
+          <text>(count(Course_Meal) = 1) and (Course_Meal[1] = "")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rmhdi1">
+          <text>(count(Guest_Preferences_Subdecision) = 1) and (Guest_Preferences_Subdecision[1] = "")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04o8195">
+          <text>Menu_List</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <dmndi:DMNShape dmnElementRef="Decision_0w40wr5">
-        <dc:Bounds height="80" width="180" x="160" y="620" />
+        <dc:Bounds height="80" width="180" x="120" y="620" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_0qafnm5" dmnElementRef="InputData_0cmpprl">
-        <dc:Bounds height="45" width="125" x="187" y="727" />
+        <dc:Bounds height="45" width="125" x="147" y="727" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_1ozwpda" dmnElementRef="InformationRequirement_0tayi2z">
-        <di:waypoint x="250" y="727" />
-        <di:waypoint x="250" y="720" />
-        <di:waypoint x="250" y="700" />
+        <di:waypoint x="210" y="727" />
+        <di:waypoint x="210" y="720" />
+        <di:waypoint x="210" y="700" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_0tk50lz" dmnElementRef="Decision_1uahnny">
         <dc:Bounds height="80" width="180" x="580" y="480" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_1jkhjph" dmnElementRef="InputData_146gmh2">
-        <dc:Bounds height="45" width="125" x="382" y="727" />
+        <dc:Bounds height="45" width="125" x="352" y="727" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_144fzin" dmnElementRef="InformationRequirement_1xg2189">
-        <di:waypoint x="445" y="727" />
-        <di:waypoint x="445" y="720" />
-        <di:waypoint x="445" y="700" />
+        <di:waypoint x="415" y="727" />
+        <di:waypoint x="415" y="720" />
+        <di:waypoint x="415" y="700" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_0991gi8" dmnElementRef="Decision_1p7f6c4">
         <dc:Bounds height="80" width="180" x="772" y="280" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_1lvy8pc" dmnElementRef="InformationRequirement_1rzbcdd">
         <di:waypoint x="670" y="480" />
-        <di:waypoint x="844" y="380" />
-        <di:waypoint x="844" y="360" />
+        <di:waypoint x="817" y="380" />
+        <di:waypoint x="817" y="360" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_0c3ozb4" dmnElementRef="Decision_0uy9197">
-        <dc:Bounds height="80" width="180" x="355" y="620" />
+        <dc:Bounds height="80" width="180" x="325" y="620" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_0fuu96j" dmnElementRef="Decision_0pj8550">
-        <dc:Bounds height="80" width="180" x="355" y="480" />
+        <dc:Bounds height="80" width="180" x="325" y="480" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_0ug9g45" dmnElementRef="InformationRequirement_1y31jri">
-        <di:waypoint x="250" y="620" />
-        <di:waypoint x="400" y="580" />
-        <di:waypoint x="400" y="560" />
+        <di:waypoint x="210" y="620" />
+        <di:waypoint x="370" y="580" />
+        <di:waypoint x="370" y="560" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_1gud1is" dmnElementRef="InformationRequirement_1a1onhv">
-        <di:waypoint x="445" y="620" />
-        <di:waypoint x="445" y="580" />
-        <di:waypoint x="445" y="560" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_1dhol77" dmnElementRef="InformationRequirement_1mjf0lp">
-        <di:waypoint x="445" y="480" />
-        <di:waypoint x="808" y="380" />
-        <di:waypoint x="808" y="360" />
+        <di:waypoint x="415" y="620" />
+        <di:waypoint x="415" y="580" />
+        <di:waypoint x="415" y="560" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_09swxjx" dmnElementRef="InformationRequirement_0rdviz3">
         <di:waypoint x="580" y="520" />
-        <di:waypoint x="555" y="520" />
-        <di:waypoint x="535" y="520" />
+        <di:waypoint x="525" y="520" />
+        <di:waypoint x="505" y="520" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_1qftlbq" dmnElementRef="InputData_1qdxkea">
-        <dc:Bounds height="45" width="125" x="587" y="727" />
+        <dc:Bounds height="45" width="125" x="557" y="727" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_15q82v4" dmnElementRef="Decision_0he9aea">
-        <dc:Bounds height="80" width="180" x="560" y="620" />
+        <dc:Bounds height="80" width="180" x="530" y="620" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_19dnrao" dmnElementRef="InformationRequirement_0ak102h">
-        <di:waypoint x="650" y="727" />
-        <di:waypoint x="650" y="720" />
-        <di:waypoint x="650" y="700" />
+        <di:waypoint x="620" y="727" />
+        <di:waypoint x="620" y="720" />
+        <di:waypoint x="620" y="700" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_137ahnb" dmnElementRef="InformationRequirement_0mmwryi">
-        <di:waypoint x="650" y="620" />
-        <di:waypoint x="490" y="580" />
-        <di:waypoint x="490" y="560" />
+        <di:waypoint x="620" y="620" />
+        <di:waypoint x="460" y="580" />
+        <di:waypoint x="460" y="560" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_1hbv4ik" dmnElementRef="InputData_18io2ks">
         <dc:Bounds height="45" width="125" x="1027" y="587" />
@@ -1907,8 +2111,8 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_04lj5x2" dmnElementRef="InformationRequirement_1scjsme">
         <di:waypoint x="880" y="480" />
-        <di:waypoint x="880" y="380" />
-        <di:waypoint x="880" y="360" />
+        <di:waypoint x="862" y="380" />
+        <di:waypoint x="862" y="360" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_1ekbxtn" dmnElementRef="Decision_0p7ihlj">
         <dc:Bounds height="80" width="180" x="1230" y="480" />
@@ -1938,9 +2142,43 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_1nb0wqj" dmnElementRef="InformationRequirement_1emeij6">
         <di:waypoint x="1090" y="480" />
-        <di:waypoint x="916" y="380" />
-        <di:waypoint x="916" y="360" />
+        <di:waypoint x="907" y="380" />
+        <di:waypoint x="907" y="360" />
       </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0zv4f6v" dmnElementRef="InputData_11zocm7">
+        <dc:Bounds height="45" width="125" x="382" y="77" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0ihnnm9" dmnElementRef="Decision_0vm84wz">
+        <dc:Bounds height="80" width="180" x="355" y="150" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1lp29c0" dmnElementRef="InformationRequirement_131i64t">
+        <di:waypoint x="445" y="122" />
+        <di:waypoint x="445" y="130" />
+        <di:waypoint x="445" y="150" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_16ix974" dmnElementRef="InformationRequirement_1d44u1a">
+        <di:waypoint x="445" y="230" />
+        <di:waypoint x="445" y="260" />
+        <di:waypoint x="445" y="280" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1yngppn" dmnElementRef="InformationRequirement_0qfe75t">
+        <di:waypoint x="415" y="480" />
+        <di:waypoint x="415" y="380" />
+        <di:waypoint x="415" y="360" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0rzosch" dmnElementRef="InformationRequirement_1jkxlnj">
+        <di:waypoint x="535" y="320" />
+        <di:waypoint x="752" y="320" />
+        <di:waypoint x="772" y="320" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0o318fp" dmnElementRef="InformationRequirement_1ohbv1b">
+        <di:waypoint x="670" y="480" />
+        <di:waypoint x="475" y="380" />
+        <di:waypoint x="475" y="360" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_11xs5tp" dmnElementRef="Decision_1trk386">
+        <dc:Bounds height="80" width="180" x="355" y="280" />
+      </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>

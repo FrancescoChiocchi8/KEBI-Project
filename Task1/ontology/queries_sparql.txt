@@ -1,0 +1,67 @@
+****************************************************************************************
+Copy and Paste the following prefix for each queries
+****************************************************************************************
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX kebi: <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#>
+
+
+****************************************************************************************
+1. Query for view all the meals which have the category "Carnivorous"
+****************************************************************************************
+SELECT DISTINCT ?meal ?category
+WHERE {
+  ?meal rdf:type ?type .
+  ?meal kebi:meal_hasCategory ?category .
+  FILTER(?category = "Carnivorous")
+}
+
+
+****************************************************************************************
+2. Query for view all the meals which have the category "Vegetarian"
+****************************************************************************************
+SELECT DISTINCT ?meal ?category
+WHERE {
+  ?meal rdf:type ?type .
+  ?meal kebi:meal_hasCategory ?category .
+  FILTER(?category = "Carnivorous")
+}
+
+
+
+
+
+
+
+****************************************************************************************
+Query for view the ingredients of a meal (in this case -> pizza)
+****************************************************************************************
+
+SELECT ?pizza ?ingredient
+WHERE {
+  ?pizza a kebi:Pizza .
+  ?pizza kebi:meal_hasIngredient ?ingredient .
+}
+
+
+****************************************************************************************
+Query for view the kcal of all ingredients
+****************************************************************************************
+
+SELECT ?ingredient ?kcal
+WHERE {
+  ?ingredient a kebi2024:Ingredient .
+  ?ingredient kebi2024:food_hasKcal ?kcal .
+}
+
+
+****************************************************************************************
+Query for view the kcal of a specific ingredient
+****************************************************************************************
+
+SELECT ?kcal
+WHERE {
+  kebi:ingredient_apple kebi:food_hasKcal ?kcal .
+}
