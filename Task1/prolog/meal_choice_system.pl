@@ -96,19 +96,55 @@ filtered_by_allergies(lactose_and_gluten, fruit_salad).
 allergies_match(Allergy_Type, Meal) :- filtered_by_allergies(Allergy_Type, Meal).
 
 
+% Meal facts releted to courses
+filtered_by_courses(appetizer, involtini_primavera).
+filtered_by_courses(appetizer, affettati_misti).
+filtered_by_courses(appetizer, formaggi_misti).
+filtered_by_courses(first_meal, spaghetti_aglio_olio_e_peperoncino).
+filtered_by_courses(first_meal, tagliatelle_alla_marinara).
+filtered_by_courses(first_meal, lasagne).
+filtered_by_courses(first_meal, rigatoni_alla_carbonara).
+filtered_by_courses(first_meal, trofie_cacio_e_pepe).
+filtered_by_courses(second_meal, grigliata_di_maiale_mista).
+filtered_by_courses(second_meal, bistecca_alla_fiorentina).
+filtered_by_courses(second_meal, pesce_arrosto).
+filtered_by_courses(sidedish, patatine_fritte).
+filtered_by_courses(sidedish, insalata_mista).
+filtered_by_courses(sidedish, melanzane_grigliate).
+filtered_by_courses(pizza, pizza_margherita).
+filtered_by_courses(pizza, pizza_bianca).
+filtered_by_courses(dessert, fruit_salad).
+filtered_by_courses(drink, water).
+filtered_by_courses(drink, coca_cola).
 
-% Rule to determine guest preferences based on category, calories, and allergies
-guest_preferences(none, CalorieLevel, none, GuestPreferences) :-
+% Rule to get filtered meals based on courses
+courses_match(Course_Type, Meal) :- filtered_by_courses(Course_Type, Meal).
+
+
+% Rule to determine guest preferences based on category, calories, allergies, and courses
+guest_preferences(none, CalorieLevel, none, none, GuestPreferences) :-
     once(findall(Meal, (calories_match(CalorieLevel, Meal)), GuestPreferences)).
 
-guest_preferences(none, CalorieLevel, AllergyType, GuestPreferences) :-
+guest_preferences(none, CalorieLevel, none, Course_Type, GuestPreferences) :-
+    once(findall(Meal, (calories_match(CalorieLevel, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
+
+guest_preferences(none, CalorieLevel, AllergyType, none, GuestPreferences) :-
     once(findall(Meal, (calories_match(CalorieLevel, Meal), allergies_match(AllergyType, Meal)), GuestPreferences)).
 
-guest_preferences(GuestType, CalorieLevel, none, GuestPreferences) :-
+guest_preferences(none, CalorieLevel, AllergyType, Course_Type, GuestPreferences) :-
+    once(findall(Meal, (calories_match(CalorieLevel, Meal), allergies_match(AllergyType, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
+
+guest_preferences(GuestType, CalorieLevel, none, none, GuestPreferences) :-
     once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal)), GuestPreferences)).
 
-guest_preferences(GuestType, CalorieLevel, AllergyType, GuestPreferences) :-
-    once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal), allergies_match(AllergyType, Meal)), GuestPreferences)).
+guest_preferences(GuestType, CalorieLevel, none, Course_Type, GuestPreferences) :-
+    once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
+
+guest_preferences(GuestType, CalorieLevel, Allergy_Type, none, GuestPreferences) :-
+    once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal), allergies_match(Allergy_Type, Meal)), GuestPreferences)).
+
+guest_preferences(GuestType, CalorieLevel, AllergyType, Course_Type, GuestPreferences) :-
+    once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal), allergies_match(AllergyType, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
 
 
 % Facts related to ingredients for each dish
@@ -296,9 +332,9 @@ meal_info(Meal, Ingredients, TotalKcal) :-
 
 % guest_preferences(carnivorous, 2, lactose, GuestPreferences).
 
-% guest_preferences(none, 0, none).
+% guest_preferences(none, 0, none, none, GuestPreferences).
 
-% guest_preferences(none, 0, lactose).
+% guest_preferences(none, 0, lactose, appetizer, GuestPreferences).
 
 % guest_preferences(carnivorous, 0, none).
 
