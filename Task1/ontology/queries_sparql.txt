@@ -32,9 +32,6 @@ WHERE {
 
 
 
-
-
-
 ****************************************************************************************
 Query for view the ingredients of a meal (in this case -> pizza)
 ****************************************************************************************
@@ -64,4 +61,26 @@ Query for view the kcal of a specific ingredient
 SELECT ?kcal
 WHERE {
   kebi:ingredient_apple kebi:food_hasKcal ?kcal .
+}
+
+****************************************************************************************
+Query for view the meals for who has lactose intolerance
+****************************************************************************************
+
+SELECT DISTINCT ?meal ?allergy
+WHERE {
+  ?meal rdf:type ?type .
+  ?meal kebi:meal_hasAllergy ?allergy .
+  FILTER(?allergy != "Lactose")
+}
+
+****************************************************************************************
+Query for view the meals for who has gluten intolerance
+****************************************************************************************
+
+SELECT DISTINCT ?meal ?allergy
+WHERE {
+  ?meal rdf:type ?type .
+  ?meal kebi:meal_hasAllergy ?allergy .
+  FILTER(?allergy != "Gluten")
 }
