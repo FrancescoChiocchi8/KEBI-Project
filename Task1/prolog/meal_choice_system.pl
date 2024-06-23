@@ -330,13 +330,11 @@ meal_info(Meal, Ingredients, TotalKcal) :-
 
 % QUERY example:
 
-% guest_preferences(carnivorous, 2, lactose, GuestPreferences).
+% guest_preferences(carnivorous, 2, lactose, none, GuestPreferences).
 
 % guest_preferences(none, 0, none, none, GuestPreferences).
 
 % guest_preferences(none, 0, lactose, appetizer, GuestPreferences).
-
-% guest_preferences(carnivorous, 0, none).
 
 % ingredient_kcal(carrot, Kcal).
 

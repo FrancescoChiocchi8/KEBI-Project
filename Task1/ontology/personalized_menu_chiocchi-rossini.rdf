@@ -6,11 +6,28 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:swlr="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:swlra="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
-     xmlns:swlrb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:kebi2024="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     
 
 
@@ -25,11 +42,137 @@
     
 
 
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#dairy_containsLactoseIntolerance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#dairy_containsLactoseIntolerance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dairy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Lactose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_hasIngredient">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#grain_containsGlutenIntolerance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#grain_containsGlutenIntolerance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Grain"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Gluten"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasAllergy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasAllergy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Allergy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_isAtRiskForFood -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_isAtRiskForFood">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsGlutenIntolerance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsGlutenIntolerance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Gluten"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsLactoseIntolerance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsLactoseIntolerance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Lactose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCourse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasIngredient -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasIngredient">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_containsDrink -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_containsDrink">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Menu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_containsMeal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_containsMeal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Menu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_hasGuest -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_hasGuest">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_hasMenu -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_hasMenu">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Menu"/>
     </owl:ObjectProperty>
     
 
@@ -45,71 +188,39 @@
     
 
 
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_hasKcal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_hasKcal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#food_hasKcal -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#food_hasKcal">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Food"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasAllergy -->
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasLevelOfCalorieConscious -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasAllergy">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasLevelOfCalorieConscious">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
         <rdfs:range>
             <rdfs:Datatype>
-                <owl:oneOf>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first></rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>Gluten</rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>Lactose</rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first>Lactose &amp; Gluten</rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
                     </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCategory -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCategory">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
                     <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>Carnivorous</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>Vegetarian</rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</xsd:maxInclusive>
                     </rdf:Description>
-                </owl:oneOf>
+                </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
     </owl:DatatypeProperty>
@@ -120,7 +231,29 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasLevelOfCalorieConscious">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#thing_hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#thing_hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -136,6 +269,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Allergy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Allergy"/>
+    
+
+
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#AnimalOriginProduct -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#AnimalOriginProduct">
@@ -147,8 +286,28 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Carnivorous -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Carnivorous">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course"/>
     
 
 
@@ -163,23 +322,21 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dessert -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dessert">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course"/>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
     
 
 
-    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstMeal -->
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstDish -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstMeal">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstDish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course"/>
     </owl:Class>
     
 
@@ -198,11 +355,25 @@
     
 
 
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Gluten -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Gluten">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Allergy"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Grain -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Grain">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Ingredient"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
     
 
 
@@ -214,10 +385,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Lactose -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Lactose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Allergy"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Liquid -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Liquid">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#MainDish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#MainDish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course"/>
     </owl:Class>
     
 
@@ -238,11 +425,15 @@
     
 
 
-    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Pizza -->
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Menu -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Pizza">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Menu"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Restaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Restaurant"/>
     
 
 
@@ -262,10 +453,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondMeal -->
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondCourse -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondMeal">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondCourse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course"/>
     </owl:Class>
     
 
@@ -273,7 +464,7 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course"/>
     </owl:Class>
     
 
@@ -294,6 +485,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetarian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetarian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category"/>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -305,11 +504,152 @@
     
 
 
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_gluten -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_gluten">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Gluten"/>
+        <kebi2024:thing_hasName>Gluten</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Lactose"/>
+        <kebi2024:thing_hasName>Lactose</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Carnivorous"/>
+        <kebi2024:thing_hasName>Carnivorous</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetarian"/>
+        <kebi2024:thing_hasName>Vegetarian</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_appetizer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_appetizer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer"/>
+        <kebi2024:thing_hasName>Appetizer</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_dessert -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_dessert">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dessert"/>
+        <kebi2024:thing_hasName>Dessert</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstDish"/>
+        <kebi2024:thing_hasName>First Dish</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_main-dish -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_main-dish">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#MainDish"/>
+        <kebi2024:thing_hasName>Main Dish</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_second-course -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_second-course">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondCourse"/>
+        <kebi2024:thing_hasName>Second Course</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_sidedish -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_sidedish">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish"/>
+        <kebi2024:thing_hasName>Sidedish</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_coca-cola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_coca-cola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
+        <kebi2024:drink_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sugar-and-food-coloring"/>
+        <kebi2024:drink_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_water"/>
+        <kebi2024:drink_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</kebi2024:drink_hasKcal>
+        <kebi2024:thing_hasName>Coca Cola</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_water -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_water">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
+        <kebi2024:drink_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_water"/>
+        <kebi2024:drink_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:drink_hasKcal>
+        <kebi2024:thing_hasName>Water</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
+        <kebi2024:guest_hasAllergy rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_gluten"/>
+        <kebi2024:guest_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:guest_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:guest_hasLevelOfCalorieConscious>
+        <kebi2024:guest_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:guest_hasLevelOfCalorieConscious>
+        <kebi2024:guest_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:guest_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Valentino Rossi</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
+        <kebi2024:guest_hasAllergy rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose"/>
+        <kebi2024:guest_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:guest_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:guest_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Lorenzo Jovanotti</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_0-type-flour -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_0-type-flour">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Grain"/>
+        <kebi2024:grain_containsGlutenIntolerance rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_gluten"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">500</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Flour type 0</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -319,6 +659,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_apple">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Fruit"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">35</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Apple</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -328,6 +669,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_banana">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Fruit"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Banana</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -336,7 +678,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_bechamel">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dairy"/>
+        <kebi2024:dairy_containsLactoseIntolerance rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">105</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Bechamel</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -346,6 +690,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_black-pepper">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seasoning"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Black Pepper</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -355,6 +700,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_cabbage">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Cabbage</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -364,6 +710,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_calamari">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seafood"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Calamari</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -373,6 +720,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_carrot">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Carrot</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -382,6 +730,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_chili">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seasoning"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Chili</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -391,6 +740,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_ciauscolo">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Ciauscolo</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -399,7 +749,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_cows-cheese">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dairy"/>
+        <kebi2024:dairy_containsLactoseIntolerance rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">115</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Cow&apos;s Cheese</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -409,6 +761,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_egg">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#AnimalOriginProduct"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Egg</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -418,6 +771,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_eggplant">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Eggplant</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -427,6 +781,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_garlic">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seasoning"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Garlic</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -436,6 +791,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_ham">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Ham</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -445,6 +801,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_lettuce">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Lettuce</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -454,6 +811,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mais">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Mais</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -463,6 +821,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_minced-meat">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Minced Meat</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -471,7 +830,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mozzarella-cheese">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dairy"/>
+        <kebi2024:dairy_containsLactoseIntolerance rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Mozzarella Cheese</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -481,6 +842,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mussel">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seafood"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Mussel</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -490,6 +852,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Oil</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -498,7 +861,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_parmesan">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dairy"/>
+        <kebi2024:dairy_containsLactoseIntolerance rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Parmesan</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -507,7 +872,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pasta">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Grain"/>
+        <kebi2024:grain_containsGlutenIntolerance rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_gluten"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">300</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Pasta</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -517,6 +884,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-cheek">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Pork Cheek</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -526,6 +894,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-chop">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">125</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Pork Chop</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -535,6 +904,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-rib">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Pork Rib</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -544,6 +914,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_potato">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Tuber"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">450</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Potato</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -552,7 +923,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_puff-pastry">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Grain"/>
+        <kebi2024:grain_containsGlutenIntolerance rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_gluten"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Puff Pastry</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -562,6 +935,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salame">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Salame</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -571,6 +945,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salmon">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seafood"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Salmon</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -579,7 +954,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seasoning"/>
-        <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:food_hasKcal>
+        <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Salt</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -589,6 +965,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sausage">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">205</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Sausage</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -597,7 +974,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sheeps-cheese">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dairy"/>
+        <kebi2024:dairy_containsLactoseIntolerance rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">135</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Sheep&apos;s Cheese</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -607,6 +986,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_shrimp">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seafood"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">35</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Shrimp</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -616,6 +996,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_steak">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">485</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Steak</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -625,6 +1006,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_strawberry">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Fruit"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Strawberry</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -632,8 +1014,9 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sugar-and-food-coloring -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sugar-and-food-coloring">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Liquid"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Sugar and Food Coloring</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -643,6 +1026,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sword-fish">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seafood"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Sword Fish</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -652,6 +1036,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_tomato">
         <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Tomato</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -659,8 +1044,9 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_water -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_water">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
-        <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:food_hasKcal>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Liquid"/>
+        <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:food_hasKcal>
+        <kebi2024:thing_hasName>Water</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -668,13 +1054,17 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_affettati-misti -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_affettati-misti">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_appetizer"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_ciauscolo"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_ham"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salame"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">190</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy></kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Affettati Misti</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -682,23 +1072,16 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_bistecca-alla-fiorentina -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_bistecca-alla-fiorentina">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondMeal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_second-course"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_steak"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">545</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy></kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_coca-cola -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_coca-cola">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
-        <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sugar-and-food-coloring"/>
-        <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</kebi2024:food_hasKcal>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Bistecca alla Fiorentina</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -706,14 +1089,17 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_formaggi-misti -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_formaggi-misti">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_appetizer"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_cows-cheese"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_parmesan"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sheeps-cheese"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">325</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Lactose</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Formaggi Misti</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -721,13 +1107,18 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_fruit-salad -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_fruit-salad">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dessert"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_dessert"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_apple"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_banana"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_strawberry"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">97</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy></kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Fruit Salad</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -735,14 +1126,17 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_grigliata-di-maiale-mista -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_grigliata-di-maiale-mista">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondMeal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_second-course"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-chop"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-rib"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sausage"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy></kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Grigliata di Maiale Mista</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -750,14 +1144,19 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_insalata-mista -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_insalata-mista">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_sidedish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_lettuce"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mais"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">135</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy></kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Insalata Mista</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -765,17 +1164,20 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_involtini-primavera -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_involtini-primavera">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_appetizer"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_cabbage"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_carrot"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_puff-pastry"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">262</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose &amp; Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Involtini Primavera</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -783,7 +1185,9 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_lasagne -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_lasagne">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstMeal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_bechamel"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_minced-meat"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
@@ -792,10 +1196,9 @@
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_tomato"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">717</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose &amp; Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Lasagne</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -803,13 +1206,18 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_melanzane-grigliate -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_melanzane-grigliate">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_sidedish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_eggplant"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">78</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy></kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Melanzane Grigliate</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -817,14 +1225,16 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_patatine-fritte -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_patatine-fritte">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_sidedish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_potato"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">510</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy></kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Patatine Fritte</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -832,15 +1242,20 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pesce-arrosto -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pesce-arrosto">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondMeal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_second-course"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_calamari"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salmon"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sword-fish"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">455</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy></kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Pesce Arrosto</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -848,14 +1263,18 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-bianca -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-bianca">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Pizza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_main-dish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_0-type-flour"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">560</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Pizza Bianca</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -863,18 +1282,19 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-margherita -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-margherita">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Pizza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_main-dish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_0-type-flour"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_cows-cheese"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_tomato"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">705</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose &amp; Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Pizza Margherita</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -882,7 +1302,9 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_rigatoni-alla-carbonara -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_rigatoni-alla-carbonara">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstMeal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_black-pepper"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_egg"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
@@ -890,10 +1312,9 @@
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-cheek"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">705</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose &amp; Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Rigatoni alla Carbonara</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -901,16 +1322,20 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_spaghetti-aglio-olio-e-peperoncino -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_spaghetti-aglio-olio-e-peperoncino">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstMeal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_chili"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_garlic"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pasta"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">378</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Spaghetti Aglio Olio e Peperoncino</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -918,15 +1343,19 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_tagliatelle-alla-marinara -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_tagliatelle-alla-marinara">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstMeal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mussel"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pasta"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_shrimp"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">435</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Tagliatelle alla Marinara</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
@@ -934,29 +1363,390 @@
     <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_trofie-cacio-e-pepe -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_trofie-cacio-e-pepe">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstMeal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous"/>
+        <kebi2024:meal_hasCategory rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian"/>
+        <kebi2024:meal_hasCourse rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_black-pepper"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pasta"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt"/>
         <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sheeps-cheese"/>
         <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">520</kebi2024:food_hasKcal>
-        <kebi2024:meal_hasAllergy>Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasAllergy>Lactose &amp; Gluten</kebi2024:meal_hasAllergy>
-        <kebi2024:meal_hasCategory>Carnivorous</kebi2024:meal_hasCategory>
-        <kebi2024:meal_hasCategory>Vegetarian</kebi2024:meal_hasCategory>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:meal_hasLevelOfCalorieConscious rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</kebi2024:meal_hasLevelOfCalorieConscious>
+        <kebi2024:thing_hasName>Trofie Cacio e Pepe</kebi2024:thing_hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_water -->
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_italian-menu -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_water">
-        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink"/>
-        <kebi2024:meal_hasIngredient rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_water"/>
-        <kebi2024:food_hasKcal rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</kebi2024:food_hasKcal>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_italian-menu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Menu"/>
+        <kebi2024:menu_containsDrink rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_coca-cola"/>
+        <kebi2024:menu_containsDrink rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_water"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_affettati-misti"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_bistecca-alla-fiorentina"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_formaggi-misti"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_fruit-salad"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_grigliata-di-maiale-mista"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_insalata-mista"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_involtini-primavera"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_lasagne"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_melanzane-grigliate"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_patatine-fritte"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pesce-arrosto"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-bianca"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-margherita"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_rigatoni-alla-carbonara"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_spaghetti-aglio-olio-e-peperoncino"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_tagliatelle-alla-marinara"/>
+        <kebi2024:menu_containsMeal rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_trofie-cacio-e-pepe"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_our-restaurant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_our-restaurant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Restaurant"/>
+        <kebi2024:restaurant_hasGuest rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest1"/>
+        <kebi2024:restaurant_hasGuest rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest2"/>
+        <kebi2024:restaurant_hasMenu rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_italian-menu"/>
+        <kebi2024:thing_hasName>Ristorante Pizzeria Chiocchi Rossini</kebi2024:thing_hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_affettati-misti"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="#guest">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#allergy">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#meal">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ingredient">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#dairy">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#gluten">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swlra:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swlra:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>GuestIsAtRiskForFoodGluten</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
+                        <swrl:argument1 rdf:resource="#guest"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasAllergy"/>
+                                <swrl:argument1 rdf:resource="#guest"/>
+                                <swrl:argument2 rdf:resource="#allergy"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+                                        <swrl:argument1 rdf:resource="#meal"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsGlutenIntolerance"/>
+                                                <swrl:argument1 rdf:resource="#meal"/>
+                                                <swrl:argument2 rdf:resource="#allergy"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_isAtRiskForFood"/>
+                        <swrl:argument1 rdf:resource="#guest"/>
+                        <swrl:argument2 rdf:resource="#meal"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swlra:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swlra:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>GuestIsAtRiskForFoodLactose</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest"/>
+                        <swrl:argument1 rdf:resource="#guest"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasAllergy"/>
+                                <swrl:argument1 rdf:resource="#guest"/>
+                                <swrl:argument2 rdf:resource="#allergy"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+                                        <swrl:argument1 rdf:resource="#meal"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsLactoseIntolerance"/>
+                                                <swrl:argument1 rdf:resource="#meal"/>
+                                                <swrl:argument2 rdf:resource="#allergy"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_isAtRiskForFood"/>
+                        <swrl:argument1 rdf:resource="#guest"/>
+                        <swrl:argument2 rdf:resource="#meal"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swlra:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swlra:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>MealContainsLactoseIntolerance</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+                        <swrl:argument1 rdf:resource="#meal"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasIngredient"/>
+                                <swrl:argument1 rdf:resource="#meal"/>
+                                <swrl:argument2 rdf:resource="#ingredient"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Ingredient"/>
+                                        <swrl:argument1 rdf:resource="#ingredient"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#dairy_containsLactoseIntolerance"/>
+                                                <swrl:argument1 rdf:resource="#ingredient"/>
+                                                <swrl:argument2 rdf:resource="#dairy"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsLactoseIntolerance"/>
+                        <swrl:argument1 rdf:resource="#meal"/>
+                        <swrl:argument2 rdf:resource="#dairy"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swlra:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swlra:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>MealContainsGlutenIntolerance</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal"/>
+                        <swrl:argument1 rdf:resource="#meal"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasIngredient"/>
+                                <swrl:argument1 rdf:resource="#meal"/>
+                                <swrl:argument2 rdf:resource="#ingredient"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Ingredient"/>
+                                        <swrl:argument1 rdf:resource="#ingredient"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#grain_containsGlutenIntolerance"/>
+                                                <swrl:argument1 rdf:resource="#ingredient"/>
+                                                <swrl:argument2 rdf:resource="#gluten"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsGlutenIntolerance"/>
+                        <swrl:argument1 rdf:resource="#meal"/>
+                        <swrl:argument2 rdf:resource="#gluten"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
 </rdf:RDF>
 
 

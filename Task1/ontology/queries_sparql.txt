@@ -11,51 +11,82 @@ PREFIX kebi: <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2
 ****************************************************************************************
 1. Query for view all the meals which have the category "Carnivorous"
 ****************************************************************************************
-SELECT DISTINCT ?meal ?category
+SELECT ?meal
 WHERE {
-  ?meal rdf:type ?type .
-  ?meal kebi:meal_hasCategory ?category .
-  FILTER(?category = "Carnivorous")
+  ?meal rdf:type kebi:Meal .
+  ?meal kebi:meal_hasCategory kebi:category_carnivorous .
 }
-
 
 ****************************************************************************************
 2. Query for view all the meals which have the category "Vegetarian"
 ****************************************************************************************
-SELECT DISTINCT ?meal ?category
+SELECT ?meal
 WHERE {
-  ?meal rdf:type ?type .
-  ?meal kebi:meal_hasCategory ?category .
-  FILTER(?category = "Carnivorous")
+  ?meal rdf:type kebi:Meal .
+  ?meal kebi:meal_hasCategory kebi:category_vegetarian .
 }
 
-
-
-
 ****************************************************************************************
-Query for view the ingredients of a meal (in this case -> pizza)
+3. Query for view the ingredients of a specific meal (in this case -> pizza-margherita)
 ****************************************************************************************
 
-SELECT ?pizza ?ingredient
+SELECT ?ingredient
 WHERE {
-  ?pizza a kebi:Pizza .
-  ?pizza kebi:meal_hasIngredient ?ingredient .
+  kebi:meal_pizza-margherita kebi:meal_hasIngredient ?ingredient .
 }
 
+****************************************************************************************
+4. Query for view the meals and the related calories
+****************************************************************************************
+
+SELECT ?meal ?calories
+WHERE {
+  ?meal rdf:type kebi:Meal .
+  ?meal kebi:food_hasKcal ?calories .
+}
 
 ****************************************************************************************
-Query for view the kcal of all ingredients
+5. Query for view the guests with allergies
+****************************************************************************************
+
+SELECT ?guest ?allergy
+WHERE {
+  ?guest a kebi:Guest ;
+         kebi:guest_hasAllergy ?allergy .
+}
+
+****************************************************************************************
+6. Query for view the kcal of a specific meal (in this case -> pizza-margherita)
+****************************************************************************************
+
+SELECT ?kcal
+WHERE {
+  kebi:meal_pizza-margherita kebi:food_hasKcal ?kcal.
+}
+
+****************************************************************************************
+7. Query for view the kcal of all ingredients
 ****************************************************************************************
 
 SELECT ?ingredient ?kcal
 WHERE {
-  ?ingredient a kebi2024:Ingredient .
-  ?ingredient kebi2024:food_hasKcal ?kcal .
+  ?ingredient a kebi:Ingredient .
+  ?ingredient kebi:food_hasKcal ?kcal .
 }
 
+****************************************************************************************
+8. Query for view the level 3 of Calorie Conscious of all meals
+****************************************************************************************
+
+SELECT DISTINCT ?meal ?calorie
+WHERE {
+  ?meal rdf:type ?type .
+  ?meal kebi:meal_hasLevelOfCalorieConscious ?calorie .
+  FILTER(?calorie = 3)
+}
 
 ****************************************************************************************
-Query for view the kcal of a specific ingredient
+9. Query for view the kcal of a specific ingredient
 ****************************************************************************************
 
 SELECT ?kcal
@@ -64,23 +95,81 @@ WHERE {
 }
 
 ****************************************************************************************
-Query for view the meals for who has lactose intolerance
+10. Query for view the ingredients with has lactose intolerance
 ****************************************************************************************
 
-SELECT DISTINCT ?meal ?allergy
+SELECT ?ingredient
 WHERE {
-  ?meal rdf:type ?type .
-  ?meal kebi:meal_hasAllergy ?allergy .
-  FILTER(?allergy != "Lactose")
+  ?ingredient rdf:type kebi:Ingredient .
+  ?ingredient kebi:dairy_containsLactoseIntolerance kebi:allergy_lactose .
 }
 
 ****************************************************************************************
-Query for view the meals for who has gluten intolerance
+11. Query for view the ingredients with has gluten intolerance
 ****************************************************************************************
 
-SELECT DISTINCT ?meal ?allergy
+SELECT ?ingredient
 WHERE {
-  ?meal rdf:type ?type .
-  ?meal kebi:meal_hasAllergy ?allergy .
-  FILTER(?allergy != "Gluten")
+  ?ingredient rdf:type kebi:Ingredient .
+  ?ingredient kebi:grain_containsGlutenIntolerance kebi:allergy_gluten .
 }
+
+****************************************************************************************
+12. Query for view the meals with has gluten intolerance --- WITH PROTEGE -Reasoner
+****************************************************************************************
+
+SELECT ?meal
+WHERE {
+  ?meal rdf:type kebi:Meal .
+  ?meal kebi:meal_containsGlutenIntolerance kebi:allergy_gluten .
+}
+
+****************************************************************************************
+13. Query for view the meals with has lactose intolerance --- WITH PROTEGE -Reasoner
+****************************************************************************************
+
+SELECT ?meal
+WHERE {
+  ?meal rdf:type kebi:Meal .
+  ?meal kebi:meal_containsLactoseIntolerance kebi:allergy_lactose .
+}
+
+****************************************************************************************
+14. Query for view the meals that are classified as Appetizer
+****************************************************************************************
+
+SELECT ?meal
+WHERE {
+  ?meal rdf:type kebi:Meal .
+  ?meal kebi:meal_hasCourse kebi:course_appetizer .
+}
+
+****************************************************************************************
+15. Query for view the meals that are classified as First Meal
+****************************************************************************************
+
+SELECT ?meal
+WHERE {
+  ?meal rdf:type kebi:Meal .
+  ?meal kebi:meal_hasCourse kebi:course_first-meal .
+}
+
+****************************************************************************************
+16. Query for view the ingredient that are classified as Seafood
+****************************************************************************************
+
+SELECT ?ingredient
+WHERE {
+  ?ingredient rdf:type kebi:Seafood.
+}
+
+****************************************************************************************
+17. Query for view the meals that has more than 500 kcal
+****************************************************************************************
+
+SELECT ?meal ?kcal
+WHERE {
+  ?meal kebi:food_hasKcal ?kcal.
+  FILTER(xsd:decimal(?kcal) > 500).
+}
+
