@@ -4,7 +4,11 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix kebi2024: <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#> .
+@base <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#> .
 
 <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024> rdf:type owl:Ontology .
 
@@ -13,7 +17,7 @@
 #################################################################
 
 ###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
-<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -21,100 +25,100 @@
 #################################################################
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#dairy_containsLactoseIntolerance
-:dairy_containsLactoseIntolerance rdf:type owl:ObjectProperty ;
-                                  rdfs:domain :Dairy ;
-                                  rdfs:range :Lactose .
+kebi2024:dairy_containsLactoseIntolerance rdf:type owl:ObjectProperty ;
+                                          rdfs:domain kebi2024:Dairy ;
+                                          rdfs:range kebi2024:Lactose .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_hasIngredient
-:drink_hasIngredient rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Drink ;
-                     rdfs:range :Ingredient .
+kebi2024:drink_hasIngredient rdf:type owl:ObjectProperty ;
+                             rdfs:domain kebi2024:Drink ;
+                             rdfs:range kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#grain_containsGlutenIntolerance
-:grain_containsGlutenIntolerance rdf:type owl:ObjectProperty ;
-                                 rdfs:domain :Grain ;
-                                 rdfs:range :Gluten .
+kebi2024:grain_containsGlutenIntolerance rdf:type owl:ObjectProperty ;
+                                         rdfs:domain kebi2024:Grain ;
+                                         rdfs:range kebi2024:Gluten .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasAllergy
-:guest_hasAllergy rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Guest ;
-                  rdfs:range :Allergy .
+kebi2024:guest_hasAllergy rdf:type owl:ObjectProperty ;
+                          rdfs:domain kebi2024:Guest ;
+                          rdfs:range kebi2024:Allergy .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasCategory
-:guest_hasCategory rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Guest ;
-                   rdfs:range :Category .
+kebi2024:guest_hasCategory rdf:type owl:ObjectProperty ;
+                           rdfs:domain kebi2024:Guest ;
+                           rdfs:range kebi2024:Category .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasPreferenceCourse
-:guest_hasPreferenceCourse rdf:type owl:ObjectProperty ;
-                           rdfs:domain :Guest ;
-                           rdfs:range :Course .
+kebi2024:guest_hasPreferenceCourse rdf:type owl:ObjectProperty ;
+                                   rdfs:domain kebi2024:Guest ;
+                                   rdfs:range kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_isAtRiskForFood
-:guest_isAtRiskForFood rdf:type owl:ObjectProperty ;
-                       rdfs:domain :Guest ;
-                       rdfs:range :Meal .
+kebi2024:guest_isAtRiskForFood rdf:type owl:ObjectProperty ;
+                               rdfs:domain kebi2024:Guest ;
+                               rdfs:range kebi2024:Meal .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsGlutenIntolerance
-:meal_containsGlutenIntolerance rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf owl:topObjectProperty ;
-                                rdfs:domain :Meal ;
-                                rdfs:range :Gluten .
+kebi2024:meal_containsGlutenIntolerance rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                        rdfs:domain kebi2024:Meal ;
+                                        rdfs:range kebi2024:Gluten .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_containsLactoseIntolerance
-:meal_containsLactoseIntolerance rdf:type owl:ObjectProperty ;
-                                 rdfs:domain :Meal ;
-                                 rdfs:range :Lactose .
+kebi2024:meal_containsLactoseIntolerance rdf:type owl:ObjectProperty ;
+                                         rdfs:domain kebi2024:Meal ;
+                                         rdfs:range kebi2024:Lactose .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCategory
-:meal_hasCategory rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Meal ;
-                  rdfs:range :Category .
+kebi2024:meal_hasCategory rdf:type owl:ObjectProperty ;
+                          rdfs:domain kebi2024:Meal ;
+                          rdfs:range kebi2024:Category .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCourse
-:meal_hasCourse rdf:type owl:ObjectProperty ;
-                rdfs:domain :Meal ;
-                rdfs:range :Course .
+kebi2024:meal_hasCourse rdf:type owl:ObjectProperty ;
+                        rdfs:domain kebi2024:Meal ;
+                        rdfs:range kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasIngredient
-:meal_hasIngredient rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Meal ;
-                    rdfs:range :Ingredient .
+kebi2024:meal_hasIngredient rdf:type owl:ObjectProperty ;
+                            rdfs:domain kebi2024:Meal ;
+                            rdfs:range kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_containsDrink
-:menu_containsDrink rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Menu ;
-                    rdfs:range :Drink .
+kebi2024:menu_containsDrink rdf:type owl:ObjectProperty ;
+                            rdfs:domain kebi2024:Menu ;
+                            rdfs:range kebi2024:Drink .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_containsMeal
-:menu_containsMeal rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Menu ;
-                   rdfs:range :Meal .
+kebi2024:menu_containsMeal rdf:type owl:ObjectProperty ;
+                           rdfs:domain kebi2024:Menu ;
+                           rdfs:range kebi2024:Meal .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_hasGuest
-:restaurant_hasGuest rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Restaurant ;
-                     rdfs:range :Guest .
+kebi2024:restaurant_hasGuest rdf:type owl:ObjectProperty ;
+                             rdfs:domain kebi2024:Restaurant ;
+                             rdfs:range kebi2024:Guest .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_hasMenu
-:restaurant_hasMenu rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Restaurant ;
-                    rdfs:range :Menu .
+kebi2024:restaurant_hasMenu rdf:type owl:ObjectProperty ;
+                            rdfs:domain kebi2024:Restaurant ;
+                            rdfs:range kebi2024:Menu .
 
 
 #################################################################
@@ -122,48 +126,48 @@
 #################################################################
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_hasKcal
-:drink_hasKcal rdf:type owl:DatatypeProperty ;
-               rdfs:domain :Drink ;
-               rdfs:range xsd:integer .
+kebi2024:drink_hasKcal rdf:type owl:DatatypeProperty ;
+                       rdfs:domain kebi2024:Drink ;
+                       rdfs:range xsd:integer .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#food_hasKcal
-:food_hasKcal rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Food ;
-              rdfs:range xsd:integer .
+kebi2024:food_hasKcal rdf:type owl:DatatypeProperty ;
+                      rdfs:domain kebi2024:Food ;
+                      rdfs:range xsd:integer .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasLevelOfCalorieConscious
-:guest_hasLevelOfCalorieConscious rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain :Guest ;
-                                  rdfs:range [ rdf:type rdfs:Datatype ;
-                                               owl:onDatatype xsd:integer ;
-                                               owl:withRestrictions ( [ xsd:minInclusive 0
-                                                                      ]
-                                                                      [ xsd:maxInclusive 3
-                                                                      ]
-                                                                    )
-                                             ] .
+kebi2024:guest_hasLevelOfCalorieConscious rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain kebi2024:Guest ;
+                                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                                       owl:onDatatype xsd:integer ;
+                                                       owl:withRestrictions ( [ xsd:minInclusive 0
+                                                                              ]
+                                                                              [ xsd:maxInclusive 3
+                                                                              ]
+                                                                            )
+                                                     ] .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasLevelOfCalorieConscious
-:meal_hasLevelOfCalorieConscious rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain :Meal ;
-                                 rdfs:range [ rdf:type rdfs:Datatype ;
-                                              owl:onDatatype xsd:integer ;
-                                              owl:withRestrictions ( [ xsd:minInclusive 0
-                                                                     ]
-                                                                     [ xsd:maxInclusive 3
-                                                                     ]
-                                                                   )
-                                            ] .
+kebi2024:meal_hasLevelOfCalorieConscious rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain kebi2024:Meal ;
+                                         rdfs:range [ rdf:type rdfs:Datatype ;
+                                                      owl:onDatatype xsd:integer ;
+                                                      owl:withRestrictions ( [ xsd:minInclusive 0
+                                                                             ]
+                                                                             [ xsd:maxInclusive 3
+                                                                             ]
+                                                                           )
+                                                    ] .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#thing_hasName
-:thing_hasName rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf owl:topDataProperty ;
-               rdfs:domain owl:Thing ;
-               rdfs:range xsd:string .
+kebi2024:thing_hasName rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain owl:Thing ;
+                       rdfs:range xsd:string .
 
 
 #################################################################
@@ -171,145 +175,145 @@
 #################################################################
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Allergy
-:Allergy rdf:type owl:Class .
+kebi2024:Allergy rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#AnimalOriginProduct
-:AnimalOriginProduct rdf:type owl:Class ;
-                     rdfs:subClassOf :Ingredient .
+kebi2024:AnimalOriginProduct rdf:type owl:Class ;
+                             rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer
-:Appetizer rdf:type owl:Class ;
-           rdfs:subClassOf :Course .
+kebi2024:Appetizer rdf:type owl:Class ;
+                   rdfs:subClassOf kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Carnivorous
-:Carnivorous rdf:type owl:Class ;
-             rdfs:subClassOf :Category .
+kebi2024:Carnivorous rdf:type owl:Class ;
+                     rdfs:subClassOf kebi2024:Category .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category
-:Category rdf:type owl:Class .
+kebi2024:Category rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Course
-:Course rdf:type owl:Class .
+kebi2024:Course rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dairy
-:Dairy rdf:type owl:Class ;
-       rdfs:subClassOf :Ingredient .
+kebi2024:Dairy rdf:type owl:Class ;
+               rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dessert
-:Dessert rdf:type owl:Class ;
-         rdfs:subClassOf :Course .
+kebi2024:Dessert rdf:type owl:Class ;
+                 rdfs:subClassOf kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink
-:Drink rdf:type owl:Class .
+kebi2024:Drink rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstDish
-:FirstDish rdf:type owl:Class ;
-           rdfs:subClassOf :Course .
+kebi2024:FirstDish rdf:type owl:Class ;
+                   rdfs:subClassOf kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Food
-:Food rdf:type owl:Class .
+kebi2024:Food rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Fruit
-:Fruit rdf:type owl:Class ;
-       rdfs:subClassOf :Ingredient .
+kebi2024:Fruit rdf:type owl:Class ;
+               rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Gluten
-:Gluten rdf:type owl:Class ;
-        rdfs:subClassOf :Allergy .
+kebi2024:Gluten rdf:type owl:Class ;
+                rdfs:subClassOf kebi2024:Allergy .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Grain
-:Grain rdf:type owl:Class ;
-       rdfs:subClassOf :Ingredient .
+kebi2024:Grain rdf:type owl:Class ;
+               rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Guest
-:Guest rdf:type owl:Class .
+kebi2024:Guest rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Ingredient
-:Ingredient rdf:type owl:Class ;
-            rdfs:subClassOf :Food .
+kebi2024:Ingredient rdf:type owl:Class ;
+                    rdfs:subClassOf kebi2024:Food .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Lactose
-:Lactose rdf:type owl:Class ;
-         rdfs:subClassOf :Allergy .
+kebi2024:Lactose rdf:type owl:Class ;
+                 rdfs:subClassOf kebi2024:Allergy .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Liquid
-:Liquid rdf:type owl:Class ;
-        rdfs:subClassOf :Ingredient .
+kebi2024:Liquid rdf:type owl:Class ;
+                rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#MainDish
-:MainDish rdf:type owl:Class ;
-          rdfs:subClassOf :Course .
+kebi2024:MainDish rdf:type owl:Class ;
+                  rdfs:subClassOf kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal
-:Meal rdf:type owl:Class ;
-      rdfs:subClassOf :Food .
+kebi2024:Meal rdf:type owl:Class ;
+              rdfs:subClassOf kebi2024:Food .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meat
-:Meat rdf:type owl:Class ;
-      rdfs:subClassOf :Ingredient .
+kebi2024:Meat rdf:type owl:Class ;
+              rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Menu
-:Menu rdf:type owl:Class .
+kebi2024:Menu rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Restaurant
-:Restaurant rdf:type owl:Class .
+kebi2024:Restaurant rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seafood
-:Seafood rdf:type owl:Class ;
-         rdfs:subClassOf :Ingredient .
+kebi2024:Seafood rdf:type owl:Class ;
+                 rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Seasoning
-:Seasoning rdf:type owl:Class ;
-           rdfs:subClassOf :Ingredient .
+kebi2024:Seasoning rdf:type owl:Class ;
+                   rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondCourse
-:SecondCourse rdf:type owl:Class ;
-              rdfs:subClassOf :Course .
+kebi2024:SecondCourse rdf:type owl:Class ;
+                      rdfs:subClassOf kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish
-:Sidedish rdf:type owl:Class ;
-          rdfs:subClassOf :Course .
+kebi2024:Sidedish rdf:type owl:Class ;
+                  rdfs:subClassOf kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Tuber
-:Tuber rdf:type owl:Class ;
-       rdfs:subClassOf :Ingredient .
+kebi2024:Tuber rdf:type owl:Class ;
+               rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable
-:Vegetable rdf:type owl:Class ;
-           rdfs:subClassOf :Ingredient .
+kebi2024:Vegetable rdf:type owl:Class ;
+                   rdfs:subClassOf kebi2024:Ingredient .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetarian
-:Vegetarian rdf:type owl:Class ;
-            rdfs:subClassOf :Category .
+kebi2024:Vegetarian rdf:type owl:Class ;
+                    rdfs:subClassOf kebi2024:Category .
 
 
 #################################################################
@@ -317,700 +321,704 @@
 #################################################################
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_gluten
-:allergy_gluten rdf:type owl:NamedIndividual ,
-                         :Gluten ;
-                :thing_hasName "Gluten" .
+kebi2024:allergy_gluten rdf:type owl:NamedIndividual ,
+                                 kebi2024:Gluten ;
+                        kebi2024:thing_hasName "Gluten" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#allergy_lactose
-:allergy_lactose rdf:type owl:NamedIndividual ,
-                          :Lactose ;
-                 :thing_hasName "Lactose" .
+kebi2024:allergy_lactose rdf:type owl:NamedIndividual ,
+                                  kebi2024:Lactose ;
+                         kebi2024:thing_hasName "Lactose" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous
-:category_carnivorous rdf:type owl:NamedIndividual ,
-                               :Carnivorous ;
-                      :thing_hasName "Carnivorous" .
+kebi2024:category_carnivorous rdf:type owl:NamedIndividual ,
+                                       kebi2024:Carnivorous ;
+                              kebi2024:thing_hasName "Carnivorous" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian
-:category_vegetarian rdf:type owl:NamedIndividual ,
-                              :Vegetarian ;
-                     :thing_hasName "Vegetarian" .
+kebi2024:category_vegetarian rdf:type owl:NamedIndividual ,
+                                      kebi2024:Vegetarian ;
+                             kebi2024:thing_hasName "Vegetarian" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_appetizer
-:course_appetizer rdf:type owl:NamedIndividual ,
-                           :Appetizer ;
-                  :thing_hasName "Appetizer" .
+kebi2024:course_appetizer rdf:type owl:NamedIndividual ,
+                                   kebi2024:Appetizer ;
+                          kebi2024:thing_hasName "Appetizer" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_dessert
-:course_dessert rdf:type owl:NamedIndividual ,
-                         :Dessert ;
-                :thing_hasName "Dessert" .
+kebi2024:course_dessert rdf:type owl:NamedIndividual ,
+                                 kebi2024:Dessert ;
+                        kebi2024:thing_hasName "Dessert" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish
-:course_first-dish rdf:type owl:NamedIndividual ,
-                            :FirstDish ;
-                   :thing_hasName "First Dish" .
+kebi2024:course_first-dish rdf:type owl:NamedIndividual ,
+                                    kebi2024:FirstDish ;
+                           kebi2024:thing_hasName "First Dish" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_main-dish
-:course_main-dish rdf:type owl:NamedIndividual ,
-                           :MainDish ;
-                  :thing_hasName "Main Dish" .
+kebi2024:course_main-dish rdf:type owl:NamedIndividual ,
+                                   kebi2024:MainDish ;
+                          kebi2024:thing_hasName "Main Dish" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_second-course
-:course_second-course rdf:type owl:NamedIndividual ,
-                               :SecondCourse ;
-                      :thing_hasName "Second Course" .
+kebi2024:course_second-course rdf:type owl:NamedIndividual ,
+                                       kebi2024:SecondCourse ;
+                              kebi2024:thing_hasName "Second Course" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_sidedish
-:course_sidedish rdf:type owl:NamedIndividual ,
-                          :Sidedish ;
-                 :thing_hasName "Sidedish" .
+kebi2024:course_sidedish rdf:type owl:NamedIndividual ,
+                                  kebi2024:Sidedish ;
+                         kebi2024:thing_hasName "Sidedish" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_coca-cola
-:drink_coca-cola rdf:type owl:NamedIndividual ,
-                          :Drink ;
-                 :drink_hasIngredient :ingredient_sugar-and-food-coloring ,
-                                      :ingredient_water ;
-                 :drink_hasKcal 60 ;
-                 :thing_hasName "Coca Cola" .
+kebi2024:drink_coca-cola rdf:type owl:NamedIndividual ,
+                                  kebi2024:Drink ;
+                         kebi2024:drink_hasIngredient kebi2024:ingredient_sugar-and-food-coloring ,
+                                                      kebi2024:ingredient_water ;
+                         kebi2024:drink_hasKcal 60 ;
+                         kebi2024:thing_hasName "Coca Cola" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_water
-:drink_water rdf:type owl:NamedIndividual ,
-                      :Drink ;
-             :drink_hasIngredient :ingredient_water ;
-             :drink_hasKcal 0 ;
-             :thing_hasName "Water" .
+kebi2024:drink_water rdf:type owl:NamedIndividual ,
+                              kebi2024:Drink ;
+                     kebi2024:drink_hasIngredient kebi2024:ingredient_water ;
+                     kebi2024:drink_hasKcal 0 ;
+                     kebi2024:thing_hasName "Water" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest1
-:guest_guest1 rdf:type owl:NamedIndividual ,
-                       :Guest ;
-              :guest_hasAllergy :allergy_gluten ;
-              :guest_hasCategory :category_carnivorous ;
-              :guest_hasPreferenceCourse :course_appetizer ;
-              :guest_hasLevelOfCalorieConscious 2 ;
-              :thing_hasName "Valentino Rossi" .
+kebi2024:guest_guest1 rdf:type owl:NamedIndividual ,
+                               kebi2024:Guest ;
+                      kebi2024:guest_hasAllergy kebi2024:allergy_gluten ;
+                      kebi2024:guest_hasCategory kebi2024:category_carnivorous ;
+                      kebi2024:guest_hasPreferenceCourse kebi2024:course_appetizer ;
+                      kebi2024:guest_hasLevelOfCalorieConscious 3 ,
+                                                                2 ;
+                      kebi2024:thing_hasName "Valentino Rossi" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest2
-:guest_guest2 rdf:type owl:NamedIndividual ,
-                       :Guest ;
-              :guest_hasAllergy :allergy_lactose ;
-              :guest_hasCategory :category_vegetarian ;
-              :guest_hasPreferenceCourse :course_first-dish ;
-              :guest_hasLevelOfCalorieConscious 0 ;
-              :thing_hasName "Lorenzo Jovanotti" .
+kebi2024:guest_guest2 rdf:type owl:NamedIndividual ,
+                               kebi2024:Guest ;
+                      kebi2024:guest_hasAllergy kebi2024:allergy_lactose ;
+                      kebi2024:guest_hasCategory kebi2024:category_vegetarian ;
+                      kebi2024:guest_hasPreferenceCourse kebi2024:course_first-dish ;
+                      kebi2024:guest_hasLevelOfCalorieConscious 1 ,
+                                                                2 ,
+                                                                3 ,
+                                                                0 ;
+                      kebi2024:thing_hasName "Lorenzo Jovanotti" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_0-type-flour
-:ingredient_0-type-flour rdf:type owl:NamedIndividual ,
-                                  :Grain ;
-                         :grain_containsGlutenIntolerance :allergy_gluten ;
-                         :food_hasKcal 500 ;
-                         :thing_hasName "Flour type 0" .
+kebi2024:ingredient_0-type-flour rdf:type owl:NamedIndividual ,
+                                          kebi2024:Grain ;
+                                 kebi2024:grain_containsGlutenIntolerance kebi2024:allergy_gluten ;
+                                 kebi2024:food_hasKcal 500 ;
+                                 kebi2024:thing_hasName "Flour type 0" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_apple
-:ingredient_apple rdf:type owl:NamedIndividual ,
-                           :Fruit ;
-                  :food_hasKcal 35 ;
-                  :thing_hasName "Apple" .
+kebi2024:ingredient_apple rdf:type owl:NamedIndividual ,
+                                   kebi2024:Fruit ;
+                          kebi2024:food_hasKcal 35 ;
+                          kebi2024:thing_hasName "Apple" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_banana
-:ingredient_banana rdf:type owl:NamedIndividual ,
-                            :Fruit ;
-                   :food_hasKcal 40 ;
-                   :thing_hasName "Banana" .
+kebi2024:ingredient_banana rdf:type owl:NamedIndividual ,
+                                    kebi2024:Fruit ;
+                           kebi2024:food_hasKcal 40 ;
+                           kebi2024:thing_hasName "Banana" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_bechamel
-:ingredient_bechamel rdf:type owl:NamedIndividual ,
-                              :Dairy ;
-                     :dairy_containsLactoseIntolerance :allergy_lactose ;
-                     :food_hasKcal 105 ;
-                     :thing_hasName "Bechamel" .
+kebi2024:ingredient_bechamel rdf:type owl:NamedIndividual ,
+                                      kebi2024:Dairy ;
+                             kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                             kebi2024:food_hasKcal 105 ;
+                             kebi2024:thing_hasName "Bechamel" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_black-pepper
-:ingredient_black-pepper rdf:type owl:NamedIndividual ,
-                                  :Seasoning ;
-                         :food_hasKcal 25 ;
-                         :thing_hasName "Black Pepper" .
+kebi2024:ingredient_black-pepper rdf:type owl:NamedIndividual ,
+                                          kebi2024:Seasoning ;
+                                 kebi2024:food_hasKcal 25 ;
+                                 kebi2024:thing_hasName "Black Pepper" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_cabbage
-:ingredient_cabbage rdf:type owl:NamedIndividual ,
-                             :Vegetable ;
-                    :food_hasKcal 25 ;
-                    :thing_hasName "Cabbage" .
+kebi2024:ingredient_cabbage rdf:type owl:NamedIndividual ,
+                                     kebi2024:Vegetable ;
+                            kebi2024:food_hasKcal 25 ;
+                            kebi2024:thing_hasName "Cabbage" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_calamari
-:ingredient_calamari rdf:type owl:NamedIndividual ,
-                              :Seafood ;
-                     :food_hasKcal 50 ;
-                     :thing_hasName "Calamari" .
+kebi2024:ingredient_calamari rdf:type owl:NamedIndividual ,
+                                      kebi2024:Seafood ;
+                             kebi2024:food_hasKcal 50 ;
+                             kebi2024:thing_hasName "Calamari" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_carrot
-:ingredient_carrot rdf:type owl:NamedIndividual ,
-                            :Vegetable ;
-                   :food_hasKcal 27 ;
-                   :thing_hasName "Carrot" .
+kebi2024:ingredient_carrot rdf:type owl:NamedIndividual ,
+                                    kebi2024:Vegetable ;
+                           kebi2024:food_hasKcal 27 ;
+                           kebi2024:thing_hasName "Carrot" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_chili
-:ingredient_chili rdf:type owl:NamedIndividual ,
-                           :Seasoning ;
-                  :food_hasKcal 15 ;
-                  :thing_hasName "Chili" .
+kebi2024:ingredient_chili rdf:type owl:NamedIndividual ,
+                                   kebi2024:Seasoning ;
+                          kebi2024:food_hasKcal 15 ;
+                          kebi2024:thing_hasName "Chili" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_ciauscolo
-:ingredient_ciauscolo rdf:type owl:NamedIndividual ,
-                               :Meat ;
-                      :food_hasKcal 70 ;
-                      :thing_hasName "Ciauscolo" .
+kebi2024:ingredient_ciauscolo rdf:type owl:NamedIndividual ,
+                                       kebi2024:Meat ;
+                              kebi2024:food_hasKcal 70 ;
+                              kebi2024:thing_hasName "Ciauscolo" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_cows-cheese
-:ingredient_cows-cheese rdf:type owl:NamedIndividual ,
-                                 :Dairy ;
-                        :dairy_containsLactoseIntolerance :allergy_lactose ;
-                        :food_hasKcal 115 ;
-                        :thing_hasName "Cow's Cheese" .
+kebi2024:ingredient_cows-cheese rdf:type owl:NamedIndividual ,
+                                         kebi2024:Dairy ;
+                                kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                                kebi2024:food_hasKcal 115 ;
+                                kebi2024:thing_hasName "Cow's Cheese" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_egg
-:ingredient_egg rdf:type owl:NamedIndividual ,
-                         :AnimalOriginProduct ;
-                :food_hasKcal 80 ;
-                :thing_hasName "Egg" .
+kebi2024:ingredient_egg rdf:type owl:NamedIndividual ,
+                                 kebi2024:AnimalOriginProduct ;
+                        kebi2024:food_hasKcal 80 ;
+                        kebi2024:thing_hasName "Egg" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_eggplant
-:ingredient_eggplant rdf:type owl:NamedIndividual ,
-                              :Vegetable ;
-                     :food_hasKcal 18 ;
-                     :thing_hasName "Eggplant" .
+kebi2024:ingredient_eggplant rdf:type owl:NamedIndividual ,
+                                      kebi2024:Vegetable ;
+                             kebi2024:food_hasKcal 18 ;
+                             kebi2024:thing_hasName "Eggplant" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_garlic
-:ingredient_garlic rdf:type owl:NamedIndividual ,
-                            :Seasoning ;
-                   :food_hasKcal 3 ;
-                   :thing_hasName "Garlic" .
+kebi2024:ingredient_garlic rdf:type owl:NamedIndividual ,
+                                    kebi2024:Seasoning ;
+                           kebi2024:food_hasKcal 3 ;
+                           kebi2024:thing_hasName "Garlic" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_ham
-:ingredient_ham rdf:type owl:NamedIndividual ,
-                         :Meat ;
-                :food_hasKcal 45 ;
-                :thing_hasName "Ham" .
+kebi2024:ingredient_ham rdf:type owl:NamedIndividual ,
+                                 kebi2024:Meat ;
+                        kebi2024:food_hasKcal 45 ;
+                        kebi2024:thing_hasName "Ham" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_lettuce
-:ingredient_lettuce rdf:type owl:NamedIndividual ,
-                             :Vegetable ;
-                    :food_hasKcal 25 ;
-                    :thing_hasName "Lettuce" .
+kebi2024:ingredient_lettuce rdf:type owl:NamedIndividual ,
+                                     kebi2024:Vegetable ;
+                            kebi2024:food_hasKcal 25 ;
+                            kebi2024:thing_hasName "Lettuce" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mais
-:ingredient_mais rdf:type owl:NamedIndividual ,
-                          :Vegetable ;
-                 :food_hasKcal 50 ;
-                 :thing_hasName "Mais" .
+kebi2024:ingredient_mais rdf:type owl:NamedIndividual ,
+                                  kebi2024:Vegetable ;
+                         kebi2024:food_hasKcal 50 ;
+                         kebi2024:thing_hasName "Mais" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_minced-meat
-:ingredient_minced-meat rdf:type owl:NamedIndividual ,
-                                 :Meat ;
-                        :food_hasKcal 120 ;
-                        :thing_hasName "Minced Meat" .
+kebi2024:ingredient_minced-meat rdf:type owl:NamedIndividual ,
+                                         kebi2024:Meat ;
+                                kebi2024:food_hasKcal 120 ;
+                                kebi2024:thing_hasName "Minced Meat" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mozzarella-cheese
-:ingredient_mozzarella-cheese rdf:type owl:NamedIndividual ,
-                                       :Dairy ;
-                              :dairy_containsLactoseIntolerance :allergy_lactose ;
-                              :food_hasKcal 100 ;
-                              :thing_hasName "Mozzarella Cheese" .
+kebi2024:ingredient_mozzarella-cheese rdf:type owl:NamedIndividual ,
+                                               kebi2024:Dairy ;
+                                      kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                                      kebi2024:food_hasKcal 100 ;
+                                      kebi2024:thing_hasName "Mozzarella Cheese" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mussel
-:ingredient_mussel rdf:type owl:NamedIndividual ,
-                            :Seafood ;
-                   :food_hasKcal 40 ;
-                   :thing_hasName "Mussel" .
+kebi2024:ingredient_mussel rdf:type owl:NamedIndividual ,
+                                    kebi2024:Seafood ;
+                           kebi2024:food_hasKcal 40 ;
+                           kebi2024:thing_hasName "Mussel" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil
-:ingredient_oil rdf:type owl:NamedIndividual ,
-                         :Vegetable ;
-                :food_hasKcal 60 ;
-                :thing_hasName "Oil" .
+kebi2024:ingredient_oil rdf:type owl:NamedIndividual ,
+                                 kebi2024:Vegetable ;
+                        kebi2024:food_hasKcal 60 ;
+                        kebi2024:thing_hasName "Oil" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_parmesan
-:ingredient_parmesan rdf:type owl:NamedIndividual ,
-                              :Dairy ;
-                     :dairy_containsLactoseIntolerance :allergy_lactose ;
-                     :food_hasKcal 75 ;
-                     :thing_hasName "Parmesan" .
+kebi2024:ingredient_parmesan rdf:type owl:NamedIndividual ,
+                                      kebi2024:Dairy ;
+                             kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                             kebi2024:food_hasKcal 75 ;
+                             kebi2024:thing_hasName "Parmesan" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pasta
-:ingredient_pasta rdf:type owl:NamedIndividual ,
-                           :Grain ;
-                  :grain_containsGlutenIntolerance :allergy_gluten ;
-                  :food_hasKcal 300 ;
-                  :thing_hasName "Pasta" .
+kebi2024:ingredient_pasta rdf:type owl:NamedIndividual ,
+                                   kebi2024:Grain ;
+                          kebi2024:grain_containsGlutenIntolerance kebi2024:allergy_gluten ;
+                          kebi2024:food_hasKcal 300 ;
+                          kebi2024:thing_hasName "Pasta" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-cheek
-:ingredient_pork-cheek rdf:type owl:NamedIndividual ,
-                                :Meat ;
-                       :food_hasKcal 150 ;
-                       :thing_hasName "Pork Cheek" .
+kebi2024:ingredient_pork-cheek rdf:type owl:NamedIndividual ,
+                                        kebi2024:Meat ;
+                               kebi2024:food_hasKcal 150 ;
+                               kebi2024:thing_hasName "Pork Cheek" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-chop
-:ingredient_pork-chop rdf:type owl:NamedIndividual ,
-                               :Meat ;
-                      :food_hasKcal 125 ;
-                      :thing_hasName "Pork Chop" .
+kebi2024:ingredient_pork-chop rdf:type owl:NamedIndividual ,
+                                       kebi2024:Meat ;
+                              kebi2024:food_hasKcal 125 ;
+                              kebi2024:thing_hasName "Pork Chop" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-rib
-:ingredient_pork-rib rdf:type owl:NamedIndividual ,
-                              :Meat ;
-                     :food_hasKcal 70 ;
-                     :thing_hasName "Pork Rib" .
+kebi2024:ingredient_pork-rib rdf:type owl:NamedIndividual ,
+                                      kebi2024:Meat ;
+                             kebi2024:food_hasKcal 70 ;
+                             kebi2024:thing_hasName "Pork Rib" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_potato
-:ingredient_potato rdf:type owl:NamedIndividual ,
-                            :Tuber ;
-                   :food_hasKcal 450 ;
-                   :thing_hasName "Potato" .
+kebi2024:ingredient_potato rdf:type owl:NamedIndividual ,
+                                    kebi2024:Tuber ;
+                           kebi2024:food_hasKcal 450 ;
+                           kebi2024:thing_hasName "Potato" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_puff-pastry
-:ingredient_puff-pastry rdf:type owl:NamedIndividual ,
-                                 :Grain ;
-                        :grain_containsGlutenIntolerance :allergy_gluten ;
-                        :food_hasKcal 150 ;
-                        :thing_hasName "Puff Pastry" .
+kebi2024:ingredient_puff-pastry rdf:type owl:NamedIndividual ,
+                                         kebi2024:Grain ;
+                                kebi2024:grain_containsGlutenIntolerance kebi2024:allergy_gluten ;
+                                kebi2024:food_hasKcal 150 ;
+                                kebi2024:thing_hasName "Puff Pastry" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salame
-:ingredient_salame rdf:type owl:NamedIndividual ,
-                            :Meat ;
-                   :food_hasKcal 50 ;
-                   :thing_hasName "Salame" .
+kebi2024:ingredient_salame rdf:type owl:NamedIndividual ,
+                                    kebi2024:Meat ;
+                           kebi2024:food_hasKcal 50 ;
+                           kebi2024:thing_hasName "Salame" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salmon
-:ingredient_salmon rdf:type owl:NamedIndividual ,
-                            :Seafood ;
-                   :food_hasKcal 150 ;
-                   :thing_hasName "Salmon" .
+kebi2024:ingredient_salmon rdf:type owl:NamedIndividual ,
+                                    kebi2024:Seafood ;
+                           kebi2024:food_hasKcal 150 ;
+                           kebi2024:thing_hasName "Salmon" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt
-:ingredient_salt rdf:type owl:NamedIndividual ,
-                          :Seasoning ;
-                 :food_hasKcal 0 ;
-                 :thing_hasName "Salt" .
+kebi2024:ingredient_salt rdf:type owl:NamedIndividual ,
+                                  kebi2024:Seasoning ;
+                         kebi2024:food_hasKcal 0 ;
+                         kebi2024:thing_hasName "Salt" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sausage
-:ingredient_sausage rdf:type owl:NamedIndividual ,
-                             :Meat ;
-                    :food_hasKcal 205 ;
-                    :thing_hasName "Sausage" .
+kebi2024:ingredient_sausage rdf:type owl:NamedIndividual ,
+                                     kebi2024:Meat ;
+                            kebi2024:food_hasKcal 205 ;
+                            kebi2024:thing_hasName "Sausage" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sheeps-cheese
-:ingredient_sheeps-cheese rdf:type owl:NamedIndividual ,
-                                   :Dairy ;
-                          :dairy_containsLactoseIntolerance :allergy_lactose ;
-                          :food_hasKcal 135 ;
-                          :thing_hasName "Sheep's Cheese" .
+kebi2024:ingredient_sheeps-cheese rdf:type owl:NamedIndividual ,
+                                           kebi2024:Dairy ;
+                                  kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                                  kebi2024:food_hasKcal 135 ;
+                                  kebi2024:thing_hasName "Sheep's Cheese" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_shrimp
-:ingredient_shrimp rdf:type owl:NamedIndividual ,
-                            :Seafood ;
-                   :food_hasKcal 35 ;
-                   :thing_hasName "Shrimp" .
+kebi2024:ingredient_shrimp rdf:type owl:NamedIndividual ,
+                                    kebi2024:Seafood ;
+                           kebi2024:food_hasKcal 35 ;
+                           kebi2024:thing_hasName "Shrimp" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_steak
-:ingredient_steak rdf:type owl:NamedIndividual ,
-                           :Meat ;
-                  :food_hasKcal 485 ;
-                  :thing_hasName "Steak" .
+kebi2024:ingredient_steak rdf:type owl:NamedIndividual ,
+                                   kebi2024:Meat ;
+                          kebi2024:food_hasKcal 485 ;
+                          kebi2024:thing_hasName "Steak" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_strawberry
-:ingredient_strawberry rdf:type owl:NamedIndividual ,
-                                :Fruit ;
-                       :food_hasKcal 22 ;
-                       :thing_hasName "Strawberry" .
+kebi2024:ingredient_strawberry rdf:type owl:NamedIndividual ,
+                                        kebi2024:Fruit ;
+                               kebi2024:food_hasKcal 22 ;
+                               kebi2024:thing_hasName "Strawberry" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sugar-and-food-coloring
-:ingredient_sugar-and-food-coloring rdf:type owl:NamedIndividual ,
-                                             :Liquid ;
-                                    :food_hasKcal 60 ;
-                                    :thing_hasName "Sugar and Food Coloring" .
+kebi2024:ingredient_sugar-and-food-coloring rdf:type owl:NamedIndividual ,
+                                                     kebi2024:Liquid ;
+                                            kebi2024:food_hasKcal 60 ;
+                                            kebi2024:thing_hasName "Sugar and Food Coloring" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sword-fish
-:ingredient_sword-fish rdf:type owl:NamedIndividual ,
-                                :Seafood ;
-                       :food_hasKcal 120 ;
-                       :thing_hasName "Sword Fish" .
+kebi2024:ingredient_sword-fish rdf:type owl:NamedIndividual ,
+                                        kebi2024:Seafood ;
+                               kebi2024:food_hasKcal 120 ;
+                               kebi2024:thing_hasName "Sword Fish" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_tomato
-:ingredient_tomato rdf:type owl:NamedIndividual ,
-                            :Vegetable ;
-                   :food_hasKcal 30 ;
-                   :thing_hasName "Tomato" .
+kebi2024:ingredient_tomato rdf:type owl:NamedIndividual ,
+                                    kebi2024:Vegetable ;
+                           kebi2024:food_hasKcal 30 ;
+                           kebi2024:thing_hasName "Tomato" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_water
-:ingredient_water rdf:type owl:NamedIndividual ,
-                           :Liquid ;
-                  :food_hasKcal 0 ;
-                  :thing_hasName "Water" .
+kebi2024:ingredient_water rdf:type owl:NamedIndividual ,
+                                   kebi2024:Liquid ;
+                          kebi2024:food_hasKcal 0 ;
+                          kebi2024:thing_hasName "Water" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_affettati-misti
-:meal_affettati-misti rdf:type owl:NamedIndividual ,
-                               :Meal ;
-                      :meal_hasCategory :category_carnivorous ;
-                      :meal_hasCourse :course_appetizer ;
-                      :meal_hasIngredient :ingredient_ciauscolo ,
-                                          :ingredient_ham ,
-                                          :ingredient_salame ;
-                      :food_hasKcal 190 ;
-                      :meal_hasLevelOfCalorieConscious 0 ,
-                                                       1 ,
-                                                       2 ;
-                      :thing_hasName "Affettati Misti" .
+kebi2024:meal_affettati-misti rdf:type owl:NamedIndividual ,
+                                       kebi2024:Meal ;
+                              kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                              kebi2024:meal_hasCourse kebi2024:course_appetizer ;
+                              kebi2024:meal_hasIngredient kebi2024:ingredient_ciauscolo ,
+                                                          kebi2024:ingredient_ham ,
+                                                          kebi2024:ingredient_salame ;
+                              kebi2024:food_hasKcal 190 ;
+                              kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                       1 ,
+                                                                       2 ;
+                              kebi2024:thing_hasName "Affettati Misti" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_bistecca-alla-fiorentina
-:meal_bistecca-alla-fiorentina rdf:type owl:NamedIndividual ,
-                                        :Meal ;
-                               :meal_hasCategory :category_carnivorous ;
-                               :meal_hasCourse :course_second-course ;
-                               :meal_hasIngredient :ingredient_oil ,
-                                                   :ingredient_salt ,
-                                                   :ingredient_steak ;
-                               :food_hasKcal 545 ;
-                               :meal_hasLevelOfCalorieConscious 0 ,
-                                                                1 ;
-                               :thing_hasName "Bistecca alla Fiorentina" .
+kebi2024:meal_bistecca-alla-fiorentina rdf:type owl:NamedIndividual ,
+                                                kebi2024:Meal ;
+                                       kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                                       kebi2024:meal_hasCourse kebi2024:course_second-course ;
+                                       kebi2024:meal_hasIngredient kebi2024:ingredient_oil ,
+                                                                   kebi2024:ingredient_salt ,
+                                                                   kebi2024:ingredient_steak ;
+                                       kebi2024:food_hasKcal 545 ;
+                                       kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                                1 ;
+                                       kebi2024:thing_hasName "Bistecca alla Fiorentina" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_formaggi-misti
-:meal_formaggi-misti rdf:type owl:NamedIndividual ,
-                              :Meal ;
-                     :meal_hasCategory :category_carnivorous ,
-                                       :category_vegetarian ;
-                     :meal_hasCourse :course_appetizer ;
-                     :meal_hasIngredient :ingredient_cows-cheese ,
-                                         :ingredient_parmesan ,
-                                         :ingredient_sheeps-cheese ;
-                     :food_hasKcal 325 ;
-                     :meal_hasLevelOfCalorieConscious 0 ,
-                                                      1 ;
-                     :thing_hasName "Formaggi Misti" .
+kebi2024:meal_formaggi-misti rdf:type owl:NamedIndividual ,
+                                      kebi2024:Meal ;
+                             kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                                                       kebi2024:category_vegetarian ;
+                             kebi2024:meal_hasCourse kebi2024:course_appetizer ;
+                             kebi2024:meal_hasIngredient kebi2024:ingredient_cows-cheese ,
+                                                         kebi2024:ingredient_parmesan ,
+                                                         kebi2024:ingredient_sheeps-cheese ;
+                             kebi2024:food_hasKcal 325 ;
+                             kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                      1 ;
+                             kebi2024:thing_hasName "Formaggi Misti" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_fruit-salad
-:meal_fruit-salad rdf:type owl:NamedIndividual ,
-                           :Meal ;
-                  :meal_hasCategory :category_vegetarian ;
-                  :meal_hasCourse :course_dessert ;
-                  :meal_hasIngredient :ingredient_apple ,
-                                      :ingredient_banana ,
-                                      :ingredient_strawberry ;
-                  :food_hasKcal 97 ;
-                  :meal_hasLevelOfCalorieConscious 0 ,
-                                                   1 ,
-                                                   2 ,
-                                                   3 ;
-                  :thing_hasName "Fruit Salad" .
+kebi2024:meal_fruit-salad rdf:type owl:NamedIndividual ,
+                                   kebi2024:Meal ;
+                          kebi2024:meal_hasCategory kebi2024:category_vegetarian ;
+                          kebi2024:meal_hasCourse kebi2024:course_dessert ;
+                          kebi2024:meal_hasIngredient kebi2024:ingredient_apple ,
+                                                      kebi2024:ingredient_banana ,
+                                                      kebi2024:ingredient_strawberry ;
+                          kebi2024:food_hasKcal 97 ;
+                          kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                   1 ,
+                                                                   2 ,
+                                                                   3 ;
+                          kebi2024:thing_hasName "Fruit Salad" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_grigliata-di-maiale-mista
-:meal_grigliata-di-maiale-mista rdf:type owl:NamedIndividual ,
-                                         :Meal ;
-                                :meal_hasCategory :category_carnivorous ;
-                                :meal_hasCourse :course_second-course ;
-                                :meal_hasIngredient :ingredient_pork-chop ,
-                                                    :ingredient_pork-rib ,
-                                                    :ingredient_salt ,
-                                                    :ingredient_sausage ;
-                                :food_hasKcal 400 ;
-                                :meal_hasLevelOfCalorieConscious 0 ,
-                                                                 1 ;
-                                :thing_hasName "Grigliata di Maiale Mista" .
+kebi2024:meal_grigliata-di-maiale-mista rdf:type owl:NamedIndividual ,
+                                                 kebi2024:Meal ;
+                                        kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                                        kebi2024:meal_hasCourse kebi2024:course_second-course ;
+                                        kebi2024:meal_hasIngredient kebi2024:ingredient_pork-chop ,
+                                                                    kebi2024:ingredient_pork-rib ,
+                                                                    kebi2024:ingredient_salt ,
+                                                                    kebi2024:ingredient_sausage ;
+                                        kebi2024:food_hasKcal 400 ;
+                                        kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                                 1 ;
+                                        kebi2024:thing_hasName "Grigliata di Maiale Mista" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_insalata-mista
-:meal_insalata-mista rdf:type owl:NamedIndividual ,
-                              :Meal ;
-                     :meal_hasCategory :category_vegetarian ;
-                     :meal_hasCourse :course_sidedish ;
-                     :meal_hasIngredient :ingredient_lettuce ,
-                                         :ingredient_mais ,
-                                         :ingredient_oil ,
-                                         :ingredient_salt ;
-                     :food_hasKcal 135 ;
-                     :meal_hasLevelOfCalorieConscious 0 ,
-                                                      1 ,
-                                                      2 ,
-                                                      3 ;
-                     :thing_hasName "Insalata Mista" .
+kebi2024:meal_insalata-mista rdf:type owl:NamedIndividual ,
+                                      kebi2024:Meal ;
+                             kebi2024:meal_hasCategory kebi2024:category_vegetarian ;
+                             kebi2024:meal_hasCourse kebi2024:course_sidedish ;
+                             kebi2024:meal_hasIngredient kebi2024:ingredient_lettuce ,
+                                                         kebi2024:ingredient_mais ,
+                                                         kebi2024:ingredient_oil ,
+                                                         kebi2024:ingredient_salt ;
+                             kebi2024:food_hasKcal 135 ;
+                             kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                      1 ,
+                                                                      2 ,
+                                                                      3 ;
+                             kebi2024:thing_hasName "Insalata Mista" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_involtini-primavera
-:meal_involtini-primavera rdf:type owl:NamedIndividual ,
-                                   :Meal ;
-                          :meal_hasCategory :category_vegetarian ;
-                          :meal_hasCourse :course_appetizer ;
-                          :meal_hasIngredient :ingredient_cabbage ,
-                                              :ingredient_carrot ,
-                                              :ingredient_oil ,
-                                              :ingredient_puff-pastry ,
-                                              :ingredient_salt ;
-                          :food_hasKcal 262 ;
-                          :meal_hasLevelOfCalorieConscious 0 ,
-                                                           1 ,
-                                                           2 ,
-                                                           3 ;
-                          :thing_hasName "Involtini Primavera" .
+kebi2024:meal_involtini-primavera rdf:type owl:NamedIndividual ,
+                                           kebi2024:Meal ;
+                                  kebi2024:meal_hasCategory kebi2024:category_vegetarian ;
+                                  kebi2024:meal_hasCourse kebi2024:course_appetizer ;
+                                  kebi2024:meal_hasIngredient kebi2024:ingredient_cabbage ,
+                                                              kebi2024:ingredient_carrot ,
+                                                              kebi2024:ingredient_oil ,
+                                                              kebi2024:ingredient_puff-pastry ,
+                                                              kebi2024:ingredient_salt ;
+                                  kebi2024:food_hasKcal 262 ;
+                                  kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                           1 ,
+                                                                           2 ,
+                                                                           3 ;
+                                  kebi2024:thing_hasName "Involtini Primavera" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_lasagne
-:meal_lasagne rdf:type owl:NamedIndividual ,
-                       :Meal ;
-              :meal_hasCategory :category_carnivorous ;
-              :meal_hasCourse :course_first-dish ;
-              :meal_hasIngredient :ingredient_bechamel ,
-                                  :ingredient_minced-meat ,
-                                  :ingredient_oil ,
-                                  :ingredient_parmesan ,
-                                  :ingredient_pasta ,
-                                  :ingredient_salt ,
-                                  :ingredient_tomato ;
-              :food_hasKcal 717 ;
-              :meal_hasLevelOfCalorieConscious 0 ,
-                                               1 ;
-              :thing_hasName "Lasagne" .
+kebi2024:meal_lasagne rdf:type owl:NamedIndividual ,
+                               kebi2024:Meal ;
+                      kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                      kebi2024:meal_hasCourse kebi2024:course_first-dish ;
+                      kebi2024:meal_hasIngredient kebi2024:ingredient_bechamel ,
+                                                  kebi2024:ingredient_minced-meat ,
+                                                  kebi2024:ingredient_oil ,
+                                                  kebi2024:ingredient_parmesan ,
+                                                  kebi2024:ingredient_pasta ,
+                                                  kebi2024:ingredient_salt ,
+                                                  kebi2024:ingredient_tomato ;
+                      kebi2024:food_hasKcal 717 ;
+                      kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                               1 ;
+                      kebi2024:thing_hasName "Lasagne" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_melanzane-grigliate
-:meal_melanzane-grigliate rdf:type owl:NamedIndividual ,
-                                   :Meal ;
-                          :meal_hasCategory :category_vegetarian ;
-                          :meal_hasCourse :course_sidedish ;
-                          :meal_hasIngredient :ingredient_eggplant ,
-                                              :ingredient_oil ,
-                                              :ingredient_salt ;
-                          :food_hasKcal 78 ;
-                          :meal_hasLevelOfCalorieConscious 0 ,
-                                                           1 ,
-                                                           2 ,
-                                                           3 ;
-                          :thing_hasName "Melanzane Grigliate" .
+kebi2024:meal_melanzane-grigliate rdf:type owl:NamedIndividual ,
+                                           kebi2024:Meal ;
+                                  kebi2024:meal_hasCategory kebi2024:category_vegetarian ;
+                                  kebi2024:meal_hasCourse kebi2024:course_sidedish ;
+                                  kebi2024:meal_hasIngredient kebi2024:ingredient_eggplant ,
+                                                              kebi2024:ingredient_oil ,
+                                                              kebi2024:ingredient_salt ;
+                                  kebi2024:food_hasKcal 78 ;
+                                  kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                           1 ,
+                                                                           2 ,
+                                                                           3 ;
+                                  kebi2024:thing_hasName "Melanzane Grigliate" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_patatine-fritte
-:meal_patatine-fritte rdf:type owl:NamedIndividual ,
-                               :Meal ;
-                      :meal_hasCategory :category_carnivorous ,
-                                        :category_vegetarian ;
-                      :meal_hasCourse :course_sidedish ;
-                      :meal_hasIngredient :ingredient_oil ,
-                                          :ingredient_potato ,
-                                          :ingredient_salt ;
-                      :food_hasKcal 510 ;
-                      :meal_hasLevelOfCalorieConscious 0 ;
-                      :thing_hasName "Patatine Fritte" .
+kebi2024:meal_patatine-fritte rdf:type owl:NamedIndividual ,
+                                       kebi2024:Meal ;
+                              kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                                                        kebi2024:category_vegetarian ;
+                              kebi2024:meal_hasCourse kebi2024:course_sidedish ;
+                              kebi2024:meal_hasIngredient kebi2024:ingredient_oil ,
+                                                          kebi2024:ingredient_potato ,
+                                                          kebi2024:ingredient_salt ;
+                              kebi2024:food_hasKcal 510 ;
+                              kebi2024:meal_hasLevelOfCalorieConscious 0 ;
+                              kebi2024:thing_hasName "Patatine Fritte" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pesce-arrosto
-:meal_pesce-arrosto rdf:type owl:NamedIndividual ,
-                             :Meal ;
-                    :meal_hasCategory :category_carnivorous ;
-                    :meal_hasCourse :course_second-course ;
-                    :meal_hasIngredient :ingredient_calamari ,
-                                        :ingredient_oil ,
-                                        :ingredient_salmon ,
-                                        :ingredient_salt ,
-                                        :ingredient_sword-fish ;
-                    :food_hasKcal 455 ;
-                    :meal_hasLevelOfCalorieConscious 0 ,
-                                                     1 ,
-                                                     2 ,
-                                                     3 ;
-                    :thing_hasName "Pesce Arrosto" .
+kebi2024:meal_pesce-arrosto rdf:type owl:NamedIndividual ,
+                                     kebi2024:Meal ;
+                            kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                            kebi2024:meal_hasCourse kebi2024:course_second-course ;
+                            kebi2024:meal_hasIngredient kebi2024:ingredient_calamari ,
+                                                        kebi2024:ingredient_oil ,
+                                                        kebi2024:ingredient_salmon ,
+                                                        kebi2024:ingredient_salt ,
+                                                        kebi2024:ingredient_sword-fish ;
+                            kebi2024:food_hasKcal 455 ;
+                            kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                     1 ,
+                                                                     2 ,
+                                                                     3 ;
+                            kebi2024:thing_hasName "Pesce Arrosto" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-bianca
-:meal_pizza-bianca rdf:type owl:NamedIndividual ,
-                            :Meal ;
-                   :meal_hasCategory :category_carnivorous ,
-                                     :category_vegetarian ;
-                   :meal_hasCourse :course_main-dish ;
-                   :meal_hasIngredient :ingredient_0-type-flour ,
-                                       :ingredient_oil ,
-                                       :ingredient_salt ;
-                   :food_hasKcal 560 ;
-                   :meal_hasLevelOfCalorieConscious 0 ,
-                                                    1 ,
-                                                    2 ;
-                   :thing_hasName "Pizza Bianca" .
+kebi2024:meal_pizza-bianca rdf:type owl:NamedIndividual ,
+                                    kebi2024:Meal ;
+                           kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                                                     kebi2024:category_vegetarian ;
+                           kebi2024:meal_hasCourse kebi2024:course_main-dish ;
+                           kebi2024:meal_hasIngredient kebi2024:ingredient_0-type-flour ,
+                                                       kebi2024:ingredient_oil ,
+                                                       kebi2024:ingredient_salt ;
+                           kebi2024:food_hasKcal 560 ;
+                           kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                    1 ,
+                                                                    2 ;
+                           kebi2024:thing_hasName "Pizza Bianca" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-margherita
-:meal_pizza-margherita rdf:type owl:NamedIndividual ,
-                                :Meal ;
-                       :meal_hasCategory :category_carnivorous ,
-                                         :category_vegetarian ;
-                       :meal_hasCourse :course_main-dish ;
-                       :meal_hasIngredient :ingredient_0-type-flour ,
-                                           :ingredient_cows-cheese ,
-                                           :ingredient_oil ,
-                                           :ingredient_salt ,
-                                           :ingredient_tomato ;
-                       :food_hasKcal 705 ;
-                       :meal_hasLevelOfCalorieConscious 0 ,
-                                                        1 ;
-                       :thing_hasName "Pizza Margherita" .
+kebi2024:meal_pizza-margherita rdf:type owl:NamedIndividual ,
+                                        kebi2024:Meal ;
+                               kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                                                         kebi2024:category_vegetarian ;
+                               kebi2024:meal_hasCourse kebi2024:course_main-dish ;
+                               kebi2024:meal_hasIngredient kebi2024:ingredient_0-type-flour ,
+                                                           kebi2024:ingredient_cows-cheese ,
+                                                           kebi2024:ingredient_oil ,
+                                                           kebi2024:ingredient_salt ,
+                                                           kebi2024:ingredient_tomato ;
+                               kebi2024:food_hasKcal 705 ;
+                               kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                        1 ;
+                               kebi2024:thing_hasName "Pizza Margherita" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_rigatoni-alla-carbonara
-:meal_rigatoni-alla-carbonara rdf:type owl:NamedIndividual ,
-                                       :Meal ;
-                              :meal_hasCategory :category_carnivorous ;
-                              :meal_hasCourse :course_first-dish ;
-                              :meal_hasIngredient :ingredient_black-pepper ,
-                                                  :ingredient_egg ,
-                                                  :ingredient_oil ,
-                                                  :ingredient_pasta ,
-                                                  :ingredient_pork-cheek ,
-                                                  :ingredient_salt ;
-                              :food_hasKcal 705 ;
-                              :meal_hasLevelOfCalorieConscious 0 ,
-                                                               1 ;
-                              :thing_hasName "Rigatoni alla Carbonara" .
+kebi2024:meal_rigatoni-alla-carbonara rdf:type owl:NamedIndividual ,
+                                               kebi2024:Meal ;
+                                      kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                                      kebi2024:meal_hasCourse kebi2024:course_first-dish ;
+                                      kebi2024:meal_hasIngredient kebi2024:ingredient_black-pepper ,
+                                                                  kebi2024:ingredient_egg ,
+                                                                  kebi2024:ingredient_oil ,
+                                                                  kebi2024:ingredient_pasta ,
+                                                                  kebi2024:ingredient_pork-cheek ,
+                                                                  kebi2024:ingredient_salt ;
+                                      kebi2024:food_hasKcal 705 ;
+                                      kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                               1 ;
+                                      kebi2024:thing_hasName "Rigatoni alla Carbonara" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_spaghetti-aglio-olio-e-peperoncino
-:meal_spaghetti-aglio-olio-e-peperoncino rdf:type owl:NamedIndividual ,
-                                                  :Meal ;
-                                         :meal_hasCategory :category_carnivorous ,
-                                                           :category_vegetarian ;
-                                         :meal_hasCourse :course_first-dish ;
-                                         :meal_hasIngredient :ingredient_chili ,
-                                                             :ingredient_garlic ,
-                                                             :ingredient_oil ,
-                                                             :ingredient_pasta ,
-                                                             :ingredient_salt ;
-                                         :food_hasKcal 378 ;
-                                         :meal_hasLevelOfCalorieConscious 0 ,
-                                                                          1 ,
-                                                                          2 ;
-                                         :thing_hasName "Spaghetti Aglio Olio e Peperoncino" .
+kebi2024:meal_spaghetti-aglio-olio-e-peperoncino rdf:type owl:NamedIndividual ,
+                                                          kebi2024:Meal ;
+                                                 kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                                                                           kebi2024:category_vegetarian ;
+                                                 kebi2024:meal_hasCourse kebi2024:course_first-dish ;
+                                                 kebi2024:meal_hasIngredient kebi2024:ingredient_chili ,
+                                                                             kebi2024:ingredient_garlic ,
+                                                                             kebi2024:ingredient_oil ,
+                                                                             kebi2024:ingredient_pasta ,
+                                                                             kebi2024:ingredient_salt ;
+                                                 kebi2024:food_hasKcal 378 ;
+                                                 kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                                          1 ,
+                                                                                          2 ;
+                                                 kebi2024:thing_hasName "Spaghetti Aglio Olio e Peperoncino" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_tagliatelle-alla-marinara
-:meal_tagliatelle-alla-marinara rdf:type owl:NamedIndividual ,
-                                         :Meal ;
-                                :meal_hasCategory :category_carnivorous ;
-                                :meal_hasCourse :course_first-dish ;
-                                :meal_hasIngredient :ingredient_mussel ,
-                                                    :ingredient_oil ,
-                                                    :ingredient_pasta ,
-                                                    :ingredient_salt ,
-                                                    :ingredient_shrimp ;
-                                :food_hasKcal 435 ;
-                                :meal_hasLevelOfCalorieConscious 0 ,
-                                                                 1 ,
-                                                                 2 ;
-                                :thing_hasName "Tagliatelle alla Marinara" .
+kebi2024:meal_tagliatelle-alla-marinara rdf:type owl:NamedIndividual ,
+                                                 kebi2024:Meal ;
+                                        kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                                        kebi2024:meal_hasCourse kebi2024:course_first-dish ;
+                                        kebi2024:meal_hasIngredient kebi2024:ingredient_mussel ,
+                                                                    kebi2024:ingredient_oil ,
+                                                                    kebi2024:ingredient_pasta ,
+                                                                    kebi2024:ingredient_salt ,
+                                                                    kebi2024:ingredient_shrimp ;
+                                        kebi2024:food_hasKcal 435 ;
+                                        kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                                 1 ,
+                                                                                 2 ;
+                                        kebi2024:thing_hasName "Tagliatelle alla Marinara" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_trofie-cacio-e-pepe
-:meal_trofie-cacio-e-pepe rdf:type owl:NamedIndividual ,
-                                   :Meal ;
-                          :meal_hasCategory :category_carnivorous ,
-                                            :category_vegetarian ;
-                          :meal_hasCourse :course_first-dish ;
-                          :meal_hasIngredient :ingredient_black-pepper ,
-                                              :ingredient_oil ,
-                                              :ingredient_pasta ,
-                                              :ingredient_salt ,
-                                              :ingredient_sheeps-cheese ;
-                          :food_hasKcal 520 ;
-                          :meal_hasLevelOfCalorieConscious 0 ,
-                                                           1 ,
-                                                           2 ;
-                          :thing_hasName "Trofie Cacio e Pepe" .
+kebi2024:meal_trofie-cacio-e-pepe rdf:type owl:NamedIndividual ,
+                                           kebi2024:Meal ;
+                                  kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                                                            kebi2024:category_vegetarian ;
+                                  kebi2024:meal_hasCourse kebi2024:course_first-dish ;
+                                  kebi2024:meal_hasIngredient kebi2024:ingredient_black-pepper ,
+                                                              kebi2024:ingredient_oil ,
+                                                              kebi2024:ingredient_pasta ,
+                                                              kebi2024:ingredient_salt ,
+                                                              kebi2024:ingredient_sheeps-cheese ;
+                                  kebi2024:food_hasKcal 520 ;
+                                  kebi2024:meal_hasLevelOfCalorieConscious 0 ,
+                                                                           1 ,
+                                                                           2 ;
+                                  kebi2024:thing_hasName "Trofie Cacio e Pepe" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_italian-menu
-:menu_italian-menu rdf:type owl:NamedIndividual ,
-                            :Menu ;
-                   :menu_containsDrink :drink_coca-cola ,
-                                       :drink_water ;
-                   :menu_containsMeal :meal_affettati-misti ,
-                                      :meal_bistecca-alla-fiorentina ,
-                                      :meal_formaggi-misti ,
-                                      :meal_fruit-salad ,
-                                      :meal_grigliata-di-maiale-mista ,
-                                      :meal_insalata-mista ,
-                                      :meal_involtini-primavera ,
-                                      :meal_lasagne ,
-                                      :meal_melanzane-grigliate ,
-                                      :meal_patatine-fritte ,
-                                      :meal_pesce-arrosto ,
-                                      :meal_pizza-bianca ,
-                                      :meal_pizza-margherita ,
-                                      :meal_rigatoni-alla-carbonara ,
-                                      :meal_spaghetti-aglio-olio-e-peperoncino ,
-                                      :meal_tagliatelle-alla-marinara ,
-                                      :meal_trofie-cacio-e-pepe .
+kebi2024:menu_italian-menu rdf:type owl:NamedIndividual ,
+                                    kebi2024:Menu ;
+                           kebi2024:menu_containsDrink kebi2024:drink_coca-cola ,
+                                                       kebi2024:drink_water ;
+                           kebi2024:menu_containsMeal kebi2024:meal_affettati-misti ,
+                                                      kebi2024:meal_bistecca-alla-fiorentina ,
+                                                      kebi2024:meal_formaggi-misti ,
+                                                      kebi2024:meal_fruit-salad ,
+                                                      kebi2024:meal_grigliata-di-maiale-mista ,
+                                                      kebi2024:meal_insalata-mista ,
+                                                      kebi2024:meal_involtini-primavera ,
+                                                      kebi2024:meal_lasagne ,
+                                                      kebi2024:meal_melanzane-grigliate ,
+                                                      kebi2024:meal_patatine-fritte ,
+                                                      kebi2024:meal_pesce-arrosto ,
+                                                      kebi2024:meal_pizza-bianca ,
+                                                      kebi2024:meal_pizza-margherita ,
+                                                      kebi2024:meal_rigatoni-alla-carbonara ,
+                                                      kebi2024:meal_spaghetti-aglio-olio-e-peperoncino ,
+                                                      kebi2024:meal_tagliatelle-alla-marinara ,
+                                                      kebi2024:meal_trofie-cacio-e-pepe .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#restaurant_our-restaurant
-:restaurant_our-restaurant rdf:type owl:NamedIndividual ,
-                                    :Restaurant ;
-                           :restaurant_hasGuest :guest_guest1 ,
-                                                :guest_guest2 ;
-                           :restaurant_hasMenu :menu_italian-menu ;
-                           :thing_hasName "Ristorante Pizzeria Chiocchi Rossini" .
+kebi2024:restaurant_our-restaurant rdf:type owl:NamedIndividual ,
+                                            kebi2024:Restaurant ;
+                                   kebi2024:restaurant_hasGuest kebi2024:guest_guest1 ,
+                                                                kebi2024:guest_guest2 ;
+                                   kebi2024:restaurant_hasMenu kebi2024:menu_italian-menu ;
+                                   kebi2024:thing_hasName "Ristorante Pizzeria Chiocchi Rossini" .
 
 
 #################################################################
@@ -1018,7 +1026,7 @@
 #################################################################
 
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :meal_affettati-misti
+  owl:distinctMembers ( kebi2024:meal_affettati-misti
                       )
 ] .
 
@@ -1027,327 +1035,180 @@
 #    Rules
 #################################################################
 
-<guest> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+kebi2024:guest rdf:type swrl:Variable .
 
-<level> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+kebi2024:allergy rdf:type swrl:Variable .
 
-:guest rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+kebi2024:meal rdf:type swrl:Variable .
 
-:allergy rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+kebi2024:ingredient rdf:type swrl:Variable .
 
-:meal rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+kebi2024:dairy rdf:type swrl:Variable .
 
-:level rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+kebi2024:gluten rdf:type swrl:Variable .
 
-:ingredient rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-:dairy rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-:gluten rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Use this Rule with Pellet / Pellet (incremental)" ;
-   rdfs:label "WithPELLET-Reasoner-CalorieConscious1" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Guest ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <guest>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <guest> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <level>
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
-                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                          rdf:first <level> ;
-                                                                                                                          rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first 1 ;
-                                                                                                                                     rdf:rest rdf:nil
-                                                                                                                                   ]
-                                                                                                                        ]
-                                                                           ] ;
-                                                                 rdf:rest rdf:nil
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <guest> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> 2
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <guest> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> 3
-                                                                ] ;
-                                                      rdf:rest rdf:nil
-                                                    ]
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Use this Rule with Pellet / Pellet (incremental)" ;
-   rdfs:label "WithPELLET-Reasoner-CalorieConscious2" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Guest ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <guest>
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> <guest> ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> <level>
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
-                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                          rdf:first <level> ;
-                                                                                                                          rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first 2 ;
-                                                                                                                                     rdf:rest rdf:nil
-                                                                                                                                   ]
-                                                                                                                        ]
-                                                                           ] ;
-                                                                 rdf:rest rdf:nil
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <guest> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> 3
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "" ;
    rdfs:label "GuestIsAtRiskForFoodGluten" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Guest ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :guest
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasAllergy ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :guest ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :allergy
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Meal ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :meal
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :meal_containsGlutenIntolerance ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :meal ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :allergy
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_isAtRiskForFood ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :guest ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :meal
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate kebi2024:Guest ;
+                           swrl:argument1 kebi2024:guest
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate kebi2024:guest_hasAllergy ;
+                                      swrl:argument1 kebi2024:guest ;
+                                      swrl:argument2 kebi2024:allergy
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate kebi2024:Meal ;
+                                                 swrl:argument1 kebi2024:meal
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate kebi2024:meal_containsGlutenIntolerance ;
+                                                            swrl:argument1 kebi2024:meal ;
+                                                            swrl:argument2 kebi2024:allergy
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate kebi2024:guest_isAtRiskForFood ;
+                           swrl:argument1 kebi2024:guest ;
+                           swrl:argument2 kebi2024:meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
  ] .
 
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "" ;
    rdfs:label "GuestIsAtRiskForFoodLactose" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Guest ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :guest
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasAllergy ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :guest ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :allergy
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Meal ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :meal
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :meal_containsLactoseIntolerance ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :meal ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :allergy
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_isAtRiskForFood ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :guest ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :meal
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate kebi2024:Guest ;
+                           swrl:argument1 kebi2024:guest
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate kebi2024:guest_hasAllergy ;
+                                      swrl:argument1 kebi2024:guest ;
+                                      swrl:argument2 kebi2024:allergy
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate kebi2024:Meal ;
+                                                 swrl:argument1 kebi2024:meal
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate kebi2024:meal_containsLactoseIntolerance ;
+                                                            swrl:argument1 kebi2024:meal ;
+                                                            swrl:argument2 kebi2024:allergy
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate kebi2024:guest_isAtRiskForFood ;
+                           swrl:argument1 kebi2024:guest ;
+                           swrl:argument2 kebi2024:meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
  ] .
 
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Use this Rule with Pellet / Pellet (incremental) Reasoner" ;
-   rdfs:label "WithPELLET-Reasoner-CalorieConscious0" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Guest ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :guest
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :guest ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :level
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
-                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
-                                                                                                                          rdf:first :level ;
-                                                                                                                          rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                     rdf:first 0 ;
-                                                                                                                                     rdf:rest rdf:nil
-                                                                                                                                   ]
-                                                                                                                        ]
-                                                                           ] ;
-                                                                 rdf:rest rdf:nil
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :guest ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> 1
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :guest ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> 2
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :guest_hasLevelOfCalorieConscious ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :guest ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument2> 3
-                                                                           ] ;
-                                                                 rdf:rest rdf:nil
-                                                               ]
-                                                    ]
-                                         ]
- ] .
-
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "" ;
    rdfs:label "MealContainsLactoseIntolerance" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Meal ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :meal
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :meal_hasIngredient ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :meal ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :ingredient
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Ingredient ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :ingredient
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :dairy_containsLactoseIntolerance ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :ingredient ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :dairy
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :meal_containsLactoseIntolerance ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :meal ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :dairy
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate kebi2024:Meal ;
+                           swrl:argument1 kebi2024:meal
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate kebi2024:meal_hasIngredient ;
+                                      swrl:argument1 kebi2024:meal ;
+                                      swrl:argument2 kebi2024:ingredient
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate kebi2024:Ingredient ;
+                                                 swrl:argument1 kebi2024:ingredient
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate kebi2024:dairy_containsLactoseIntolerance ;
+                                                            swrl:argument1 kebi2024:ingredient ;
+                                                            swrl:argument2 kebi2024:dairy
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate kebi2024:meal_containsLactoseIntolerance ;
+                           swrl:argument1 kebi2024:meal ;
+                           swrl:argument2 kebi2024:dairy
+                         ] ;
+               rdf:rest rdf:nil
+             ]
  ] .
 
-[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "" ;
    rdfs:label "MealContainsGlutenIntolerance" ;
-   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
-   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Meal ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :meal
-                                                     ] ;
-                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :meal_hasIngredient ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :meal ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument2> :ingredient
-                                                                ] ;
-                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Ingredient ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> :ingredient
-                                                                           ] ;
-                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :grain_containsGlutenIntolerance ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :ingredient ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :gluten
-                                                                                      ] ;
-                                                                            rdf:rest rdf:nil
-                                                                          ]
-                                                               ]
-                                                    ]
-                                         ] ;
-   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :meal_containsGlutenIntolerance ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :meal ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :gluten
-                                                     ] ;
-                                           rdf:rest rdf:nil
-                                         ]
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate kebi2024:Meal ;
+                           swrl:argument1 kebi2024:meal
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate kebi2024:meal_hasIngredient ;
+                                      swrl:argument1 kebi2024:meal ;
+                                      swrl:argument2 kebi2024:ingredient
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate kebi2024:Ingredient ;
+                                                 swrl:argument1 kebi2024:ingredient
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate kebi2024:grain_containsGlutenIntolerance ;
+                                                            swrl:argument1 kebi2024:ingredient ;
+                                                            swrl:argument2 kebi2024:gluten
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate kebi2024:meal_containsGlutenIntolerance ;
+                           swrl:argument1 kebi2024:meal ;
+                           swrl:argument2 kebi2024:gluten
+                         ] ;
+               rdf:rest rdf:nil
+             ]
  ] .
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
