@@ -16,6 +16,7 @@ meal(vegetarian, water).
 meal(carnivorous, coca-cola).
 meal(vegetarian, coca-cola).
 meal(carnivorous, affettati_misti).
+meal(carnivorous, rigatoni_alla_carbonara).
 meal(carnivorous, tagliatelle_alla_marinara).
 meal(carnivorous, lasagne).
 meal(carnivorous, grigliata_di_maiale_mista).

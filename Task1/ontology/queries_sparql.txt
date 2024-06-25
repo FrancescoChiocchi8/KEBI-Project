@@ -11,6 +11,7 @@ PREFIX kebi: <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2
 ****************************************************************************************
 1. Query for view all the meals which have the category "Carnivorous"
 ****************************************************************************************
+
 SELECT ?meal
 WHERE {
   ?meal rdf:type kebi:Meal .
@@ -20,6 +21,7 @@ WHERE {
 ****************************************************************************************
 2. Query for view all the meals which have the category "Vegetarian"
 ****************************************************************************************
+
 SELECT ?meal
 WHERE {
   ?meal rdf:type kebi:Meal .
@@ -151,7 +153,7 @@ WHERE {
 SELECT ?meal
 WHERE {
   ?meal rdf:type kebi:Meal .
-  ?meal kebi:meal_hasCourse kebi:course_first-meal .
+  ?meal kebi:meal_hasCourse kebi:course_first-dish .
 }
 
 ****************************************************************************************
@@ -173,3 +175,27 @@ WHERE {
   FILTER(xsd:decimal(?kcal) > 500).
 }
 
+
+****************************************************************************************
+1. Advanced query for see the meals in base of the preference of the guest 
+(in this case -> guest_guest1) **With Protégé -> Reasoner Pellet/ Pellet(incremental)
+****************************************************************************************
+
+SELECT DISTINCT ?meal ?mealName
+WHERE{
+  kebi:guest_guest1 a kebi:Guest ;
+  kebi:guest_hasAllergy ?allergy ;
+  kebi:guest_hasCategory ?category;
+  kebi:guest_hasPreferenceCourse ?course ;
+  kebi:guest_hasLevelOfCalorieConscious ?calorieLevel .
+
+  ?meal a kebi:Meal;
+  kebi:meal_hasCategory ?category ;
+  kebi:meal_hasLevelOfCalorieConscious ?calorieLevel ;
+  kebi:meal_hasCourse ?course ;
+  kebi:thing_hasName ?mealName .
+
+  MINUS {?meal kebi:meal_containsGlutenIntolerance ?allergy }
+  MINUS {?meal kebi:meal_containsLactoseIntolerance ?allergy }
+
+}
