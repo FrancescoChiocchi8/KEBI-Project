@@ -1,0 +1,71 @@
+****************************************************************************************
+Copy and Paste the following prefix for each queries
+****************************************************************************************
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mod: <http://fhnw.ch/modelingEnvironment/ModelOntology#>
+PREFIX lo: <http://fhnw.ch/modelingEnvironment/LanguageOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX kebi: <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+****************************************************************************************
+1. It is used for see the property an their relative value of our extended class 
+SuggestMeal
+****************************************************************************************
+
+SELECT DISTINCT ?property ?value
+WHERE {
+  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 ?property ?value .
+}
+
+
+****************************************************************************************
+2. It is used for analyze the extended class and return the meals which satisfied
+all data property described
+****************************************************************************************
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mod: <http://fhnw.ch/modelingEnvironment/ModelOntology#>
+PREFIX lo: <http://fhnw.ch/modelingEnvironment/LanguageOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX kebi: <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?meal ?category ?levelCC ?allergy ?course
+WHERE {
+  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 lo:meal_hasCategory ?category .
+  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 lo:meal_hasCalorieConsciousLevel ?levelCC .
+  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 lo:meal_containsAllergy ?allergy .
+  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 lo:meal_hasCourse ?course .
+
+  BIND(IF(?category = "Vegetarian", kebi:category_vegetarian,
+           IF(?category = "Carnivorous", kebi:category_carnivorous, ?category)) AS ?finalCategory) .
+  
+  BIND(IF(?course = "Appetizer", kebi:course_appetizer,
+           IF(?course = "First Dish", kebi:course_first-dish,
+              IF(?course = "Main Dish", kebi:course_main-dish,
+                 IF(?course = "Second Course", kebi:course_second-course,
+                    IF(?course = "Sidedish", kebi:course_sidedish,
+                       IF(?course = "Dessert", kebi:course_dessert, ?course)))))) AS ?finalCourse) .
+  
+  BIND(IF(?allergy = "Gluten", kebi:grain_containsGlutenIntolerance,
+              IF(?allergy = "Lactose", kebi:dairy_containsLactoseIntolerance, ?allergy)) AS ?finalAllergy) .
+  
+  ?meal a kebi:Meal .
+  ?meal kebi:meal_hasLevelOfCalorieConscious ?kcal .
+  FILTER(?kcal = ?levelCC)
+
+  ?meal kebi:meal_hasCategory ?finalCategory .
+  ?meal kebi:meal_hasCourse ?finalCourse .
+
+  OPTIONAL {
+    ?meal kebi:meal_hasIngredient ?ingredient .
+    ?ingredient rdf:type ?ingredientType .
+    FILTER ((?finalAllergy = kebi:grain_containsGlutenIntolerance && ?ingredientType = kebi:Grain) ||
+            (?finalAllergy = kebi:dairy_containsLactoseIntolerance && ?ingredientType = kebi:Dairy))
+  }
+  FILTER (!BOUND(?ingredient))
+}
+

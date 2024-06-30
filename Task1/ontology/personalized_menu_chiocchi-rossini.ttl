@@ -6,9 +6,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
 @prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
-@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
 @prefix kebi2024: <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#> .
-@base <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#> .
+@base <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024> .
 
 <http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024> rdf:type owl:Ontology .
 
@@ -403,8 +402,8 @@ kebi2024:guest_guest1 rdf:type owl:NamedIndividual ,
                       kebi2024:guest_hasAllergy kebi2024:allergy_gluten ;
                       kebi2024:guest_hasCategory kebi2024:category_carnivorous ;
                       kebi2024:guest_hasPreferenceCourse kebi2024:course_appetizer ;
-                      kebi2024:guest_hasLevelOfCalorieConscious 3 ,
-                                                                2 ;
+                      kebi2024:guest_hasLevelOfCalorieConscious 2 ,
+                                                                3 ;
                       kebi2024:thing_hasName "Valentino Rossi" .
 
 
@@ -414,10 +413,10 @@ kebi2024:guest_guest2 rdf:type owl:NamedIndividual ,
                       kebi2024:guest_hasAllergy kebi2024:allergy_lactose ;
                       kebi2024:guest_hasCategory kebi2024:category_vegetarian ;
                       kebi2024:guest_hasPreferenceCourse kebi2024:course_first-dish ;
-                      kebi2024:guest_hasLevelOfCalorieConscious 1 ,
+                      kebi2024:guest_hasLevelOfCalorieConscious 0 ,
+                                                                1 ,
                                                                 2 ,
-                                                                3 ,
-                                                                0 ;
+                                                                3 ;
                       kebi2024:thing_hasName "Lorenzo Jovanotti" .
 
 
