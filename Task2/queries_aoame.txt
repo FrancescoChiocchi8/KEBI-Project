@@ -35,10 +35,10 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?meal ?category ?levelCC ?allergy ?course
 WHERE {
-  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 lo:meal_hasCategory ?category .
-  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 lo:meal_hasCalorieConsciousLevel ?levelCC .
-  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 lo:meal_containsAllergy ?allergy .
-  mod:SuggestMeal_b8f9fb3d-e3c6-4224-9b85-057a7e4c59a2 lo:meal_hasCourse ?course .
+  mod:SuggestMeal_57a2b6bb-185f-4483-8e28-1354a2fb766a lo:meal_hasCategory ?category .
+  mod:SuggestMeal_57a2b6bb-185f-4483-8e28-1354a2fb766a lo:meal_hasCalorieConsciousLevel ?levelCC .
+  mod:SuggestMeal_57a2b6bb-185f-4483-8e28-1354a2fb766a lo:meal_containsAllergy ?allergy .
+  mod:SuggestMeal_57a2b6bb-185f-4483-8e28-1354a2fb766a lo:meal_hasCourse ?course .
 
   BIND(IF(?category = "Vegetarian", kebi:category_vegetarian,
            IF(?category = "Carnivorous", kebi:category_carnivorous, ?category)) AS ?finalCategory) .
@@ -51,7 +51,8 @@ WHERE {
                        IF(?course = "Dessert", kebi:course_dessert, ?course)))))) AS ?finalCourse) .
   
   BIND(IF(?allergy = "Gluten", kebi:grain_containsGlutenIntolerance,
-              IF(?allergy = "Lactose", kebi:dairy_containsLactoseIntolerance, ?allergy)) AS ?finalAllergy) .
+              IF(?allergy = "Lactose", kebi:dairy_containsLactoseIntolerance,
+                 IF(?allergy = "none", "none", ?allergy))) AS ?finalAllergy) .
   
   ?meal a kebi:Meal .
   ?meal kebi:meal_hasLevelOfCalorieConscious ?kcal .
@@ -63,9 +64,9 @@ WHERE {
   OPTIONAL {
     ?meal kebi:meal_hasIngredient ?ingredient .
     ?ingredient rdf:type ?ingredientType .
-    FILTER ((?finalAllergy = kebi:grain_containsGlutenIntolerance && ?ingredientType = kebi:Grain) ||
+    FILTER ((?finalAllergy = "none") ||
+            (?finalAllergy = kebi:grain_containsGlutenIntolerance && ?ingredientType = kebi:Grain) ||
             (?finalAllergy = kebi:dairy_containsLactoseIntolerance && ?ingredientType = kebi:Dairy))
   }
   FILTER (!BOUND(?ingredient))
 }
-
