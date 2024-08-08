@@ -148,118 +148,26 @@ guest_preferences(GuestType, CalorieLevel, AllergyType, Course_Type, GuestPrefer
     once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal), allergies_match(AllergyType, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
 
 
-% Facts related to ingredients for each dish
-ingredient(involtini_primavera, salt).
-ingredient(affettati_misti, salt).
-ingredient(formaggi_misti, salt).
-ingredient(tagliatelle_alla_marinara, salt).
-ingredient(rigatoni_alla_carbonara, salt).
-ingredient(trofie_cacio_e_pepe, salt).
-ingredient(spaghetti_aglio_olio_e_peperoncino, salt).
-ingredient(lasagne, salt).
-ingredient(grigliata_di_maiale_mista, salt).
-ingredient(bistecca_alla_fiorentina, salt).
-ingredient(pesce_arrosto, salt).
-ingredient(patatine_fritte, salt).
-ingredient(melanzane_grigliate, salt).
-ingredient(insalata_mista, salt).
-ingredient(pizza_margherita, salt).
-ingredient(pizza_bianca, salt).
+% Ingredients in a Meal
+ingredient(involtini_primavera, [salt, oil, carrot, cabbage, puff_pastry]).
+ingredient(affettati_misti, [salt, ciauscolo, salame, ham, black_pepper]).
+ingredient(formaggi_misti, [salt, cow_cheese, sheep_cheese, parmesan]).
+ingredient(tagliatelle_alla_marinara, [salt, oil, pasta, shrimp, mussel]).
+ingredient(rigatoni_alla_carbonara, [salt, oil, pasta, sheep_cheese, egg, black_pepper, pork_cheek]).
+ingredient(trofie_cacio_e_pepe, [salt, oil, pasta, black_pepper]).
+ingredient(spaghetti_aglio_olio_e_peperoncino, [salt, oil, pasta, garlic, chili]).
+ingredient(lasagne, [salt, oil, carrot, pasta, parmesan, tomato, bechamel, minced_meat]).
+ingredient(grigliata_di_maiale_mista, [salt, pork_rib, sausage, pork_chop]).
+ingredient(bistecca_alla_fiorentina, [salt, oil, steak]).
+ingredient(pesce_arrosto, [salt, oil, shrimp, mussel, calamari, sword_fish, salmon]).
+ingredient(patatine_fritte, [salt, oil, potato]).
+ingredient(melanzane_grigliate, [salt, oil, eggplant]).
+ingredient(pizza_margherita, [salt, oil, cow_cheese, tomato, water, type_0_flour]).
+ingredient(pizza_bianca, [salt, oil, water, type_0_flour]).
+ingredient(coca_cola, [water, sugar_and_food_coloring]).
+ingredient(insalata_mista, [salt, oil, lettuce, corn]).
+ingredient(fruit_salad, [apple, banana, strawberry]).
 
-ingredient(involtini_primavera, oil).
-ingredient(tagliatelle_alla_marinara, oil).
-ingredient(rigatoni_alla_carbonara, oil).
-ingredient(trofie_cacio_e_pepe, oil).
-ingredient(spaghetti_aglio_olio_e_peperoncino, oil).
-ingredient(lasagne, oil).
-ingredient(bistecca_alla_fiorentina, oil).
-ingredient(pesce_arrosto, oil).
-ingredient(patatine_fritte, oil).
-ingredient(melanzane_grigliate, oil).
-ingredient(insalata_mista, oil).
-ingredient(pizza_margherita, oil).
-ingredient(pizza_bianca, oil).
-
-ingredient(involtini_primavera, carrot).
-ingredient(lasagne, carrot).
-
-ingredient(involtini_primavera, cabbage).
-
-ingredient(affettati_misti, ciauscolo).
-ingredient(affettati_misti, salame).
-ingredient(affettati_misti, ham).
-
-ingredient(formaggi_misti, cow_cheese).
-ingredient(pizza_margherita, cow_cheese).
-
-ingredient(formaggi_misti, sheep_cheese).
-ingredient(rigatoni_alla_carbonara, sheep_cheese).
-
-ingredient(tagliatelle_alla_marinara, pasta).
-ingredient(rigatoni_alla_carbonara, pasta).
-ingredient(trofie_cacio_e_pepe, pasta).
-ingredient(spaghetti_aglio_olio_e_peperoncino, pasta).
-ingredient(lasagne, pasta).
-
-ingredient(tagliatelle_alla_marinara, shrimp).
-ingredient(pesce_arrosto, shrimp).
-
-ingredient(involtini_primavera, puff_pastry).
-
-ingredient(tagliatelle_alla_marinara, mussel).
-ingredient(pesce_arrosto, mussel).
-
-ingredient(formaggi_misti, parmesan).
-ingredient(lasagne, parmesan).
-
-ingredient(rigatoni_alla_carbonara, egg).
-
-ingredient(affettati_misti, black_pepper).
-ingredient(rigatoni_alla_carbonara, black_pepper).
-ingredient(trofie_cacio_e_pepe, black_pepper).
-
-ingredient(rigatoni_alla_carbonara, pork_cheek).
-
-ingredient(spaghetti_aglio_olio_e_peperoncino, garlic).
-
-ingredient(spaghetti_aglio_olio_e_peperoncino, chili).
-
-ingredient(lasagne, tomato).
-ingredient(pizza_margherita, tomato).
-
-ingredient(lasagne, bechamel).
-
-ingredient(lasagne, minced_meat).
-
-ingredient(grigliata_di_maiale_mista, pork_rib).
-ingredient(grigliata_di_maiale_mista, sausage).
-ingredient(grigliata_di_maiale_mista, pork_chop).
-
-ingredient(bistecca_alla_fiorentina, steak).
-
-ingredient(pesce_arrosto, calamari).
-ingredient(pesce_arrosto, sword_fish).
-ingredient(pesce_arrosto, salmon).
-
-ingredient(patatine_fritte, potato).
-
-ingredient(melanzane_grigliate, eggplant).
-
-ingredient(pizza_margherita, water).
-ingredient(pizza_bianca, water).
-ingredient(coca_cola, water).
-
-ingredient(insalata_mista, lettuce).
-ingredient(insalata_mista, corn).
-
-ingredient(pizza_margherita, type_0_flour).
-ingredient(pizza_bianca, type_0_flour).
-
-ingredient(coca_cola, sugar_and_food_coloring).
-
-ingredient(fruit_salad, apple).
-ingredient(fruit_salad, banana).
-ingredient(fruit_salad, strawberry).
 
 % Rule to find the ingredients of a dish
 dish_ingredients(Meal, Ingredients) :-
@@ -280,6 +188,7 @@ kcal_in_ingredient(cabbage, 25).
 kcal_in_ingredient(puff_pastry, 150).
 kcal_in_ingredient(mussel, 40).
 kcal_in_ingredient(salt, 0).
+kcal_in_ingredient(type_0_flour, 500).
 kcal_in_ingredient(water, 0).
 kcal_in_ingredient(parmesan, 75).
 kcal_in_ingredient(egg, 80).
@@ -320,13 +229,13 @@ kcal_in_meal([Ingredient | Rest], TotalKcal) :-
 
 % Calculation of the total calories of a meal given the name of the meal
 meal_total_kcal(Meal, TotalKcal) :-
-    once(dish_ingredients(Meal, Ingredients)),
+    once(ingredient(Meal, Ingredients)),
     once(kcal_in_meal(Ingredients, TotalKcal)).
 
 % Rule to obtain both the ingredients and the total calories of a dish
 meal_info(Meal, Ingredients, TotalKcal) :-
-    once(dish_ingredients(Meal, Ingredients)),
-    once(meal_total_kcal(Meal, TotalKcal)).
+    once(ingredient(Meal, Ingredients)),
+    once(kcal_in_meal(Ingredients, TotalKcal)).
 
 
 % QUERY example:

@@ -14,8 +14,8 @@ kebi2024:RestaurantShape a sh:NodeShape ;
         sh:path kebi2024:restaurant_hasMenu ;
         sh:node kebi2024:MenuShape ;
         sh:minCount 1 ;
-        sh:maxCount 5 ;
-        sh:message "It is impossible that a Restaurant does not have a menu!!" ;
+        sh:maxCount 1 ;
+        sh:message "It is impossible that a Restaurant does not have a menu or you added too many menu!!" ;
     ] ;
     sh:property [
         sh:path kebi2024:restaurant_hasGuest ;
@@ -54,7 +54,6 @@ kebi2024:GuestShape a sh:NodeShape ;
         sh:path kebi2024:guest_hasAllergy ;
         sh:node kebi2024:AllergyShape ;
         sh:minCount 0 ;
-        sh:maxCount 10;
     ] ;
     sh:property [
         sh:path kebi2024:guest_hasCategory ;
@@ -111,18 +110,17 @@ kebi2024:MealShape a sh:NodeShape ;
         sh:path kebi2024:meal_hasCategory ;
         sh:node kebi2024:CategoryShape ;
         sh:minCount 0 ;
-        sh:maxCount 5 ;
     ] ;
     sh:property [
         sh:path kebi2024:meal_hasCourse ;
         sh:node kebi2024:CourseShape ;
-        sh:minCount 0 ;
-        sh:maxCount 2 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
     ] ;
     sh:property [
         sh:path kebi2024:meal_hasIngredient ;
         sh:node kebi2024:IngredientShape ;
-        sh:minCount 2 ;
+        sh:minCount 1 ;
         sh:maxCount 150 ;
     ] ;
 .
@@ -143,7 +141,6 @@ kebi2024:DrinkShape a sh:NodeShape ;
         sh:path kebi2024:drink_hasIngredient ;
         sh:node kebi2024:IngredientShape ;
         sh:minCount 1;
-        sh:maxCount 20 ;
     ] ;
     sh:property [
         sh:path kebi2024:drink_hasKcal ;
