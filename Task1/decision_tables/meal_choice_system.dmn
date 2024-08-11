@@ -1,2184 +1,2111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0a03vzc" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
-  <decision id="Decision_0w40wr5" name="Guest_Types_Match">
-    <informationRequirement id="InformationRequirement_0tayi2z">
-      <requiredInput href="#InputData_0cmpprl" />
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_0n4vc9t" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+  <decision id="Decision_0zxpxng" name="Ingredients Choosing">
+    <informationRequirement id="InformationRequirement_1dmh3e9">
+      <requiredInput href="#InputData_0qjalwi" />
     </informationRequirement>
-    <decisionTable id="DecisionTable_1kxwne6" hitPolicy="COLLECT">
-      <input id="Input_1" label="Guest_Type" biodi:width="246">
-        <inputExpression id="InputExpression_1" typeRef="string">
-          <text>Guest_Type</text>
+    <informationRequirement id="InformationRequirement_1sfz929">
+      <requiredInput href="#InputData_1pmoi50" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1ow8jzq">
+      <requiredInput href="#InputData_0qxqaa1" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0okwo9s" hitPolicy="COLLECT">
+      <input id="InputClause_1hipa46" label="Guest Category">
+        <inputExpression id="LiteralExpression_0xrnnxy" typeRef="string">
+          <text>GuestCategory</text>
         </inputExpression>
-        <inputValues id="UnaryTests_0918vuk">
-          <text>"Carnivorous","Vegetarian"</text>
+        <inputValues id="UnaryTests_067agrc">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputValues>
       </input>
-      <output id="Output_1" label="Category_Meals" name="Category_Meals" typeRef="string" biodi:width="192" />
-      <rule id="DecisionRule_0izyize">
-        <inputEntry id="UnaryTests_0jxrqtx">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ic4fg1">
-          <text>"Formaggi Misti"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1lcgnag">
-        <inputEntry id="UnaryTests_14lqvqg">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1u7k4rf">
-          <text>"Trofie Cacio e pepe"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_026e427">
-        <inputEntry id="UnaryTests_05hgdl8">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_037gxwa">
-          <text>"Spaghetti aglio olio e Peperoncino"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_09x3rs5">
-        <inputEntry id="UnaryTests_0m35et8">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_14tfllc">
-          <text>"Patatine fritte"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_17swo8p">
-        <inputEntry id="UnaryTests_1lm34zs">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0spt80l">
-          <text>"Pizza Margherita"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1scg9y1">
-        <inputEntry id="UnaryTests_11j9jir">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_027wpp2">
-          <text>"Pizza Bianca"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0a773fk">
-        <inputEntry id="UnaryTests_14plcbl">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_15sg5qh">
-          <text>"Water"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1oe0dfg">
-        <inputEntry id="UnaryTests_1hjoee3">
-          <text>"Carnivorous","Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0q0lkse">
-          <text>"Coca-Cola"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1im9m2s">
-        <inputEntry id="UnaryTests_0onz7po">
-          <text>"Carnivorous"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1v2sczz">
-          <text>"Affettati Misti"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1wubk6l">
-        <inputEntry id="UnaryTests_0jr5up6">
-          <text>"Carnivorous"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_180cant">
-          <text>"Tagliatelle alla Marinara"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1w8nl1k">
-        <inputEntry id="UnaryTests_0sarflg">
-          <text>"Carnivorous"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_001te4r">
-          <text>"Lasagne"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1u0ccc3">
-        <inputEntry id="UnaryTests_1t9wr34">
-          <text>"Carnivorous"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0nmtm0i">
-          <text>"Grigliata di maiale mista"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1qpg2j8">
-        <inputEntry id="UnaryTests_1n21kv8">
-          <text>"Carnivorous"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0bl3xzf">
-          <text>"Bistecca alla Fiorentina"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_13g2ziu">
-        <inputEntry id="UnaryTests_0otxh7t">
-          <text>"Carnivorous"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1gg9j24">
-          <text>"Pesce arrosto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0zg35rd">
-        <inputEntry id="UnaryTests_0kijpts">
-          <text>"Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08ym98l">
-          <text>"Involtini primavera"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_015gm35">
-        <inputEntry id="UnaryTests_17zvq25">
-          <text>"Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1nk6xo8">
-          <text>"Melanzane grigliate"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1hdi95e">
-        <inputEntry id="UnaryTests_0iaaew2">
-          <text>"Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1id5065">
-          <text>"Insalata Mista"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1wwk7gw">
-        <inputEntry id="UnaryTests_1m3se2m">
-          <text>"Vegetarian"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_187uo8p">
-          <text>"Fruit salad"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0c8156s">
-        <inputEntry id="UnaryTests_1bg8qf9">
-          <text>""</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_103flrc">
-          <text>""</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <inputData id="InputData_0cmpprl" name="Guest_Type" />
-  <decision id="Decision_1uahnny" name="Menu_List">
-    <variable id="InformationItem_128xk76" name="Menu_List" />
-    <literalExpression id="LiteralExpression_1y37dc3">
-      <text>[
-  "Involtini primavera",
-  "Affettati Misti",
-  "Formaggi Misti",
-  "Tagliatelle alla Marinara",
-  "Rigatoni alla Carbonara",
-  "Trofie cacio e pepe",
-  "Spaghetti aglio olio e peperoncino",
-  "Lasagne",
-  "Grigliata di maiale mista",
-  "Bistecca alla Fiorentina",
-  "Pesce arrosto",
-  "Patatine fritte",
-  "Melanzane grigliate",
-  "Insalata Mista",
-  "Pizza Margherita",
-  "Pizza Bianca",
-  "Water",
-  "Coca-Cola",
-  "Fruit salad"
-]</text>
-    </literalExpression>
-  </decision>
-  <inputData id="InputData_146gmh2" name="CalorieConscious_level" />
-  <decision id="Decision_1p7f6c4" name="Final_Suggestion">
-    <informationRequirement id="InformationRequirement_1rzbcdd">
-      <requiredDecision href="#Decision_1uahnny" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_1scjsme">
-      <requiredDecision href="#Decision_118dwbg" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_01yo875">
-      <requiredDecision href="#Decision_0zyolsm" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_1y7ekx5">
-      <requiredDecision href="#Decision_0smww4m" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_1emeij6">
-      <requiredDecision href="#Decision_09vgnlj" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_1jkxlnj">
-      <requiredDecision href="#Decision_1trk386" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_1q75kyk">
-      <input id="InputClause_1p1a0qv" label="Guest_Preferences" biodi:width="192">
-        <inputExpression id="LiteralExpression_1g9w14g" typeRef="">
-          <text>Guest_Preferences</text>
+      <input id="Input_1" label="is Lactose Intolerant" biodi:width="192">
+        <inputExpression id="InputExpression_1" typeRef="boolean">
+          <text>isLactoseIntolerant</text>
         </inputExpression>
       </input>
-      <input id="InputClause_1a93xe2" label="Ingredient">
-        <inputExpression id="LiteralExpression_0wy2tyr" typeRef="">
-          <text>Ingredient</text>
+      <input id="InputClause_0bxk7ng" label="is Gluten Intolerant">
+        <inputExpression id="LiteralExpression_0iiydmh" typeRef="boolean">
+          <text>isGlutenIntolerant</text>
         </inputExpression>
       </input>
-      <output id="OutputClause_1y81rp5" label="Suggested_Menu" name="Suggested_Menu" typeRef="" biodi:width="301" />
-      <output id="OutputClause_1rjd2db" label="Final_Meal_Information" name="Final_Meal_Information" typeRef="" biodi:width="272" />
-      <rule id="DecisionRule_0w59oi0">
-        <inputEntry id="UnaryTests_0dibd6f">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0i34pju">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0m556g7">
-          <text>(Menu_List[list contains(Guest_Preferences,item)])</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0io25xl">
-          <text>(Ingredients_List[list contains(Ingredient, item)])</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <decision id="Decision_0uy9197" name="Calories_Match">
-    <informationRequirement id="InformationRequirement_1xg2189">
-      <requiredInput href="#InputData_146gmh2" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_1j71cmc" hitPolicy="COLLECT">
-      <input id="InputClause_0kyycww" label="Calorie_Conscious_Level" biodi:width="268">
-        <inputExpression id="LiteralExpression_0i5x8b6" typeRef="integer">
-          <text>Calorie_Conscious_Level</text>
-        </inputExpression>
-      </input>
-      <output id="OutputClause_0pglr8j" label="Filtred_by_Calories" name="Filtred_by_Calories" typeRef="string" biodi:width="280">
-        <outputValues id="UnaryTests_1esxg68">
-          <text>"Involtini primavera","Affettati Misti","Formaggi Misti","Tagliatelle alla Marinara","Rigatoni alla Carbonara","Trofie cacio e pepe","Spaghetti aglio olio e peperoncino","Lasagne","Grigliata di maiale mista","Bistecca alla Fiorentina","Pesce arrosto","Patatine fritte","Melanzane grigliate","Insalata Mista","Pizza Margherita","Pizza Bianca","Water","Coca-Cola","Fruit salad"</text>
-        </outputValues>
-      </output>
-      <rule id="DecisionRule_0qs1a3z">
-        <description>If the user enters a number between 0 and 3 (inclusive), he can view the meal</description>
-        <inputEntry id="UnaryTests_0nh2uly">
-          <text>[0..3]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_01t7xk1">
-          <text>"Involtini primavera"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_12w1o44">
-        <inputEntry id="UnaryTests_1hxha01">
-          <text>[0..2]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_18iqgcj">
-          <text>"Affettati Misti"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0q9a5qz">
-        <inputEntry id="UnaryTests_01kqxq0">
-          <text>[0..1]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_06um78r">
-          <text>"Formaggi Misti"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0okhd2s">
-        <inputEntry id="UnaryTests_03j69og">
-          <text>[0..2]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1pkgpva">
-          <text>"Tagliatelle alla Marinara"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0w5jw85">
-        <inputEntry id="UnaryTests_0y42nym">
-          <text>[0..1]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_12ves3x">
-          <text>"Rigatoni alla Carbonara"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0tc2742">
-        <inputEntry id="UnaryTests_1e3mrhu">
-          <text>[0..2]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_11dkw6k">
-          <text>"Trofie cacio e pepe"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ho7z0s">
-        <inputEntry id="UnaryTests_1gggtm3">
-          <text>[0..3]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0i8zdy7">
-          <text>"Spaghetti aglio olio e peperoncino"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0052kz2">
-        <inputEntry id="UnaryTests_1q1p1yw">
-          <text>[0..1]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1jaqytg">
-          <text>"Lasagne"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1no49ow">
-        <inputEntry id="UnaryTests_1j2iait">
-          <text>[0..1]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vwm494">
-          <text>"Grigliata di maiale mista"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_19uxv6y">
-        <inputEntry id="UnaryTests_1kgk76r">
-          <text>[0..2]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_11mtkec">
-          <text>"Bistecca alla Fiorentina"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_17f4w5i">
-        <inputEntry id="UnaryTests_1gp6qae">
-          <text>[0..3]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0odifhe">
-          <text>"Pesce arrosto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_09dd2yz">
-        <inputEntry id="UnaryTests_1you7oo">
-          <text>0</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0t6ta3y">
-          <text>"Patatine fritte"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1eh0ibr">
-        <inputEntry id="UnaryTests_1e96lqc">
-          <text>[0..3]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0zipjht">
-          <text>"Melanzane grigliate"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0aew1l2">
-        <inputEntry id="UnaryTests_0wb4pu3">
-          <text>[0..3]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_15mfoay">
-          <text>"Insalata Mista"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1k4d53a">
-        <inputEntry id="UnaryTests_1vsm6f6">
-          <text>[0..1]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1v2pctw">
-          <text>"Pizza Margherita"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0moq4jd">
-        <inputEntry id="UnaryTests_1yelv4p">
-          <text>[0..2]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1h49jjk">
-          <text>"Pizza Bianca"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1mctfdl">
-        <inputEntry id="UnaryTests_02z1d7l">
-          <text>[0..3]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1dtif22">
-          <text>"Water"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1gp1s3s">
-        <inputEntry id="UnaryTests_1gpr9v5">
-          <text>[0..1]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_18erfml">
-          <text>"Coca-Cola"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0iq8neg">
-        <inputEntry id="UnaryTests_17adox8">
-          <text>[0..2]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_18npfy1">
-          <text>"Fruit salad"</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <decision id="Decision_0pj8550" name="Guest_Preferences_Subdecision">
-    <informationRequirement id="InformationRequirement_1y31jri">
-      <requiredDecision href="#Decision_0w40wr5" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_1a1onhv">
-      <requiredDecision href="#Decision_0uy9197" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_0rdviz3">
-      <requiredDecision href="#Decision_1uahnny" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_0mmwryi">
-      <requiredDecision href="#Decision_0he9aea" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_1u6ocma">
-      <input id="InputClause_1xy9rmz" label="Category_Meals" biodi:width="276">
-        <inputExpression id="LiteralExpression_0fqdjs6" typeRef="string">
-          <text>Category_Meals</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_0u0q8e8" label="Filtred_by_Calories" biodi:width="280">
-        <inputExpression id="LiteralExpression_0b21eqv" typeRef="string">
-          <text>Filtred_by_Calories</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_1vvd8qw" label="Filtred_by_Allergies" biodi:width="224">
-        <inputExpression id="LiteralExpression_0u3mke7" typeRef="string">
-          <text>Filtred_by_Allergies</text>
-        </inputExpression>
-      </input>
-      <output id="OutputClause_1jhijc1" label="Guest_Preferences_Subdecision" name="Guest_Preferences_Subdecision" typeRef="" biodi:width="390" />
-      <rule id="DecisionRule_1y7atme">
-        <inputEntry id="UnaryTests_0cfu2mm">
-          <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0t8onmt">
-          <text>(count(Filtred_by_Calories) &gt;= 1) and (Filtred_by_Calories[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_00250gr">
-          <text>(count(Filtred_by_Allergies) &gt;= 1) and (Filtred_by_Allergies[1] != "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0gvzrrv">
-          <text>(Menu_List[list contains(Category_Meals,item)][list contains(Filtred_by_Calories,item)])[list contains(Filtred_by_Allergies,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1qxf6bf">
-        <inputEntry id="UnaryTests_0sdr9tz">
-          <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ieit9v">
-          <text>(count(Filtred_by_Calories) = 1) and (Filtred_by_Calories[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0f248qb">
-          <text>(count(Filtred_by_Allergies) &gt;= 1) and (Filtred_by_Allergies[1] != "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0dp94ag">
-          <text>Menu_List[list contains(Category_Meals,item)][list contains(Filtred_by_Allergies,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0h0u59o">
-        <inputEntry id="UnaryTests_1agved9">
-          <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ndxapt">
-          <text>(count(Filtred_by_Calories) &gt;= 1) and (Filtred_by_Calories[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0l4hhas">
-          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0femw9u">
-          <text>Menu_List[list contains(Category_Meals,item)][list contains(Filtred_by_Calories,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1i7un6r">
-        <inputEntry id="UnaryTests_1lbjrql">
-          <text>(count(Category_Meals) = 1) and (Category_Meals[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0urqf7w">
-          <text>(count(Filtred_by_Calories) &gt;= 1) and (Filtred_by_Calories[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ec836p">
-          <text>(count(Filtred_by_Allergies) &gt;= 1) and (Filtred_by_Allergies[1] != "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1mpekrn">
-          <text>Menu_List[list contains(Filtred_by_Calories,item)][list contains(Filtred_by_Allergies,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0qlayf5">
-        <inputEntry id="UnaryTests_09dy6ze">
-          <text>(count(Category_Meals) = 1) and (Category_Meals[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0phb0an">
-          <text>(count(Filtred_by_Calories) &gt;= 1) and (Filtred_by_Calories[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ixleo9">
-          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1oi58mh">
-          <text>Menu_List[list contains(Filtred_by_Calories,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1cy4nsq">
-        <inputEntry id="UnaryTests_1qes9vx">
-          <text>(count(Category_Meals) = 1) and (Category_Meals[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0umc2az">
-          <text>(count(Filtred_by_Calories) = 1) and (Filtred_by_Calories[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16kd18l">
-          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_12xgtk1">
-          <text>Menu_List[list contains(Filtred_by_Allergies,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0cdk9hp">
-        <inputEntry id="UnaryTests_13t37c1">
-          <text>(count(Category_Meals) &gt;= 1) and (Category_Meals[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12ihiga">
-          <text>(count(Filtred_by_Calories) = 1) and (Filtred_by_Calories[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0t79sym">
-          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0g81dqr">
-          <text>Menu_List[list contains(Category_Meals,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_01nd4y6">
-        <inputEntry id="UnaryTests_0axyhbg">
-          <text>(count(Category_Meals) = 1) and (Category_Meals[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_114n4jy">
-          <text>(count(Filtred_by_Calories) = 1) and (Filtred_by_Calories[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1a9n31i">
-          <text>(count(Filtred_by_Allergies) = 1) and (Filtred_by_Allergies[1] = "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1kyph72">
-          <text>Menu_List</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <inputData id="InputData_1qdxkea" name="Allergy_Type" />
-  <decision id="Decision_0he9aea" name="Allergies_Match">
-    <informationRequirement id="InformationRequirement_0ak102h">
-      <requiredInput href="#InputData_1qdxkea" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_11jakks" hitPolicy="COLLECT">
-      <input id="InputClause_0gaacgt" label="Allergy_Type">
-        <inputExpression id="LiteralExpression_1yvixpl" typeRef="string">
-          <text>Allergy_Type</text>
-        </inputExpression>
-        <inputValues id="UnaryTests_1amy34g">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputValues>
-      </input>
-      <output id="OutputClause_0ph2she" label="Filtred_by_Allergies" name="Filtred_by_Allergies" typeRef="string" biodi:width="251">
-        <outputValues id="UnaryTests_0tmggh2">
-          <text>"Involtini primavera","Affettati Misti","Formaggi Misti","Tagliatelle alla Marinara","Rigatoni alla Carbonara","Trofie cacio e pepe","Spaghetti aglio olio e peperoncino","Lasagne","Grigliata di maiale mista","Bistecca alla Fiorentina","Pesce arrosto","Patatine fritte","Melanzane grigliate","Insalata Mista","Pizza Margherita","Pizza Bianca","Water","Coca-Cola","Fruit salad"</text>
-        </outputValues>
-      </output>
-      <rule id="DecisionRule_1ccf7t1">
-        <description>If the user has lactose-intolerance OR gluten-intolerance can view the meal OR if the user has lactose-intolerance AND gluten-intolerance</description>
-        <inputEntry id="UnaryTests_1dcf9jv">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_00a5kpy">
-          <text>"Affettati Misti"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1i3jdi1">
-        <description>If the user has only gluten-intolerance can view the meal</description>
-        <inputEntry id="UnaryTests_1kofepp">
-          <text>"Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0aj8oam">
-          <text>"Formaggi Misti"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0rjb1zd">
-        <description>If the user has only lactose-intolerance can view the meal</description>
-        <inputEntry id="UnaryTests_07epo1v">
-          <text>"Lactose"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_055ju48">
-          <text>"Tagliatelle alla Marinara"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1kyrutv">
-        <inputEntry id="UnaryTests_0mi1tm1">
-          <text>"Lactose"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0foctgc">
-          <text>"Spaghetti aglio olio e peperoncino"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0mmrltu">
-        <inputEntry id="UnaryTests_0o4t2mr">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1x76wqg">
-          <text>"Grigliata di maiale mista"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1yd0uu1">
-        <inputEntry id="UnaryTests_0t81g0o">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1wal73q">
-          <text>"Bistecca alla Fiorentina"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1prwitl">
-        <inputEntry id="UnaryTests_0wmi1qi">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_18t94rw">
-          <text>"Pesce arrosto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_18twlra">
-        <inputEntry id="UnaryTests_0z7z9sy">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_01ngfpn">
-          <text>"Patatine fritte"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1tuptm7">
-        <inputEntry id="UnaryTests_0bvqgud">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0p0739y">
-          <text>"Melanzane grigliate"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1kd27kk">
-        <inputEntry id="UnaryTests_1d31gvm">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_083mas3">
-          <text>"Insalata Mista"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1129y88">
-        <inputEntry id="UnaryTests_1n1h9qy">
-          <text>"Lactose"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1lg2dqa">
-          <text>"Pizza Bianca"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1qgbeua">
-        <inputEntry id="UnaryTests_0zxbdze">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03gxzm6">
-          <text>"Water"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0r2ynkz">
-        <inputEntry id="UnaryTests_11i4ojd">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_18pnrkw">
-          <text>"Coca-Cola"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1pv3tn8">
-        <inputEntry id="UnaryTests_0sc6yv9">
-          <text>"Lactose","Gluten","Lactose and Gluten"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1jx7a8u">
-          <text>"Fruit salad"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_09zbcf2">
-        <description>If the user has no allergy, return empty string and in Guest Preferences compare the other filters</description>
-        <inputEntry id="UnaryTests_1q7d2th">
-          <text>""</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0yq2icj">
-          <text>""</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <inputData id="InputData_18io2ks" name="Meal" />
-  <decision id="Decision_09vgnlj" name="Ingradient_in_a_Meal_Match">
-    <informationRequirement id="InformationRequirement_1hkuwhg">
-      <requiredInput href="#InputData_18io2ks" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_0o2t562" hitPolicy="COLLECT">
-      <input id="InputClause_0xgk8l3" label="Meal" biodi:width="692">
-        <inputExpression id="LiteralExpression_0cp9pfr" typeRef="string">
-          <text>Meal</text>
-        </inputExpression>
-        <inputValues id="UnaryTests_0uaxl9j">
-          <text>"Involtini primavera","Affettati Misti","Formaggi Misti","Tagliatelle alla Marinara","Rigatoni alla Carbonara","Trofie cacio e pepe","Spaghetti aglio olio e peperoncino","Lasagne","Grigliata di maiale mista","Bistecca alla Fiorentina","Pesce arrosto","Patatine fritte","Melanzane grigliate","Insalata Mista","Pizza Margherita","Pizza Bianca","Water","Coca-Cola","Fruit salad"</text>
-        </inputValues>
-      </input>
-      <output id="OutputClause_1px1uxj" label="Ingredient" name="Ingredient" typeRef="string" biodi:width="269">
-        <outputValues id="UnaryTests_1invi0r">
+      <output id="Output_1" label="Ingredients" name="Ingredients" typeRef="string">
+        <outputValues id="UnaryTests_0g7dodk">
           <text>"Oil","Eggplant","Cow's cheese","Sheep's cheese","Pasta","Shrimp","Ciauscolo","Salame","Ham","Carrot","Cabbage","Puff Pastry","Mussel","Salt","Parmesan","Egg","Black pepper","Pork cheek","Garlic","Chili","Tomato","Bechamel","Mozzarella cheese","Minced meat","Pork rib","Sausage","Pork chop","Steak","Calamari","Sword fish","Salmon","Potato","Water","Lettuce","Mais","0-Type Flour","Sugar and Food Coloring","Apple","Banana","Strawberry"</text>
         </outputValues>
       </output>
-      <rule id="DecisionRule_1gifd49">
-        <inputEntry id="UnaryTests_1d38822">
-          <text>"Involtini primavera","Affettati Misti","Formaggi Misti","Tagliatelle alla Marinara","Rigatoni alla Carbonara","Trofie cacio e pepe","Spaghetti aglio olio e peperoncino","Lasagne","Grigliata di maiale mista","Bistecca alla Fiorentina","Pesce arrosto","Patatine fritte","Melanzane grigliate","Insalata Mista","Pizza Margherita","Pizza Bianca"</text>
+      <rule id="DecisionRule_0xym07h">
+        <inputEntry id="UnaryTests_1lncvpy">
+          <text>"vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1tmj2ao">
+        <inputEntry id="UnaryTests_123fnlg">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mnu11i">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15hqquh">
+          <text>"Carrot"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_016tfyq">
+        <inputEntry id="UnaryTests_0t4lxd5">
+          <text>"vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gkk5ol">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1li9pts">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08rt5em">
+          <text>"Cabbage"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y65o98">
+        <inputEntry id="UnaryTests_0u1nd85">
+          <text>"vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c36edl">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tefz9p">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f4voj4">
+          <text>"Lettuce"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0acbun8">
+        <inputEntry id="UnaryTests_0uxpn0j">
+          <text>"vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_184lwa0">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ybv5lo">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11grblz">
+          <text>"Eggplant"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_139md9e">
+        <inputEntry id="UnaryTests_1r4kb0f">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bn1nmu">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xbp5e2">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rdtcf4">
+          <text>"Shrimp"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1chgv09">
+        <inputEntry id="UnaryTests_0xtxfp6">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16v3zw5">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ubj980">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0znnm1v">
+          <text>"Ciauscolo"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wz6l9f">
+        <inputEntry id="UnaryTests_1fsnpgv">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ipca6n">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fbhbp3">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kduhr2">
+          <text>"Salame"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15txekq">
+        <inputEntry id="UnaryTests_0gabf08">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y3uiuy">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00xyjxg">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1efg51r">
+          <text>"Ham"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zhyjt0">
+        <inputEntry id="UnaryTests_0yzyxdr">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lk6koz">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wz427p">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jtb4ud">
+          <text>"Pork cheek"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08k8wq2">
+        <inputEntry id="UnaryTests_0spk2v7">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r9ayjt">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16yt8d2">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j5h2ab">
+          <text>"Sausage"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06cp3yz">
+        <inputEntry id="UnaryTests_0ccqy41">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01u9s8i">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ctasf1">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hkmqqb">
+          <text>"Pork rib"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02g9ejy">
+        <inputEntry id="UnaryTests_08ithav">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_127zxqh">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ts55gf">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00kg0g2">
+          <text>"Pork chop"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kh944w">
+        <inputEntry id="UnaryTests_0re65jr">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w3byau">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_173c7e7">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14v8uyy">
+          <text>"Steak"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02n7stj">
+        <inputEntry id="UnaryTests_03u8710">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xamx82">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h7j93f">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1scmy5x">
+          <text>"Salmon"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rt4ssx">
+        <inputEntry id="UnaryTests_0jbh6ic">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vmyr0d">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y5oub5">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01uak2k">
+          <text>"Sword fish"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1b1ivwh">
+        <inputEntry id="UnaryTests_03n94le">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ngyh7">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p610jt">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_089phtn">
+          <text>"Minced meat"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gmi5jl">
+        <inputEntry id="UnaryTests_0lugpot">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0an8zog">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_183ny72">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uj7cn8">
+          <text>"Mussel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1o4m15y">
+        <inputEntry id="UnaryTests_1o02jdb">
+          <text>"carnivorous","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_018kkkg">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v7xejn">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_031d8ka">
+          <text>"Calamari"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v8xzsg">
+        <inputEntry id="UnaryTests_1kwtl1q">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qi22th">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nao7x9">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c9t5wt">
+          <text>"Egg"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sr0anl">
+        <inputEntry id="UnaryTests_05q9dkv">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19f0p71">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0okdu49">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15j146v">
+          <text>"Oil"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zxhw3g">
+        <inputEntry id="UnaryTests_0s6m044">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sy94wr">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0voz9e1">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qtcdyk">
           <text>"Salt"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_13sy4g2">
-        <inputEntry id="UnaryTests_00a2bmm">
-          <text>"Involtini primavera","Tagliatelle alla Marinara","Rigatoni alla Carbonara","Trofie cacio e pepe","Spaghetti aglio olio e peperoncino","Lasagne","Bistecca alla Fiorentina","Pesce arrosto","Patatine fritte","Melanzane grigliate","Insalata Mista","Pizza Margherita","Pizza Bianca"</text>
+      <rule id="DecisionRule_1jhd49l">
+        <inputEntry id="UnaryTests_01wj360">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_13wq5l5">
-          <text>"Oil"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_09yrjrg">
-        <inputEntry id="UnaryTests_1ac5l1s">
-          <text>"Involtini primavera","Lasagne"</text>
+        <inputEntry id="UnaryTests_0k0vz49">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0hv4vll">
-          <text>"Carrot"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ev2n8y">
-        <inputEntry id="UnaryTests_0vr4ryf">
-          <text>"Involtini primavera"</text>
+        <inputEntry id="UnaryTests_0m4v92b">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1shjtwi">
-          <text>"Cabbage"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1wnkph0">
-        <inputEntry id="UnaryTests_1yk8hfa">
-          <text>"Affettati Misti"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0rnse7o">
-          <text>"Ciauscolo"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1mi7sy0">
-        <inputEntry id="UnaryTests_18o1see">
-          <text>"Affettati Misti"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_145fuum">
-          <text>"Salame"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0pdvh1n">
-        <inputEntry id="UnaryTests_0bzmrwj">
-          <text>"Affettati Misti"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1b2entv">
-          <text>"Ham"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1bhhvie">
-        <inputEntry id="UnaryTests_0gd0354">
-          <text>"Formaggi Misti","Pizza Margherita"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_05cii9r">
-          <text>"Cow's cheese"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_02pda92">
-        <inputEntry id="UnaryTests_1mcjxot">
-          <text>"Formaggi Misti","Rigatoni alla Carbonara","Trofie cacio e pepe"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0sab8k8">
-          <text>"Sheep's cheese"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_10v1758">
-        <inputEntry id="UnaryTests_034qbfu">
-          <text>"Tagliatelle alla Marinara","Rigatoni alla Carbonara","Trofie cacio e pepe","Spaghetti aglio olio e peperoncino","Lasagne"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08qy6m5">
-          <text>"Pasta"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_025h8cx">
-        <inputEntry id="UnaryTests_0nh5j29">
-          <text>"Tagliatelle alla Marinara","Pesce arrosto"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_02h4owh">
-          <text>"Shrimp"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0v3w2g0">
-        <inputEntry id="UnaryTests_09fmpkh">
-          <text>"Involtini primavera"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1qr5los">
-          <text>"Puff Pastry"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_15xya6e">
-        <inputEntry id="UnaryTests_0bsnpm4">
-          <text>"Tagliatelle alla Marinara","Pesce arrosto"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0mubs1d">
-          <text>"Mussel"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0c36ep3">
-        <inputEntry id="UnaryTests_0jyeuw1">
-          <text>"Formaggi Misti","Lasagne"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_19sosov">
-          <text>"Parmesan"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0xei5vl">
-        <inputEntry id="UnaryTests_0exgr8o">
-          <text>"Rigatoni alla Carbonara"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0rrey0k">
-          <text>"Egg"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1dp0dq1">
-        <inputEntry id="UnaryTests_1ms6o6c">
-          <text>"Affettati Misti","Rigatoni alla Carbonara","Trofie cacio e pepe"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08dit8r">
+        <outputEntry id="LiteralExpression_039icku">
           <text>"Black pepper"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1sk23vj">
-        <inputEntry id="UnaryTests_0s610z6">
-          <text>"Rigatoni alla Carbonara"</text>
+      <rule id="DecisionRule_0pyymwa">
+        <inputEntry id="UnaryTests_1bk1jvw">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1387fx2">
-          <text>"Pork cheek"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1whqk72">
-        <inputEntry id="UnaryTests_12943o7">
-          <text>"Spaghetti aglio olio e peperoncino"</text>
+        <inputEntry id="UnaryTests_1ocf3l9">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1xv98bt">
-          <text>"Garlic"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1mtspgs">
-        <inputEntry id="UnaryTests_1dbwgoi">
-          <text>"Spaghetti aglio olio e peperoncino"</text>
+        <inputEntry id="UnaryTests_0tmltqp">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0b0sd1c">
+        <outputEntry id="LiteralExpression_0fwsj21">
           <text>"Chili"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0cr5nxo">
-        <inputEntry id="UnaryTests_1g7jyys">
-          <text>"Lasagne","Pizza Margherita"</text>
+      <rule id="DecisionRule_1rzobk1">
+        <inputEntry id="UnaryTests_0mrx8ws">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0jolz5i">
+        <inputEntry id="UnaryTests_1tss5ws">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u0znc9">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o2o27b">
           <text>"Tomato"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_05263ib">
-        <inputEntry id="UnaryTests_1s9wi0p">
-          <text>"Lasagne"</text>
+      <rule id="DecisionRule_0p46b07">
+        <inputEntry id="UnaryTests_152ypyv">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0pavt5m">
-          <text>"Bechamel"</text>
+        <inputEntry id="UnaryTests_0f0hepd">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19e725z">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qw8t8i">
+          <text>"Garlic"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1ot0fzy">
-        <inputEntry id="UnaryTests_12ycqk8">
-          <text>"Lasagne"</text>
+      <rule id="DecisionRule_0czoyj9">
+        <inputEntry id="UnaryTests_108phsx">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_08xwlv2">
-          <text>"Minced meat"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1xwuuuk">
-        <inputEntry id="UnaryTests_0p65o04">
-          <text>"Grigliata di maiale mista"</text>
+        <inputEntry id="UnaryTests_1fcyv1d">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1mfnhzy">
-          <text>"Pork rib"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0a2nk4i">
-        <inputEntry id="UnaryTests_1aw9rle">
-          <text>"Grigliata di maiale mista"</text>
+        <inputEntry id="UnaryTests_0vrrnjq">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_095widt">
-          <text>"Sausage"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ilur3b">
-        <inputEntry id="UnaryTests_1yogobj">
-          <text>"Grigliata di maiale mista"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0hxrf5r">
-          <text>"Pork chop"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0puef1s">
-        <inputEntry id="UnaryTests_0wagof4">
-          <text>"Bistecca alla Fiorentina"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1knrmoq">
-          <text>"Steak"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_11uv0kq">
-        <inputEntry id="UnaryTests_0i19pxo">
-          <text>"Pesce arrosto"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ayoy9a">
-          <text>"Calamari"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0vlh8ok">
-        <inputEntry id="UnaryTests_0024piy">
-          <text>"Pesce arrosto"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_194ylhj">
-          <text>"Sword fish"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ml82fv">
-        <inputEntry id="UnaryTests_1jupfbj">
-          <text>"Pesce arrosto"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1po00wz">
-          <text>"Salmon"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0komn2n">
-        <inputEntry id="UnaryTests_0o8t2ni">
-          <text>"Patatine fritte"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1tyc8am">
+        <outputEntry id="LiteralExpression_0s6cmr2">
           <text>"Potato"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0p4a6bt">
-        <inputEntry id="UnaryTests_1qqosvr">
-          <text>"Melanzane grigliate"</text>
+      <rule id="DecisionRule_0m409f2">
+        <inputEntry id="UnaryTests_1ww5znx">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_02j40m3">
-          <text>"Eggplant"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_023mb87">
-        <inputEntry id="UnaryTests_0hc676r">
-          <text>"Pizza Margherita","Pizza Bianca","Coca-Cola"</text>
+        <inputEntry id="UnaryTests_1ueih80">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0fsuaum">
+        <inputEntry id="UnaryTests_1oflysa">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0iruxhf">
           <text>"Water"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_02ylxvr">
-        <inputEntry id="UnaryTests_13y2qo6">
-          <text>"Insalata Mista"</text>
+      <rule id="DecisionRule_1jk4rsr">
+        <inputEntry id="UnaryTests_0n1rq55">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0gbav8f">
-          <text>"Lettuce"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0j6e8z5">
-        <inputEntry id="UnaryTests_0sgflqk">
-          <text>"Insalata Mista"</text>
+        <inputEntry id="UnaryTests_0osye4s">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_00cq0nb">
+        <inputEntry id="UnaryTests_0bzib9i">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v2pval">
           <text>"Mais"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1hu45ip">
-        <inputEntry id="UnaryTests_16jrq0w">
-          <text>"Pizza Margherita","Pizza Bianca"</text>
+      <rule id="DecisionRule_0rbrjc5">
+        <inputEntry id="UnaryTests_0rti0tm">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1b3zp2m">
+        <inputEntry id="UnaryTests_0lq864r">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10rc8nx">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pudiy5">
+          <text>"Sugar and Food Coloring"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cvxxg8">
+        <inputEntry id="UnaryTests_0x8j1gp">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aza0y8">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d6vlcv">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xyt26r">
+          <text>"Apple"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xznp0w">
+        <inputEntry id="UnaryTests_1pdznut">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wcyi55">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0173gjr">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fyhx9z">
+          <text>"Banana"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hplhtg">
+        <inputEntry id="UnaryTests_17c7n9x">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m2bqij">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v7muar">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0iqbzap">
+          <text>"Strawberry"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10dft5n">
+        <inputEntry id="UnaryTests_1ulpv9d">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nu6e5h">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ey4muv">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1grbg1a">
+          <text>"Puff Pastry"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08xontj">
+        <inputEntry id="UnaryTests_1rllhha">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c8zkgg">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03sst2l">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c43py2">
+          <text>"Pasta"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bklhse">
+        <inputEntry id="UnaryTests_0p34lau">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pdjj0d">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vzz6mh">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t1cnlj">
           <text>"0-Type Flour"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_07n9k9j">
-        <inputEntry id="UnaryTests_1cz6glt">
-          <text>"Coca-Cola"</text>
+      <rule id="DecisionRule_1fsq5m1">
+        <inputEntry id="UnaryTests_1xe1512">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0dndbtx">
-          <text>"Sugar and Food Coloring"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1qs5q7j">
-        <inputEntry id="UnaryTests_0g4xudv">
-          <text>"Fruit salad"</text>
+        <inputEntry id="UnaryTests_16cub2p">
+          <text>false</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_09bhnha">
-          <text>"Apple"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1qxluv8">
-        <inputEntry id="UnaryTests_1ksh9r2">
-          <text>"Fruit salad"</text>
+        <inputEntry id="UnaryTests_0mzz8es">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_024f39o">
-          <text>"Banana"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1dhi5bl">
-        <inputEntry id="UnaryTests_0sxayhk">
-          <text>"Fruit salad"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0b7qjcb">
-          <text>"Strawberry"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0bg7r6d">
-        <inputEntry id="UnaryTests_1n8mx36">
-          <text>""</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_095js26">
-          <text>""</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <decision id="Decision_118dwbg" name="Ingredients_List">
-    <variable id="InformationItem_0qhc021" name="Ingredients_List" />
-    <literalExpression id="LiteralExpression_0iim349">
-      <text>[
-  "Oil",
-  "Eggplant",
-  "Cow's cheese",
-  "Sheep's cheese",
-  "Pasta",
-  "Shrimp",
-  "Ciauscolo",
-  "Salame",
-  "Ham",
-  "Carrot",
-  "Cabbage",
-  "Puff Pastry",
-  "Mussel",
-  "Salt",
-  "Parmesan",
-  "Egg",
-  "Black pepper",
-  "Pork cheek",
-  "Garlic",
-  "Chili",
-  "Tomato",
-  "Bechamel",
-  "Mozzarella cheese",
-  "Minced meat",
-  "Pork rib",
-  "Sausage",
-  "Pork chop",
-  "Steak",
-  "Calamari",
-  "Sword fish",
-  "Salmon",
-  "Potato",
-  "Water",
-  "Lettuce",
-  "Mais",
-  "0-Type Flour",
-  "Sugar and Food Coloring",
-  "Apple",
-  "Banana",
-  "Strawberry"
-]</text>
-    </literalExpression>
-  </decision>
-  <inputData id="InputData_0j5erm2" name="Ingredient" />
-  <decision id="Decision_0zyolsm" name="Kcal_in_Ingredient_Match">
-    <informationRequirement id="InformationRequirement_0ec7mza">
-      <requiredInput href="#InputData_0j5erm2" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_0crjenf">
-      <input id="InputClause_1uhzk0q" label="Ingredients" biodi:width="317">
-        <inputExpression id="LiteralExpression_1b3jafj" typeRef="string">
-          <text>Ingredients</text>
-        </inputExpression>
-        <inputValues id="UnaryTests_1mj9nva">
-          <text>"Oil","Eggplant","Cow's cheese","Sheep's cheese","Pasta","Shrimp","Ciauscolo","Salame","Ham","Carrot","Cabbage","Puff Pastry","Mussel","Salt","Parmesan","Egg","Black pepper","Pork cheek","Garlic","Chili","Tomato","Bechamel","Mozzarella cheese","Minced meat","Pork rib","Sausage","Pork chop","Steak","Calamari","Sword fish","Salmon","Potato","Water","Lettuce","Mais","0-Type Flour","Sugar and Food Coloring","Apple","Banana","Strawberry"</text>
-        </inputValues>
-      </input>
-      <output id="OutputClause_1drs1pv" label="Kcal_in_Ingredient" name="Kcal_in_Ingredient" typeRef="integer" />
-      <rule id="DecisionRule_0n74qsa">
-        <inputEntry id="UnaryTests_1aexjxe">
-          <text>"Oil"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0270gny">
-          <text>60</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0mzlsxg">
-        <inputEntry id="UnaryTests_14pi3zo">
-          <text>"Eggplant"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1wza7i0">
-          <text>18</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_19wbo8r">
-        <inputEntry id="UnaryTests_10ztxsz">
-          <text>"Cow's cheese"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1gxu739">
-          <text>115</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0vwec9y">
-        <inputEntry id="UnaryTests_0ag63ot">
-          <text>"Sheep's cheese"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vl50vt">
-          <text>135</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0vg2f7p">
-        <inputEntry id="UnaryTests_0zwayyk">
-          <text>"Pasta"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03sh28n">
-          <text>300</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_00dri93">
-        <inputEntry id="UnaryTests_0q2ql0r">
-          <text>"Shrimp"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0f39nb7">
-          <text>35</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0jpbdw7">
-        <inputEntry id="UnaryTests_1jddn5p">
-          <text>"Ciauscolo"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vopx3x">
-          <text>70</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0cemlsn">
-        <inputEntry id="UnaryTests_1lmww4o">
-          <text>"Salame"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1xn60an">
-          <text>50</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1oc7dzf">
-        <inputEntry id="UnaryTests_1xsxe5v">
-          <text>"Ham"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0b8oydn">
-          <text>45</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1089a8y">
-        <inputEntry id="UnaryTests_1ghtqms">
-          <text>"Carrot"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0bc9g8r">
-          <text>27</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1swhevc">
-        <inputEntry id="UnaryTests_0vj92qx">
-          <text>"Cabbage"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1br1b13">
-          <text>25</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0n0gmjk">
-        <inputEntry id="UnaryTests_0wbk3q5">
-          <text>"Puff Pastry"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0e1l231">
-          <text>150</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1chtbal">
-        <inputEntry id="UnaryTests_0l9jaf7">
-          <text>"Mussel"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0kkwgsu">
-          <text>40</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0scu0vi">
-        <inputEntry id="UnaryTests_0vwi33w">
-          <text>"Salt","Water"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ncdv7u">
-          <text>0</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1tanahy">
-        <inputEntry id="UnaryTests_0999d1o">
+        <outputEntry id="LiteralExpression_1bqm2em">
           <text>"Parmesan"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vz1181">
-          <text>75</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0o0kieu">
-        <inputEntry id="UnaryTests_1v0km70">
-          <text>"Egg"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1pqy4wx">
-          <text>80</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_15i6dqj">
-        <inputEntry id="UnaryTests_0jy13gx">
-          <text>"Black pepper"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1m4cv5w">
-          <text>25</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_098b36w">
-        <inputEntry id="UnaryTests_1ii29fj">
-          <text>"Pork cheek"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0273mgq">
-          <text>150</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0r5hxkc">
-        <inputEntry id="UnaryTests_147d65o">
-          <text>"Garlic"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1azkmfe">
-          <text>3</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1uqzq60">
-        <inputEntry id="UnaryTests_180cnpi">
-          <text>"Chili"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0xhvgrm">
-          <text>15</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ro0h2b">
-        <inputEntry id="UnaryTests_1ffew0u">
-          <text>"Tomato"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08fp1gh">
-          <text>30</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_19rqfun">
-        <inputEntry id="UnaryTests_08rnqyp">
-          <text>"Bechamel"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0gwumdh">
-          <text>105</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1u7mbz8">
-        <inputEntry id="UnaryTests_1tsbfsa">
-          <text>"Minced meat"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0v5h8r0">
-          <text>120</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0t07y2y">
-        <inputEntry id="UnaryTests_1jw7y0v">
-          <text>"Pork rib"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1k0l3j7">
-          <text>70</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ed09sf">
-        <inputEntry id="UnaryTests_0711m4x">
-          <text>"Sausage"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0caaq1x">
-          <text>205</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_060yz7o">
-        <inputEntry id="UnaryTests_0z5siqq">
-          <text>"Pork chop"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1cfa6y3">
-          <text>125</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03ixnsk">
-        <inputEntry id="UnaryTests_1rt71zz">
-          <text>"Steak"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1hqfuxo">
-          <text>485</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03lcs0r">
-        <inputEntry id="UnaryTests_1f0wfkj">
-          <text>"Calamari"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08n7gbk">
-          <text>50</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_05sn8co">
-        <inputEntry id="UnaryTests_1w1ywr1">
-          <text>"Sword fish"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1k0ay42">
-          <text>120</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1tyvcfs">
-        <inputEntry id="UnaryTests_0o75alt">
-          <text>"Salmon"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0rr2ncd">
-          <text>150</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1k620me">
-        <inputEntry id="UnaryTests_1qoat83">
-          <text>"Potato"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0jtjnbz">
-          <text>450</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1xln9pv">
-        <inputEntry id="UnaryTests_0kqtkg5">
-          <text>"Lettuce"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0u56fp6">
-          <text>25</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_047mn3u">
-        <inputEntry id="UnaryTests_0ge9evi">
-          <text>"Mais"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_12g07s3">
-          <text>50</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_08r6k59">
-        <inputEntry id="UnaryTests_0j2rubh">
-          <text>"Sugar and Food Coloring"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0jf07vh">
-          <text>204</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1q5ltmn">
-        <inputEntry id="UnaryTests_14n0nwo">
-          <text>"Apple"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0wh2xkk">
-          <text>35</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1j99yc6">
-        <inputEntry id="UnaryTests_1u55dks">
-          <text>"Banana"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1wb04oi">
-          <text>40</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_129tq91">
-        <inputEntry id="UnaryTests_1k5q9k5">
-          <text>"Strawberry"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1uge3cd">
-          <text>22</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_179ny56">
-        <inputEntry id="UnaryTests_0il9qw1">
-          <text>""</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1vnz2yv">
-          <text>0</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <decision id="Decision_0p7ihlj" name="Kcal_in_Meal">
-    <informationRequirement id="InformationRequirement_0ui5wwk">
-      <requiredDecision href="#Decision_09vgnlj" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_14wzjz3" hitPolicy="COLLECT" aggregation="SUM">
-      <input id="InputClause_0xykz2u" label="Ingredient" biodi:width="460">
-        <inputExpression id="LiteralExpression_16xvi8u" typeRef="string">
-          <text>Ingredient</text>
-        </inputExpression>
-      </input>
-      <output id="OutputClause_16b9k91" label="Kcal_in_Meal" name="Kcal_in_Meal" typeRef="integer" />
-      <rule id="DecisionRule_1b652ms">
-        <inputEntry id="UnaryTests_0s0wxwt">
-          <text>list contains(Ingredient, "Oil")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_05gyg5g">
-          <text>60</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_15chb9s">
-        <inputEntry id="UnaryTests_1xmh6vj">
-          <text>list contains(Ingredient, "Eggplant")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_09r2ilc">
-          <text>18</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ngp394">
-        <inputEntry id="UnaryTests_1920vrg">
-          <text>list contains(Ingredient, "Cow's cheese")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0hsd7e5">
-          <text>115</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0s44gzy">
-        <inputEntry id="UnaryTests_1ydkfc6">
-          <text>list contains(Ingredient, "Sheep's cheese")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1299ues">
-          <text>135</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ycmvo2">
-        <inputEntry id="UnaryTests_1xffqva">
-          <text>list contains(Ingredient, "Pasta")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ot8uco">
-          <text>300</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_121c5xq">
-        <inputEntry id="UnaryTests_17wgyew">
-          <text>list contains(Ingredient, "Shrimp")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0blzwre">
-          <text>35</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0yxgozz">
-        <inputEntry id="UnaryTests_0mj8vcn">
-          <text>list contains(Ingredient, "Ciauscolo")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vyhaec">
-          <text>70</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1dutoq7">
-        <inputEntry id="UnaryTests_1skzozw">
-          <text>list contains(Ingredient, "Salame")</text>
+      <rule id="DecisionRule_119f2m6">
+        <inputEntry id="UnaryTests_14024u4">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1f7ek6t">
-          <text>50</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0dqt16o">
-        <inputEntry id="UnaryTests_19g2u0h">
-          <text>list contains(Ingredient, "Ham")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_033uyey">
-          <text>45</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1itghvf">
-        <inputEntry id="UnaryTests_0vralka">
-          <text>list contains(Ingredient, "Carrot")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0um54tl">
-          <text>27</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1dfg78y">
-        <inputEntry id="UnaryTests_1ct1t2p">
-          <text>list contains(Ingredient, "Cabbage")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_151hnyn">
-          <text>25</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1vw43p2">
-        <inputEntry id="UnaryTests_11r2jn5">
-          <text>list contains(Ingredient, "Puff Pastry")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_15tlv1g">
-          <text>150</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1gh2g24">
-        <inputEntry id="UnaryTests_0d3ibue">
-          <text>list contains(Ingredient, "Mussel")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0gpb23r">
-          <text>40</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_02b3ytn">
-        <inputEntry id="UnaryTests_061ibbc">
-          <text>list contains(Ingredient, "Salt")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_10jltyp">
-          <text>0</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_00n4wv8">
-        <inputEntry id="UnaryTests_1seqzna">
-          <text>list contains(Ingredient, "Parmesan")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_19qbbs2">
-          <text>75</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0o6uavh">
-        <inputEntry id="UnaryTests_16hn4ei">
-          <text>list contains(Ingredient, "Egg")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1fb15wy">
-          <text>80</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_046v3fk">
-        <inputEntry id="UnaryTests_0xfdzfg">
-          <text>list contains(Ingredient, "Black pepper")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0u79pbk">
-          <text>25</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_17zsq3f">
-        <inputEntry id="UnaryTests_0inpa4f">
-          <text>list contains(Ingredient, "Pork cheek")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0og5kqr">
-          <text>150</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_001lfe8">
-        <inputEntry id="UnaryTests_1hny5cn">
-          <text>list contains(Ingredient, "Garlic")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_153vgyz">
-          <text>3</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ti8exs">
-        <inputEntry id="UnaryTests_0a6zu44">
-          <text>list contains(Ingredient, "Chili")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1rh2xd7">
-          <text>15</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1o9ki4e">
-        <inputEntry id="UnaryTests_1qp1vko">
-          <text>list contains(Ingredient, "Tomato")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1wpzijc">
-          <text>30</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_10q45ac">
-        <inputEntry id="UnaryTests_0kbk1xd">
-          <text>list contains(Ingredient, "Bechamel")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1q768fj">
-          <text>105</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0gyad78">
-        <inputEntry id="UnaryTests_0l09wb8">
-          <text>list contains(Ingredient, "Minced meat")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1fusj1w">
-          <text>120</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0nqd760">
-        <inputEntry id="UnaryTests_0w9surq">
-          <text>list contains(Ingredient, "Pork rib")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1jz2odu">
-          <text>70</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0vu940x">
-        <inputEntry id="UnaryTests_0h5rw4g">
-          <text>list contains(Ingredient, "Sausage")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1x854ds">
-          <text>205</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0310rne">
-        <inputEntry id="UnaryTests_0o6bmtt">
-          <text>list contains(Ingredient, "Pork chop")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_14pqlwn">
-          <text>125</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_004htha">
-        <inputEntry id="UnaryTests_05iyjgg">
-          <text>list contains(Ingredient, "Steak")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1u1h1t2">
-          <text>485</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1xvfrib">
-        <inputEntry id="UnaryTests_1h5c54k">
-          <text>list contains(Ingredient, "Calamari")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0lr7i1d">
-          <text>50</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_063sok5">
-        <inputEntry id="UnaryTests_02ypxc9">
-          <text>list contains(Ingredient, "Sword fish")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_12gf5fg">
-          <text>120</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ijeglt">
-        <inputEntry id="UnaryTests_1smvyke">
-          <text>list contains(Ingredient, "Salmon")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1d2o4ge">
-          <text>150</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_152kt9z">
-        <inputEntry id="UnaryTests_09jt84z">
-          <text>list contains(Ingredient, "Potato")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1payq0k">
-          <text>450</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0zujzi8">
-        <inputEntry id="UnaryTests_1woms91">
-          <text>list contains(Ingredient, "0-Type Flour")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0sgz64z">
-          <text>500</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_12gqihy">
-        <inputEntry id="UnaryTests_1rcncjm">
-          <text>list contains(Ingredient, "Lettuce")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0rq85jr">
-          <text>25</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0qj8d73">
-        <inputEntry id="UnaryTests_1ju5b58">
-          <text>list contains(Ingredient, "Mais")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0yejg0u">
-          <text>50</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1qh6wjk">
-        <inputEntry id="UnaryTests_1ejywg7">
-          <text>list contains(Ingredient, "Water")</text>
+        <inputEntry id="UnaryTests_04l6hne">
+          <text>false</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0o24dbr">
-          <text>0</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0qd7t5j">
-        <inputEntry id="UnaryTests_01wmuqe">
-          <text>list contains(Ingredient, "Sugar and Food Coloring")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_117vq2e">
-          <text>204</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_13hfvdp">
-        <inputEntry id="UnaryTests_05rweps">
-          <text>list contains(Ingredient, "Apple")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0tn5wai">
-          <text>35</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1vg19cg">
-        <inputEntry id="UnaryTests_0txtins">
-          <text>list contains(Ingredient, "Banana")</text>
+        <inputEntry id="UnaryTests_107wp94">
+          <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_07etufl">
-          <text>40</text>
+        <outputEntry id="LiteralExpression_0aobjrb">
+          <text>"Cow's cheese"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_10ffn1m">
-        <inputEntry id="UnaryTests_0hc8jz7">
-          <text>list contains(Ingredient, "Strawberry")</text>
+      <rule id="DecisionRule_16jvoc2">
+        <inputEntry id="UnaryTests_1db52hp">
+          <text>"carnivorous","vegetarian","omnivore"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1ixmaxo">
-          <text>22</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1tpky2r">
-        <inputEntry id="UnaryTests_12zuoip">
-          <text>list contains(Ingredient, "")</text>
+        <inputEntry id="UnaryTests_0wxlpss">
+          <text>false</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0g0djpy">
-          <text>0</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <decision id="Decision_0smww4m" name="Kcal_Sum">
-    <informationRequirement id="InformationRequirement_1ce0sab">
-      <requiredDecision href="#Decision_0p7ihlj" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_0i7qqsm">
-      <input id="InputClause_1vof4eo" label="Kcal_in_Meal">
-        <inputExpression id="LiteralExpression_05yyuqc" typeRef="integer">
-          <text>Kcal_in_Meal</text>
-        </inputExpression>
-      </input>
-      <output id="OutputClause_1exs154" label="Kcal_Sum" name="Kcal_Sum" typeRef="" />
-      <rule id="DecisionRule_0g20ads">
-        <inputEntry id="UnaryTests_12lqnng">
+        <inputEntry id="UnaryTests_1fw0t6p">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_02hug38">
-          <text>sum(Kcal_in_Meal)</text>
+        <outputEntry id="LiteralExpression_16h4ej1">
+          <text>"Sheep's cheese"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kgvx9f">
+        <inputEntry id="UnaryTests_0t0bwq8">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gkmks8">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19p7pd7">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w4yncg">
+          <text>"Bechamel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bgu8r4">
+        <inputEntry id="UnaryTests_0em7y4b">
+          <text>"carnivorous","vegetarian","omnivore"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ubxdho">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xz48nq">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x42iya">
+          <text>"Mozzarella cheese"</text>
         </outputEntry>
       </rule>
     </decisionTable>
   </decision>
-  <inputData id="InputData_11zocm7" name="Course_Type" />
-  <decision id="Decision_0vm84wz" name="Courses_Type_Match">
-    <informationRequirement id="InformationRequirement_131i64t">
-      <requiredInput href="#InputData_11zocm7" />
+  <inputData id="InputData_0qjalwi" name="is Lactose Intolerant" />
+  <decision id="Decision_1ebox1h" name="Meals Suggestion">
+    <informationRequirement id="InformationRequirement_0o1sv22">
+      <requiredDecision href="#Decision_0zxpxng" />
     </informationRequirement>
-    <decisionTable id="DecisionTable_0jln2gv" hitPolicy="COLLECT">
-      <input id="InputClause_1jcl4u6" label="Course">
-        <inputExpression id="LiteralExpression_1h4hx7v" typeRef="string">
-          <text>Course</text>
+    <informationRequirement id="InformationRequirement_0crtbtg">
+      <requiredInput href="#InputData_11irofb" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1ykt147">
+      <requiredInput href="#InputData_14drdgp" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0pu8cs0">
+      <requiredDecision href="#Decision_0hzki0u" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_05t3b5m" hitPolicy="COLLECT">
+      <input id="InputClause_0u32g0v" label="Ingredients" biodi:width="341">
+        <inputExpression id="LiteralExpression_0rt43qy" typeRef="list">
+          <text>Ingredients</text>
         </inputExpression>
-        <inputValues id="UnaryTests_0g01ve8">
-          <text>"Appetizer","First Meal","Second Meal","Sidedish","Pizza","Dessert","Drink"</text>
-        </inputValues>
       </input>
-      <output id="OutputClause_1hpp7iw" label="Course_Meal" name="Course_Meal" typeRef="string">
-        <outputValues id="UnaryTests_12djzct">
-          <text>"Involtini primavera","Affettati Misti","Formaggi Misti","Tagliatelle alla Marinara","Rigatoni alla Carbonara","Trofie cacio e pepe","Spaghetti aglio olio e peperoncino","Lasagne","Grigliata di maiale mista","Bistecca alla Fiorentina","Pesce arrosto","Patatine fritte","Melanzane grigliate","Insalata Mista","Pizza Margherita","Pizza Bianca","Water","Coca-Cola","Fruit salad"</text>
-        </outputValues>
-      </output>
-      <rule id="DecisionRule_0hxaocw">
-        <inputEntry id="UnaryTests_0gk8mcv">
+      <input id="InputClause_18sftwp" label="Ingredients_List" biodi:width="469" camunda:inputVariable="Ingredients_List">
+        <inputExpression id="LiteralExpression_0cezmxp" typeRef="list">
+          <text>Ingredients_List</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0652xc7" label="Calorie_Conscious_Level">
+        <inputExpression id="LiteralExpression_17r8fgd" typeRef="integer">
+          <text>Calorie_Conscious_Level</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_181txf4" label="Course_Type">
+        <inputExpression id="LiteralExpression_0m8tv6d" typeRef="string">
+          <text>Course_Type</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0p2mev9" label="Meals" typeRef="string" />
+      <rule id="DecisionRule_0lhw6oa">
+        <inputEntry id="UnaryTests_01kktzt">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Carrot") and list contains(Ingredients, "Cabbage") and list contains(Ingredients, "Puff Pastry")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eu17il">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Cabbage"].calories[1] + Ingredients_List[name="Puff Pastry"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s1qce1">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vw6hkk">
           <text>"Appetizer"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1wehial">
+        <outputEntry id="LiteralExpression_1kj99za">
           <text>"Involtini primavera"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_17muwzu">
-        <inputEntry id="UnaryTests_0x35gk6">
+      <rule id="DecisionRule_0z3rt30">
+        <inputEntry id="UnaryTests_0c28elf">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Carrot") and list contains(Ingredients, "Cabbage") and list contains(Ingredients, "Puff Pastry")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_125d9gl">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Cabbage"].calories[1] + Ingredients_List[name="Puff Pastry"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vuybfi">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jigh6b">
           <text>"Appetizer"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1e9292c">
+        <outputEntry id="LiteralExpression_1xtbzlk">
+          <text>"Involtini primavera"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14wv5hq">
+        <inputEntry id="UnaryTests_00aglb7">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Carrot") and list contains(Ingredients, "Cabbage") and list contains(Ingredients, "Puff Pastry")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17qv56i">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Cabbage"].calories[1] + Ingredients_List[name="Puff Pastry"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mvcln2">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07mwb61">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0552loq">
+          <text>"Involtini primavera"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ihwh51">
+        <inputEntry id="UnaryTests_1d8iyuj">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Carrot") and list contains(Ingredients, "Cabbage") and list contains(Ingredients, "Puff Pastry")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c3p05a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11vul3f">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u1y8mf">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qiewzq">
+          <text>"Involtini primavera"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v4dmuz">
+        <inputEntry id="UnaryTests_1tia0mr">
+          <text>list contains(Ingredients, "Ham") and list contains(Ingredients, "Salame") and list contains(Ingredients, "Ciauscolo") and list contains(Ingredients, "Salt")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15yeduy">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Ham"].calories[1] + Ingredients_List[name="Salame"].calories[1] + Ingredients_List[name="Ciauscolo"].calories[1] )&lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l61s9t">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sncq1w">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vshwdu">
           <text>"Affettati Misti"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0d7phkg">
-        <inputEntry id="UnaryTests_1rja0r6">
+      <rule id="DecisionRule_1u5rgq3">
+        <inputEntry id="UnaryTests_0xin8xi">
+          <text>list contains(Ingredients, "Ham") and list contains(Ingredients, "Salame") and list contains(Ingredients, "Ciauscolo") and list contains(Ingredients, "Salt")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r934sd">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Ham"].calories[1] + Ingredients_List[name="Salame"].calories[1] + Ingredients_List[name="Ciauscolo"].calories[1] )&lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03m8oac">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17qyps9">
           <text>"Appetizer"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_12qigqp">
-          <text>"Formaggi Misti"</text>
+        <outputEntry id="LiteralExpression_0xmto8h">
+          <text>"Affettati Misti"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1xnuzxp">
-        <inputEntry id="UnaryTests_0v0rxx7">
-          <text>"First Meal"</text>
+      <rule id="DecisionRule_1cpr2a4">
+        <inputEntry id="UnaryTests_0ryx6m3">
+          <text>list contains(Ingredients, "Ham") and list contains(Ingredients, "Salame") and list contains(Ingredients, "Ciauscolo") and list contains(Ingredients, "Salt")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0s29qo0">
-          <text>"Tagliatelle alla Marinara"</text>
+        <inputEntry id="UnaryTests_03api9m">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Ham"].calories[1] + Ingredients_List[name="Salame"].calories[1] + Ingredients_List[name="Ciauscolo"].calories[1] )&lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08zy03o">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ttehv">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p99jun">
+          <text>"Affettati Misti"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1fyhqhq">
-        <inputEntry id="UnaryTests_1a38c6y">
-          <text>"First Meal"</text>
+      <rule id="DecisionRule_1ptgobc">
+        <inputEntry id="UnaryTests_0gnge51">
+          <text>list contains(Ingredients, "Ham") and list contains(Ingredients, "Salame") and list contains(Ingredients, "Ciauscolo") and list contains(Ingredients, "Salt")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0aycoal">
+        <inputEntry id="UnaryTests_1mnqayz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cw8vw1">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sumj92">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02ouec3">
+          <text>"Affettati Misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c1hu4c">
+        <inputEntry id="UnaryTests_0ntxxdf">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Parmesan") and list contains(Ingredients, "Sheep's cheese") and list contains(Ingredients, "Cow's cheese") and list contains(Ingredients, "Mozzarella cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b97uzq">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Parmesan"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1] + Ingredients_List[name="Cow's cheese"].calories[1] + Ingredients_List[name="Mozzarella cheese"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sebc8z">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pda2oc">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l214j2">
+          <text>"Formaggi misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0g7jol1">
+        <inputEntry id="UnaryTests_1375l4g">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Parmesan") and list contains(Ingredients, "Sheep's cheese") and list contains(Ingredients, "Cow's cheese") and list contains(Ingredients, "Mozzarella cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rlnx1c">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Parmesan"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1] + Ingredients_List[name="Cow's cheese"].calories[1] + Ingredients_List[name="Mozzarella cheese"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12fxae2">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a3mnca">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oth0qw">
+          <text>"Formaggi misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sbrkge">
+        <inputEntry id="UnaryTests_0in0w94">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Parmesan") and list contains(Ingredients, "Sheep's cheese") and list contains(Ingredients, "Cow's cheese") and list contains(Ingredients, "Mozzarella cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b3zz8i">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Parmesan"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1] + Ingredients_List[name="Cow's cheese"].calories[1] + Ingredients_List[name="Mozzarella cheese"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hz85qt">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01hbnv8">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ebqmh4">
+          <text>"Formaggi misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0trlenc">
+        <inputEntry id="UnaryTests_19kl7o4">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Parmesan") and list contains(Ingredients, "Sheep's cheese") and list contains(Ingredients, "Cow's cheese") and list contains(Ingredients, "Mozzarella cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xbzufn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17tii9z">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12rpt3v">
+          <text>"Appetizer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n1expn">
+          <text>"Formaggi misti"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0457eol">
+        <inputEntry id="UnaryTests_1jd1hmp">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Mussel") and list contains(Ingredients, "Shrimp")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n75i52">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Mussel"].calories[1] + Ingredients_List[name="Shrimp"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sn1hy0">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r1euus">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02aatqy">
+          <text>"Tagliatelle alla marinara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19wl2oh">
+        <inputEntry id="UnaryTests_03w4tp3">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Mussel") and list contains(Ingredients, "Shrimp")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x8y67x">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Mussel"].calories[1] + Ingredients_List[name="Shrimp"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nb9amj">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lfj3bo">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nxmq1g">
+          <text>"Tagliatelle alla marinara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08whjbp">
+        <inputEntry id="UnaryTests_10jgvg7">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Mussel") and list contains(Ingredients, "Shrimp")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mac3bp">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Mussel"].calories[1] + Ingredients_List[name="Shrimp"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12xc1st">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01kksno">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1glgeyv">
+          <text>"Tagliatelle alla marinara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18biqlq">
+        <inputEntry id="UnaryTests_0b48br2">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Mussel") and list contains(Ingredients, "Shrimp")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1we2idi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t5ypi3">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jls8sk">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gcv122">
+          <text>"Tagliatelle alla marinara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00vj2if">
+        <inputEntry id="UnaryTests_1fuw61o">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Egg") and list contains(Ingredients, "Pork cheek") and list contains(Ingredients, "Black pepper") and list contains(Ingredients, "Sheep's cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1say56x">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Egg"].calories[1] + Ingredients_List[name="Pork cheek"].calories[1] + Ingredients_List[name="Black pepper"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06jjzb2">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ids280">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l4ypkc">
           <text>"Rigatoni alla Carbonara"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_09y63sn">
-        <inputEntry id="UnaryTests_0rtdrbz">
-          <text>"First Meal"</text>
+      <rule id="DecisionRule_0zuxa94">
+        <inputEntry id="UnaryTests_0ik401r">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Egg") and list contains(Ingredients, "Pork cheek") and list contains(Ingredients, "Black pepper") and list contains(Ingredients, "Sheep's cheese")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0x6d376">
-          <text>"Trofie cacio e pepe"</text>
+        <inputEntry id="UnaryTests_1djeqiq">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Egg"].calories[1] + Ingredients_List[name="Pork cheek"].calories[1] + Ingredients_List[name="Black pepper"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_175gyr4">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b55jty">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1syjsft">
+          <text>"Rigatoni alla Carbonara"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1kzpojj">
-        <inputEntry id="UnaryTests_1lg6283">
-          <text>"First Meal"</text>
+      <rule id="DecisionRule_0zc1kdx">
+        <inputEntry id="UnaryTests_0g3rqdz">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Egg") and list contains(Ingredients, "Pork cheek") and list contains(Ingredients, "Black pepper") and list contains(Ingredients, "Sheep's cheese")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_095owdm">
+        <inputEntry id="UnaryTests_15agtn1">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Egg"].calories[1] + Ingredients_List[name="Pork cheek"].calories[1] + Ingredients_List[name="Black pepper"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g4sspf">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lysggj">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1smysbu">
+          <text>"Rigatoni alla Carbonara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yytlu6">
+        <inputEntry id="UnaryTests_0a5sbwz">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Egg") and list contains(Ingredients, "Pork cheek") and list contains(Ingredients, "Black pepper") and list contains(Ingredients, "Sheep's cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hoemt1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e9ec4e">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o9cioi">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_070tfrd">
+          <text>"Rigatoni alla Carbonara"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ohliit">
+        <inputEntry id="UnaryTests_127pscj">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Garlic") and list contains(Ingredients, "Chili")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0trhnv8">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Garlic"].calories[1] + Ingredients_List[name="Chili"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xfo9jd">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xru3cd">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o7erp3">
           <text>"Spaghetti aglio olio e peperoncino"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_175baet">
-        <inputEntry id="UnaryTests_1ba1m5j">
-          <text>"First Meal"</text>
+      <rule id="DecisionRule_1tw53dc">
+        <inputEntry id="UnaryTests_0flvlbo">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Garlic") and list contains(Ingredients, "Chili")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0pbdbmf">
+        <inputEntry id="UnaryTests_0s6agk5">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Garlic"].calories[1] + Ingredients_List[name="Chili"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n34u2s">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1om6sro">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08pyhj6">
+          <text>"Spaghetti aglio olio e peperoncino"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0j3uk84">
+        <inputEntry id="UnaryTests_1jqfc72">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Garlic") and list contains(Ingredients, "Chili")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15u37eh">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Garlic"].calories[1] + Ingredients_List[name="Chili"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yg0jpq">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xovlcl">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18dneq5">
+          <text>"Spaghetti aglio olio e peperoncino"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1l16bh0">
+        <inputEntry id="UnaryTests_1tj0ly3">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Garlic") and list contains(Ingredients, "Chili")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16jxufb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lt7amh">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bw9a0d">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b3t2bx">
+          <text>"Spaghetti aglio olio e peperoncino"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ynja87">
+        <inputEntry id="UnaryTests_18vizzj">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Sheep's cheese") and list contains(Ingredients, "Black pepper")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13bywkx">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1] + Ingredients_List[name="Black pepper"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ogljvk">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08pc4ak">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b3w4nx">
+          <text>"Trofie cacio e pepe"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w63wlp">
+        <inputEntry id="UnaryTests_16p782s">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Sheep's cheese") and list contains(Ingredients, "Black pepper")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pgwul5">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1] + Ingredients_List[name="Black pepper"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gbgi53">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mnvih8">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10tfbqw">
+          <text>"Trofie cacio e pepe"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ivwh6p">
+        <inputEntry id="UnaryTests_0wra3up">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Sheep's cheese") and list contains(Ingredients, "Black pepper")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u1o18w">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Sheep's cheese"].calories[1] + Ingredients_List[name="Black pepper"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01qz463">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07wcu8e">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_045h8x8">
+          <text>"Trofie cacio e pepe"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qu7ur1">
+        <inputEntry id="UnaryTests_0av47eg">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Sheep's cheese") and list contains(Ingredients, "Black pepper")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kskbfr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i8yxkf">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s18dmc">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10wjqq1">
+          <text>"Trofie cacio e pepe"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06ppmyv">
+        <inputEntry id="UnaryTests_05qljyr">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Bechamel") and list contains(Ingredients, "Carrot")and list contains(Ingredients, "Tomato") and list contains(Ingredients, "Minced meat")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_192lwzg">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Bechamel"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Tomato"].calories[1] + Ingredients_List[name="Minced meat"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15rlqai">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fqkvx0">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1j235ju">
           <text>"Lasagne"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1jhle10">
-        <inputEntry id="UnaryTests_09c2hts">
-          <text>"Second Meal"</text>
+      <rule id="DecisionRule_03j30s0">
+        <inputEntry id="UnaryTests_0ta0wnb">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Bechamel") and list contains(Ingredients, "Carrot")and list contains(Ingredients, "Tomato") and list contains(Ingredients, "Minced meat")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1gdlnm6">
-          <text>"Grigliata di maiale mista"</text>
+        <inputEntry id="UnaryTests_12kjb49">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Bechamel"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Tomato"].calories[1] + Ingredients_List[name="Minced meat"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09y2jj9">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xa6v1w">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x7ejic">
+          <text>"Lasagne"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1xidpa7">
-        <inputEntry id="UnaryTests_1pkbiy6">
-          <text>"Second Meal"</text>
+      <rule id="DecisionRule_1ed85km">
+        <inputEntry id="UnaryTests_1vk44xy">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Bechamel") and list contains(Ingredients, "Carrot")and list contains(Ingredients, "Tomato") and list contains(Ingredients, "Minced meat")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_035h32q">
+        <inputEntry id="UnaryTests_1icxrps">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Pasta"].calories[1] + Ingredients_List[name="Bechamel"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Tomato"].calories[1] + Ingredients_List[name="Minced meat"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eylpnn">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04aos7z">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bb1v8x">
+          <text>"Lasagne"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1e6pq7q">
+        <inputEntry id="UnaryTests_19nfvkt">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Pasta") and list contains(Ingredients, "Bechamel") and list contains(Ingredients, "Carrot")and list contains(Ingredients, "Tomato") and list contains(Ingredients, "Minced meat")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m2g5xr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1epcqs2">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xep97w">
+          <text>"First-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06k31qt">
+          <text>"Lasagne"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yph839">
+        <inputEntry id="UnaryTests_0hwtd99">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Pork rib") and list contains(Ingredients, "Sausage") and list contains(Ingredients, "Pork chop")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mj9vi8">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Pork rib"].calories[1] + Ingredients_List[name="Sausage"].calories[1] + Ingredients_List[name="Pork chop"].calories[1] ) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08e6aus">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v8g9gk">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_017vdd6">
+          <text>"Grigliata mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cinp5c">
+        <inputEntry id="UnaryTests_0mnfcqg">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Pork rib") and list contains(Ingredients, "Sausage") and list contains(Ingredients, "Pork chop")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ixalim">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Pork rib"].calories[1] + Ingredients_List[name="Sausage"].calories[1] + Ingredients_List[name="Pork chop"].calories[1] ) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p5744b">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pdzgh0">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cfxbnw">
+          <text>"Grigliata mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nd9nub">
+        <inputEntry id="UnaryTests_0qi9bb3">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Pork rib") and list contains(Ingredients, "Sausage") and list contains(Ingredients, "Pork chop")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sdcyj0">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Pork rib"].calories[1] + Ingredients_List[name="Sausage"].calories[1] + Ingredients_List[name="Pork chop"].calories[1] ) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08mv5an">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0odzpmm">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i4xaws">
+          <text>"Grigliata mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00fu9av">
+        <inputEntry id="UnaryTests_1axzxrt">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Pork rib") and list contains(Ingredients, "Sausage") and list contains(Ingredients, "Pork chop")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1us46ip">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_078hb38">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19p2igj">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hb6vm9">
+          <text>"Grigliata mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09ugl3b">
+        <inputEntry id="UnaryTests_133fjf0">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Steak")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_175f213">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Steak"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00vczhe">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16h5spt">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dthk0u">
           <text>"Bistecca alla Fiorentina"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1qxt17q">
-        <inputEntry id="UnaryTests_0twbevf">
-          <text>"Second Meal"</text>
+      <rule id="DecisionRule_0y5i7bj">
+        <inputEntry id="UnaryTests_107d8td">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Steak")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0z6k5w6">
+        <inputEntry id="UnaryTests_1s81r5k">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Steak"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gfninx">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dw31ej">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1914ggf">
+          <text>"Bistecca alla Fiorentina"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pd8yz9">
+        <inputEntry id="UnaryTests_0b2c8mg">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Steak")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lc0yhr">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Steak"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f2aja4">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hp81du">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_031ii3x">
+          <text>"Bistecca alla Fiorentina"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k935ja">
+        <inputEntry id="UnaryTests_0yldcac">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Steak")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uhg247">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01euh73">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09528a1">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l5v3ps">
+          <text>"Bistecca alla Fiorentina"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12bgn83">
+        <inputEntry id="UnaryTests_1x085a4">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Calamari") and list contains(Ingredients, "Sword fish") and list contains(Ingredients, "Salmon")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13t2sg0">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Calamari"].calories[1] + Ingredients_List[name="Sword fish"].calories[1] + Ingredients_List[name="Salmon"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08r1t18">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w2rvqm">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1usg2sn">
           <text>"Pesce arrosto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_01h00rv">
-        <inputEntry id="UnaryTests_0p0m5b4">
+      <rule id="DecisionRule_0ycm64o">
+        <inputEntry id="UnaryTests_1rshuvn">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Calamari") and list contains(Ingredients, "Sword fish") and list contains(Ingredients, "Salmon")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b27vda">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Calamari"].calories[1] + Ingredients_List[name="Sword fish"].calories[1] + Ingredients_List[name="Salmon"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0avaab2">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1grui49">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a7yhz1">
+          <text>"Pesce arrosto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_000qe3f">
+        <inputEntry id="UnaryTests_0yji8tw">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Calamari") and list contains(Ingredients, "Sword fish") and list contains(Ingredients, "Salmon")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m62sp4">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Calamari"].calories[1] + Ingredients_List[name="Sword fish"].calories[1] + Ingredients_List[name="Salmon"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_030advj">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x92e2v">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tpykj4">
+          <text>"Pesce arrosto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qmeotc">
+        <inputEntry id="UnaryTests_0r7ova1">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Calamari") and list contains(Ingredients, "Sword fish") and list contains(Ingredients, "Salmon")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cxd01d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d70fch">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n87xzf">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uni6nn">
+          <text>"Pesce arrosto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f9hrbg">
+        <inputEntry id="UnaryTests_0dhvtlj">
+          <text>list contains(Ingredients, "Oil") and list contains(Ingredients, "Carrot") and list contains(Ingredients, "Cabbage") and list contains(Ingredients, "Eggplant")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cjxfr4">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Cabbage"].calories[1] + Ingredients_List[name="Eggplant"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ihuxo9">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0matgil">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17lqt0x">
+          <text>"Verdure miste"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wzyxyg">
+        <inputEntry id="UnaryTests_00nqydp">
+          <text>list contains(Ingredients, "Oil") and list contains(Ingredients, "Carrot") and list contains(Ingredients, "Cabbage") and list contains(Ingredients, "Eggplant")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a0nctg">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Cabbage"].calories[1] + Ingredients_List[name="Eggplant"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qy6nvh">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wcq7vd">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0g5nc2t">
+          <text>"Verdure miste"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1e4e8kb">
+        <inputEntry id="UnaryTests_1aq499s">
+          <text>list contains(Ingredients, "Oil") and list contains(Ingredients, "Carrot") and list contains(Ingredients, "Cabbage") and list contains(Ingredients, "Eggplant")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0isgnep">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Carrot"].calories[1] + Ingredients_List[name="Cabbage"].calories[1] + Ingredients_List[name="Eggplant"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y78i2t">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dblrn7">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vuwwmu">
+          <text>"Verdure miste"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_087q8xb">
+        <inputEntry id="UnaryTests_051z5e9">
+          <text>list contains(Ingredients, "Oil") and list contains(Ingredients, "Carrot") and list contains(Ingredients, "Cabbage") and list contains(Ingredients, "Eggplant")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14r3ps0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0szxq6g">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1md11fy">
+          <text>"Second-Course"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xzejq7">
+          <text>"Verdure miste"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0khlhqa">
+        <inputEntry id="UnaryTests_0mm8mt8">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Potato") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k8nd3c">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Potato"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yziugb">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v9bb01">
           <text>"Sidedish"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_01ygm4l">
+        <outputEntry id="LiteralExpression_1mdzjxr">
           <text>"Patatine fritte"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1u7jg7z">
-        <inputEntry id="UnaryTests_150vrc9">
+      <rule id="DecisionRule_0dnb682">
+        <inputEntry id="UnaryTests_0u1n3da">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Potato") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w1crtv">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Potato"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0337z8v">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x0lq91">
           <text>"Sidedish"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1ppp6j8">
+        <outputEntry id="LiteralExpression_0d0el9y">
+          <text>"Patatine fritte"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1b4ie0n">
+        <inputEntry id="UnaryTests_0kzvkmt">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Potato") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tn2hkp">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Potato"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ksuap2">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06e2bcp">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zohunj">
+          <text>"Patatine fritte"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kclw2n">
+        <inputEntry id="UnaryTests_1p3itql">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Potato") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jyw1ii">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b7xw4a">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ooad6c">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o5x0ir">
+          <text>"Patatine fritte"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0r7lmke">
+        <inputEntry id="UnaryTests_1l6kyps">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Eggplant") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ks93li">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Eggplant"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01iehft">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1crpk2x">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02oesb1">
           <text>"Melanzane grigliate"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1xsjomu">
-        <inputEntry id="UnaryTests_01sf6yd">
+      <rule id="DecisionRule_06qbbrj">
+        <inputEntry id="UnaryTests_0vlaw1h">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Eggplant") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dtdyok">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Eggplant"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_154fgty">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bskirp">
           <text>"Sidedish"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_19mekqc">
-          <text>"Insalata Mista"</text>
+        <outputEntry id="LiteralExpression_1mwpxnu">
+          <text>"Melanzane grigliate"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0rg516a">
-        <inputEntry id="UnaryTests_17uik6f">
-          <text>"Pizza"</text>
+      <rule id="DecisionRule_1o8x5p9">
+        <inputEntry id="UnaryTests_0jtk9c2">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Eggplant") </text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0bxa1wq">
-          <text>"Pizza Margherita"</text>
+        <inputEntry id="UnaryTests_0ifissc">
+          <text>(Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Eggplant"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v2u1et">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ivugsd">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l75i6u">
+          <text>"Melanzane grigliate"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0uytamk">
-        <inputEntry id="UnaryTests_1h7t9wc">
-          <text>"Pizza"</text>
+      <rule id="DecisionRule_182d64k">
+        <inputEntry id="UnaryTests_0zswrs7">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Eggplant") </text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1s706hn">
+        <inputEntry id="UnaryTests_1sfpmqy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rx11kf">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0migy6j">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nozlt6">
+          <text>"Melanzane grigliate"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_088o5wc">
+        <inputEntry id="UnaryTests_19f2odh">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Mais") and list contains(Ingredients, "Lettuce") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c7rjax">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Mais"].calories[1] + Ingredients_List[name="Lettuce"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ke5wub">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j3qopt">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r7vpj2">
+          <text>"Insalata mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0opig4a">
+        <inputEntry id="UnaryTests_1ipcf8e">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Mais") and list contains(Ingredients, "Lettuce") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_182fkf2">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Mais"].calories[1] + Ingredients_List[name="Lettuce"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ngxeyj">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17zwq8m">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19gqmw5">
+          <text>"Insalata mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0oq3kn2">
+        <inputEntry id="UnaryTests_0hrho5y">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Mais") and list contains(Ingredients, "Lettuce") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gh3xej">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="Mais"].calories[1] + Ingredients_List[name="Lettuce"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16tuhj6">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1622g0j">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ci6404">
+          <text>"Insalata mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1g3y154">
+        <inputEntry id="UnaryTests_0nq6zea">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "Mais") and list contains(Ingredients, "Lettuce") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06e4ofp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x65xcp">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fh1vyy">
+          <text>"Sidedish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06sq1do">
+          <text>"Insalata mista"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0afersz">
+        <inputEntry id="UnaryTests_09szafq">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "0-Type Flour") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17v3dcw">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="0-Tyoe Flour"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17xyk1w">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u6n6cy">
+          <text>"Main-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03nfq44">
           <text>"Pizza Bianca"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1urdipk">
-        <inputEntry id="UnaryTests_0o7qn3g">
-          <text>"Dessert"</text>
+      <rule id="DecisionRule_1eefpgr">
+        <inputEntry id="UnaryTests_0kvvb5d">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "0-Type Flour") </text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1gxsbix">
-          <text>"Fruit salad"</text>
+        <inputEntry id="UnaryTests_0rmkum5">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="0-Tyoe Flour"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hpmwyq">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kh8a6p">
+          <text>"Main-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jkg368">
+          <text>"Pizza Bianca"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0zydsu2">
-        <inputEntry id="UnaryTests_1kg3m0s">
+      <rule id="DecisionRule_16ukbgd">
+        <inputEntry id="UnaryTests_039cpxa">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "0-Type Flour") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sk6fkm">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="0-Tyoe Flour"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mzso8y">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q5zr5i">
+          <text>"Main-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mj8wxu">
+          <text>"Pizza Bianca"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m26czf">
+        <inputEntry id="UnaryTests_0fpml16">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "0-Type Flour") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j49khz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oyioe9">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hzx9b3">
+          <text>"Main-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12fc7ac">
+          <text>"Pizza Bianca"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0iaxmwc">
+        <inputEntry id="UnaryTests_15a2x0b">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "0-Type Flour") and list contains(Ingredients, "Tomato") and list contains(Ingredients, "Mozzarella cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y79zwf">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="0-Type Flour"].calories[1] + Ingredients_List[name="Tomato"].calories[1] + Ingredients_List[name="Mozzarella cheese"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aofef0">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0phqbet">
+          <text>"Main-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qyfgyb">
+          <text>"Pizza Margherita"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0skzqxt">
+        <inputEntry id="UnaryTests_1pzkyro">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "0-Type Flour") and list contains(Ingredients, "Tomato") and list contains(Ingredients, "Mozzarella cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gbtshe">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="0-Type Flour"].calories[1] + Ingredients_List[name="Tomato"].calories[1] + Ingredients_List[name="Mozzarella cheese"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14gyxmh">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jw8ptp">
+          <text>"Main-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cc0pp7">
+          <text>"Pizza Margherita"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15i89oa">
+        <inputEntry id="UnaryTests_1flhtxl">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "0-Type Flour") and list contains(Ingredients, "Tomato") and list contains(Ingredients, "Mozzarella cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0imnyog">
+          <text>(Ingredients_List[name="Salt"].calories[1] + Ingredients_List[name="Oil"].calories[1] + Ingredients_List[name="0-Type Flour"].calories[1] + Ingredients_List[name="Tomato"].calories[1] + Ingredients_List[name="Mozzarella cheese"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15zyq1f">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fe9k42">
+          <text>"Main-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ihi0fh">
+          <text>"Pizza Margherita"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11v18tj">
+        <inputEntry id="UnaryTests_1e9ofbb">
+          <text>list contains(Ingredients, "Salt") and list contains(Ingredients, "Oil") and list contains(Ingredients, "0-Type Flour") and list contains(Ingredients, "Tomato") and list contains(Ingredients, "Mozzarella cheese")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bjpp2h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ism5dn">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lejod8">
+          <text>"Main-Dish"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d6b36q">
+          <text>"Pizza Margherita"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vob0jm">
+        <inputEntry id="UnaryTests_1cfu0p8">
+          <text>list contains(Ingredients, "Water") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jwwpry">
+          <text>(Ingredients_List[name="Water"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hjrfyu">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w3smax">
           <text>"Drink"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0z9izn4">
+        <outputEntry id="LiteralExpression_189gic8">
           <text>"Water"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1db72ec">
-        <inputEntry id="UnaryTests_10nvh07">
+      <rule id="DecisionRule_0pdr3rx">
+        <inputEntry id="UnaryTests_0mu733g">
+          <text>list contains(Ingredients, "Water") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00a3h8v">
+          <text>(Ingredients_List[name="Water"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0izptrh">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0si8i8y">
           <text>"Drink"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0b392bx">
+        <outputEntry id="LiteralExpression_19g46q8">
+          <text>"Water"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xrr8pe">
+        <inputEntry id="UnaryTests_0fc7v72">
+          <text>list contains(Ingredients, "Water") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a5h063">
+          <text>(Ingredients_List[name="Water"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1csbd9k">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dukwzs">
+          <text>"Drink"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zhjus8">
+          <text>"Water"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l9rvje">
+        <inputEntry id="UnaryTests_03v5old">
+          <text>list contains(Ingredients, "Water") </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a11dvw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gi1xa4">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sq7790">
+          <text>"Drink"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1769icb">
+          <text>"Water"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0a4jnzv">
+        <inputEntry id="UnaryTests_1m1jg4g">
+          <text>list contains(Ingredients, "Water") and list contains(Ingredients, "Sugar and Food Coloring")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ycf0ii">
+          <text>(Ingredients_List[name="Water"].calories[1] + Ingredients_List[name="Sugar and Food Coloring"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mn1oof">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vzawjj">
+          <text>"Drink"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10zlvxd">
           <text>"Coca-Cola"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1kwa72z">
-        <inputEntry id="UnaryTests_160aeq0">
-          <text>""</text>
+      <rule id="DecisionRule_1vsi7aa">
+        <inputEntry id="UnaryTests_1m7qc9q">
+          <text>list contains(Ingredients, "Water") and list contains(Ingredients, "Sugar and Food Coloring")</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0c7usxb">
-          <text>""</text>
+        <inputEntry id="UnaryTests_0bt0j20">
+          <text>(Ingredients_List[name="Water"].calories[1] + Ingredients_List[name="Sugar and Food Coloring"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k57ax4">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e55pzy">
+          <text>"Drink"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19hadqo">
+          <text>"Coca-Cola"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03n2k3y">
+        <inputEntry id="UnaryTests_19zqn64">
+          <text>list contains(Ingredients, "Water") and list contains(Ingredients, "Sugar and Food Coloring")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vfndbb">
+          <text>(Ingredients_List[name="Water"].calories[1] + Ingredients_List[name="Sugar and Food Coloring"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gqe56c">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p5mgx1">
+          <text>"Drink"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vmex4i">
+          <text>"Coca-Cola"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dm1xdn">
+        <inputEntry id="UnaryTests_1wio64u">
+          <text>list contains(Ingredients, "Water") and list contains(Ingredients, "Sugar and Food Coloring")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hs86g2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h4ug73">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1crndwy">
+          <text>"Drink"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fxsxvy">
+          <text>"Coca-Cola"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dlfwb5">
+        <inputEntry id="UnaryTests_1q8aur7">
+          <text>list contains(Ingredients, "Apple") and list contains(Ingredients, "Banana") and list contains(Ingredients, "Strawberry")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0521gej">
+          <text>(Ingredients_List[name="Apple"].calories[1] + Ingredients_List[name="Banana"].calories[1] + Ingredients_List[name="Strawberry"].calories[1]) &lt;= 250</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v07ao6">
+          <text>3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16h37qq">
+          <text>"Dessert"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0whl0l0">
+          <text>"Fruit salad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08zslqe">
+        <inputEntry id="UnaryTests_1hhsppx">
+          <text>list contains(Ingredients, "Apple") and list contains(Ingredients, "Banana") and list contains(Ingredients, "Strawberry")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pbjsl3">
+          <text>(Ingredients_List[name="Apple"].calories[1] + Ingredients_List[name="Banana"].calories[1] + Ingredients_List[name="Strawberry"].calories[1]) &lt;= 450</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_125tsrt">
+          <text>2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kxg0vq">
+          <text>"Dessert"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ebk6ol">
+          <text>"Fruit salad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ejohay">
+        <inputEntry id="UnaryTests_0ja9g7h">
+          <text>list contains(Ingredients, "Apple") and list contains(Ingredients, "Banana") and list contains(Ingredients, "Strawberry")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ad9263">
+          <text>(Ingredients_List[name="Apple"].calories[1] + Ingredients_List[name="Banana"].calories[1] + Ingredients_List[name="Strawberry"].calories[1]) &lt;= 650</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xfead2">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tt2n9b">
+          <text>"Dessert"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rr67no">
+          <text>"Fruit salad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f17kb7">
+        <inputEntry id="UnaryTests_193sjz1">
+          <text>list contains(Ingredients, "Apple") and list contains(Ingredients, "Banana") and list contains(Ingredients, "Strawberry")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s10oox">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fhbpeq">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ybz5bb">
+          <text>"Dessert"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tzxo8v">
+          <text>"Fruit salad"</text>
         </outputEntry>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="Decision_1trk386" name="Guest_Preferences">
-    <informationRequirement id="InformationRequirement_1d44u1a">
-      <requiredDecision href="#Decision_0vm84wz" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_0qfe75t">
-      <requiredDecision href="#Decision_0pj8550" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_1ohbv1b">
-      <requiredDecision href="#Decision_1uahnny" />
-    </informationRequirement>
-    <decisionTable id="DecisionTable_0yy7b5g">
-      <input id="InputClause_0szik4z" label="Course_Meal" biodi:width="262">
-        <inputExpression id="LiteralExpression_0teb2x5" typeRef="string">
-          <text>Course_Meal</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_1spokw7" label="Guest_Preferences_Subdecision" biodi:width="372">
-        <inputExpression id="LiteralExpression_0u6l1t2" typeRef="string">
-          <text>Guest_Preferences_Subdecision</text>
-        </inputExpression>
-      </input>
-      <output id="OutputClause_03iykog" label="Guest_Preferences" name="Guest_Preferences" typeRef="" biodi:width="402" />
-      <rule id="DecisionRule_1nse6q1">
-        <inputEntry id="UnaryTests_1twz40k">
-          <text>(count(Course_Meal) &gt;= 1) and (Course_Meal[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0cj06p5">
-          <text>(count(Guest_Preferences_Subdecision) &gt;= 1) and (Guest_Preferences_Subdecision[1] != "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ju6ssr">
-          <text>Menu_List[list contains(Course_Meal,item)][list contains(Guest_Preferences_Subdecision,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1el5pws">
-        <inputEntry id="UnaryTests_012qayv">
-          <text>(count(Course_Meal) &gt;= 1) and (Course_Meal[1] != "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1jk584m">
-          <text>(count(Guest_Preferences_Subdecision) = 1) and (Guest_Preferences_Subdecision[1] = "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0903jd3">
-          <text>Menu_List[list contains(Course_Meal,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0nldgdb">
-        <inputEntry id="UnaryTests_0wj1s3c">
-          <text>(count(Course_Meal) = 1) and (Course_Meal[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0jc2ufc">
-          <text>(count(Guest_Preferences_Subdecision) &gt;= 1) and (Guest_Preferences_Subdecision[1] != "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1m017v4">
-          <text>Menu_List[list contains(Guest_Preferences_Subdecision,item)]</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0kak7x6">
-        <inputEntry id="UnaryTests_1p0i8xq">
-          <text>(count(Course_Meal) = 1) and (Course_Meal[1] = "")</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1rmhdi1">
-          <text>(count(Guest_Preferences_Subdecision) = 1) and (Guest_Preferences_Subdecision[1] = "")</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_04o8195">
-          <text>Menu_List</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
+  <inputData id="InputData_11irofb" name="Calorie_Conscious_Level" />
+  <inputData id="InputData_14drdgp" name="Course_Type" />
+  <inputData id="InputData_1pmoi50" name="is Gluten Intolerant" />
+  <decision id="Decision_0hzki0u" name="Ingredients_List">
+    <variable id="InformationItem_0aksjl2" name="Ingredients_List" />
+    <literalExpression id="LiteralExpression_1rfvi10">
+      <text>[
+  {"name": "Oil", "calories": 60},
+  {"name": "Eggplant", "calories": 18},
+  {"name": "Cow's cheese", "calories": 120},
+  {"name": "Sheep's cheese", "calories": 135},
+  {"name": "Pasta", "calories": 300},
+  {"name": "Shrimp", "calories": 35},
+  {"name": "Ciauscolo", "calories": 70},
+  {"name": "Salame", "calories": 50},
+  {"name": "Ham", "calories": 45},
+  {"name": "Carrot", "calories": 27},
+  {"name": "Cabbage", "calories": 25},
+  {"name": "Puff Pastry", "calories": 150},
+  {"name": "Mussel", "calories": 40},
+  {"name": "Salt", "calories": 0},
+  {"name": "Parmesan", "calories": 85},
+  {"name": "Egg", "calories": 80},
+  {"name": "Black pepper", "calories": 25},
+  {"name": "Pork cheek", "calories": 150},
+  {"name": "Garlic", "calories": 3},
+  {"name": "Chili", "calories": 15},
+  {"name": "Tomato", "calories": 30},
+  {"name": "Bechamel", "calories": 105},
+  {"name": "Mozzarella cheese", "calories": 120},
+  {"name": "Minced Meat", "calories": 120},
+  {"name": "Pork rib", "calories": 70},
+  {"name": "Sausage", "calories": 205},
+  {"name": "Pork chop", "calories": 125},
+  {"name": "Steak", "calories": 485},
+  {"name": "Calamari", "calories": 50},
+  {"name": "Sword fish", "calories": 120},
+  {"name": "Salmon", "calories": 150},
+  {"name": "Potato", "calories": 450},
+  {"name": "Water", "calories": 0},
+  {"name": "Lettuce", "calories": 25},
+  {"name": "Mais", "calories": 50},
+  {"name": "0 Type-Flour", "calories": 500},
+  {"name": "Sugar and Food Coloring", "calories": 460},
+  {"name": "Apple", "calories": 35},
+  {"name": "Banana", "calories": 40},
+  {"name": "Strawberry", "calories": 22}
+]</text>
+    </literalExpression>
   </decision>
+  <inputData id="InputData_0qxqaa1" name="Guest Category" />
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
-      <dmndi:DMNShape dmnElementRef="Decision_0w40wr5">
-        <dc:Bounds height="80" width="180" x="120" y="620" />
+      <dmndi:DMNShape dmnElementRef="Decision_0zxpxng">
+        <dc:Bounds height="80" width="180" x="360" y="240" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0qafnm5" dmnElementRef="InputData_0cmpprl">
-        <dc:Bounds height="45" width="125" x="147" y="727" />
+      <dmndi:DMNShape id="DMNShape_1y5c8f2" dmnElementRef="InputData_0qjalwi">
+        <dc:Bounds height="45" width="125" x="158" y="257" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1ozwpda" dmnElementRef="InformationRequirement_0tayi2z">
-        <di:waypoint x="210" y="727" />
-        <di:waypoint x="210" y="720" />
-        <di:waypoint x="210" y="700" />
+      <dmndi:DMNEdge id="DMNEdge_0t4d5c0" dmnElementRef="InformationRequirement_1dmh3e9">
+        <di:waypoint x="283" y="280" />
+        <di:waypoint x="340" y="280" />
+        <di:waypoint x="360" y="280" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_0tk50lz" dmnElementRef="Decision_1uahnny">
-        <dc:Bounds height="80" width="180" x="580" y="480" />
+      <dmndi:DMNEdge id="DMNEdge_0p1aeud" dmnElementRef="InformationRequirement_0o1sv22">
+        <di:waypoint x="540" y="280" />
+        <di:waypoint x="600" y="280" />
+        <di:waypoint x="620" y="280" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1vaonms" dmnElementRef="Decision_1ebox1h">
+        <dc:Bounds height="80" width="180" x="620" y="240" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_1jkhjph" dmnElementRef="InputData_146gmh2">
-        <dc:Bounds height="45" width="125" x="352" y="727" />
+      <dmndi:DMNShape id="DMNShape_1wh4e50" dmnElementRef="InputData_11irofb">
+        <dc:Bounds height="45" width="125" x="857" y="257" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_144fzin" dmnElementRef="InformationRequirement_1xg2189">
-        <di:waypoint x="415" y="727" />
-        <di:waypoint x="415" y="720" />
-        <di:waypoint x="415" y="700" />
+      <dmndi:DMNEdge id="DMNEdge_1w26457" dmnElementRef="InformationRequirement_0crtbtg">
+        <di:waypoint x="857" y="280" />
+        <di:waypoint x="820" y="280" />
+        <di:waypoint x="800" y="280" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_0991gi8" dmnElementRef="Decision_1p7f6c4">
-        <dc:Bounds height="80" width="180" x="772" y="280" />
+      <dmndi:DMNShape id="DMNShape_14y1acu" dmnElementRef="InputData_14drdgp">
+        <dc:Bounds height="45" width="125" x="647" y="367" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1lvy8pc" dmnElementRef="InformationRequirement_1rzbcdd">
-        <di:waypoint x="670" y="480" />
-        <di:waypoint x="817" y="380" />
-        <di:waypoint x="817" y="360" />
+      <dmndi:DMNEdge id="DMNEdge_0dpbtzm" dmnElementRef="InformationRequirement_1ykt147">
+        <di:waypoint x="710" y="367" />
+        <di:waypoint x="710" y="340" />
+        <di:waypoint x="710" y="320" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_0c3ozb4" dmnElementRef="Decision_0uy9197">
-        <dc:Bounds height="80" width="180" x="325" y="620" />
+      <dmndi:DMNShape id="DMNShape_1kmxndh" dmnElementRef="InputData_1pmoi50">
+        <dc:Bounds height="45" width="125" x="387" y="148" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0fuu96j" dmnElementRef="Decision_0pj8550">
-        <dc:Bounds height="80" width="180" x="325" y="480" />
+      <dmndi:DMNEdge id="DMNEdge_1uuc71m" dmnElementRef="InformationRequirement_1sfz929">
+        <di:waypoint x="450" y="193" />
+        <di:waypoint x="450" y="220" />
+        <di:waypoint x="450" y="240" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0v8zo85" dmnElementRef="Decision_0hzki0u">
+        <dc:Bounds height="80" width="180" x="620" y="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_0ug9g45" dmnElementRef="InformationRequirement_1y31jri">
-        <di:waypoint x="210" y="620" />
-        <di:waypoint x="370" y="580" />
-        <di:waypoint x="370" y="560" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_1gud1is" dmnElementRef="InformationRequirement_1a1onhv">
-        <di:waypoint x="415" y="620" />
-        <di:waypoint x="415" y="580" />
-        <di:waypoint x="415" y="560" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_09swxjx" dmnElementRef="InformationRequirement_0rdviz3">
-        <di:waypoint x="580" y="520" />
-        <di:waypoint x="525" y="520" />
-        <di:waypoint x="505" y="520" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_1qftlbq" dmnElementRef="InputData_1qdxkea">
-        <dc:Bounds height="45" width="125" x="557" y="727" />
+      <dmndi:DMNShape id="DMNShape_0vhru15" dmnElementRef="InputData_0qxqaa1">
+        <dc:Bounds height="45" width="125" x="387" y="367" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_15q82v4" dmnElementRef="Decision_0he9aea">
-        <dc:Bounds height="80" width="180" x="530" y="620" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_19dnrao" dmnElementRef="InformationRequirement_0ak102h">
-        <di:waypoint x="620" y="727" />
-        <di:waypoint x="620" y="720" />
-        <di:waypoint x="620" y="700" />
+      <dmndi:DMNEdge id="DMNEdge_0jlghbg" dmnElementRef="InformationRequirement_1ow8jzq">
+        <di:waypoint x="450" y="367" />
+        <di:waypoint x="450" y="340" />
+        <di:waypoint x="450" y="320" />
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_137ahnb" dmnElementRef="InformationRequirement_0mmwryi">
-        <di:waypoint x="620" y="620" />
-        <di:waypoint x="460" y="580" />
-        <di:waypoint x="460" y="560" />
+      <dmndi:DMNEdge id="DMNEdge_0mo6f8i" dmnElementRef="InformationRequirement_0pu8cs0">
+        <di:waypoint x="710" y="160" />
+        <di:waypoint x="710" y="220" />
+        <di:waypoint x="710" y="240" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_1hbv4ik" dmnElementRef="InputData_18io2ks">
-        <dc:Bounds height="45" width="125" x="1027" y="587" />
-      </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0xfz4ss" dmnElementRef="Decision_09vgnlj">
-        <dc:Bounds height="80" width="180" x="1000" y="480" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_0bao55w" dmnElementRef="InformationRequirement_1hkuwhg">
-        <di:waypoint x="1090" y="587" />
-        <di:waypoint x="1090" y="580" />
-        <di:waypoint x="1090" y="560" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_15ztpjd" dmnElementRef="Decision_118dwbg">
-        <dc:Bounds height="80" width="180" x="790" y="480" />
-      </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0s7mfgp" dmnElementRef="InputData_0j5erm2">
-        <dc:Bounds height="45" width="125" x="799" y="77" />
-      </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0laq1gx" dmnElementRef="Decision_0zyolsm">
-        <dc:Bounds height="80" width="180" x="772" y="150" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_0ke8zf2" dmnElementRef="InformationRequirement_0ec7mza">
-        <di:waypoint x="862" y="122" />
-        <di:waypoint x="862" y="130" />
-        <di:waypoint x="862" y="150" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_04lj5x2" dmnElementRef="InformationRequirement_1scjsme">
-        <di:waypoint x="880" y="480" />
-        <di:waypoint x="862" y="380" />
-        <di:waypoint x="862" y="360" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_1ekbxtn" dmnElementRef="Decision_0p7ihlj">
-        <dc:Bounds height="80" width="180" x="1230" y="480" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_0e2dn5u" dmnElementRef="InformationRequirement_0ui5wwk">
-        <di:waypoint x="1180" y="520" />
-        <di:waypoint x="1210" y="520" />
-        <di:waypoint x="1230" y="520" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_1v3d299" dmnElementRef="InformationRequirement_01yo875">
-        <di:waypoint x="862" y="230" />
-        <di:waypoint x="862" y="260" />
-        <di:waypoint x="862" y="280" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_135705d" dmnElementRef="Decision_0smww4m">
-        <dc:Bounds height="80" width="180" x="1230" y="280" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1g6a1gm" dmnElementRef="InformationRequirement_1ce0sab">
-        <di:waypoint x="1320" y="480" />
-        <di:waypoint x="1320" y="380" />
-        <di:waypoint x="1320" y="360" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_1ou7j0f" dmnElementRef="InformationRequirement_1y7ekx5">
-        <di:waypoint x="1230" y="320" />
-        <di:waypoint x="972" y="320" />
-        <di:waypoint x="952" y="320" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_1nb0wqj" dmnElementRef="InformationRequirement_1emeij6">
-        <di:waypoint x="1090" y="480" />
-        <di:waypoint x="907" y="380" />
-        <di:waypoint x="907" y="360" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_0zv4f6v" dmnElementRef="InputData_11zocm7">
-        <dc:Bounds height="45" width="125" x="382" y="77" />
-      </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0ihnnm9" dmnElementRef="Decision_0vm84wz">
-        <dc:Bounds height="80" width="180" x="355" y="150" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1lp29c0" dmnElementRef="InformationRequirement_131i64t">
-        <di:waypoint x="445" y="122" />
-        <di:waypoint x="445" y="130" />
-        <di:waypoint x="445" y="150" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_16ix974" dmnElementRef="InformationRequirement_1d44u1a">
-        <di:waypoint x="445" y="230" />
-        <di:waypoint x="445" y="260" />
-        <di:waypoint x="445" y="280" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_1yngppn" dmnElementRef="InformationRequirement_0qfe75t">
-        <di:waypoint x="415" y="480" />
-        <di:waypoint x="415" y="380" />
-        <di:waypoint x="415" y="360" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_0rzosch" dmnElementRef="InformationRequirement_1jkxlnj">
-        <di:waypoint x="535" y="320" />
-        <di:waypoint x="752" y="320" />
-        <di:waypoint x="772" y="320" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_0o318fp" dmnElementRef="InformationRequirement_1ohbv1b">
-        <di:waypoint x="670" y="480" />
-        <di:waypoint x="475" y="380" />
-        <di:waypoint x="475" y="360" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_11xs5tp" dmnElementRef="Decision_1trk386">
-        <dc:Bounds height="80" width="180" x="355" y="280" />
-      </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
