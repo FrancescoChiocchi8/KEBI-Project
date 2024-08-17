@@ -1,251 +1,234 @@
-% Facts related to guest types and associated meals
-meal(carnivorous, formaggi_misti).
-meal(vegetarian, formaggi_misti).
-meal(carnivorous, trofie_cacio_e_pepe).
-meal(vegetarian, trofie_cacio_e_pepe).
-meal(carnivorous, spaghetti_aglio_olio_e_peperoncino).
-meal(vegetarian, spaghetti_aglio_olio_e_peperoncino).
-meal(carnivorous, patatine_fritte).
-meal(vegetarian, patatine_fritte).
-meal(carnivorous, pizza_margherita).
-meal(vegetarian, pizza_margherita).
-meal(carnivorous, pizza_bianca).
-meal(vegetarian, pizza_bianca).
-meal(carnivorous, water).
-meal(vegetarian, water).
-meal(carnivorous, coca-cola).
-meal(vegetarian, coca-cola).
-meal(carnivorous, affettati_misti).
-meal(carnivorous, rigatoni_alla_carbonara).
-meal(carnivorous, tagliatelle_alla_marinara).
-meal(carnivorous, lasagne).
-meal(carnivorous, grigliata_di_maiale_mista).
-meal(carnivorous, bistecca_alla_fiorentina).
-meal(carnivorous, pesce_arrosto).
-meal(vegetarian, involtini_primavera).
-meal(vegetarian, melanzane_grigliate).
-meal(vegetarian, insalata_mista).
-meal(vegetarian, fruit_salad).
+% Define the list of ingredients used in meals
+ingredient(salt).
+ingredient(oil).
+ingredient(carrot).
+ingredient(cabbage).
+ingredient(puff_pastry).
+ingredient(ciauscolo).
+ingredient(salame).
+ingredient(ham).
+ingredient(black_pepper).
+ingredient(cow_cheese).
+ingredient(sheep_cheese).
+ingredient(parmesan).
+ingredient(mozzarella_cheese).
+ingredient(pasta).
+ingredient(egg).
+ingredient(pork_cheek).
+ingredient(shrimp).
+ingredient(mussel).
+ingredient(chili).
+ingredient(garlic).
+ingredient(tomato).
+ingredient(bechamel).
+ingredient(minced_meat).
+ingredient(pork_chop).
+ingredient(pork_rib).
+ingredient(sausage).
+ingredient(steak).
+ingredient(calamari).
+ingredient(sword_fish).
+ingredient(salmon).
+ingredient(potato).
+ingredient(eggplant).
+ingredient(type_0_flour).
+ingredient(water).
+ingredient(sugar_and_food_coloring).
+ingredient(corn).
+ingredient(lettuce).
+ingredient(apple).
+ingredient(banana).
+ingredient(strawberry).
 
-% Rule to get the meal based on the guest type
-category_meals(GuestType, Meal) :- meal(GuestType, Meal).
+% Define the caloric content of each ingredient
+kcal_ingredient(salt, 0).
+kcal_ingredient(oil, 60).
+kcal_ingredient(carrot, 27).
+kcal_ingredient(cabbage, 25).
+kcal_ingredient(puff_pastry, 150).
+kcal_ingredient(ciauscolo, 70).
+kcal_ingredient(salame, 50).
+kcal_ingredient(ham, 45).
+kcal_ingredient(black_pepper, 25).
+kcal_ingredient(cow_cheese, 120).
+kcal_ingredient(sheep_cheese, 135).
+kcal_ingredient(parmesan, 85).
+kcal_ingredient(mozzarella_cheese, 120).
+kcal_ingredient(pasta, 300).
+kcal_ingredient(egg, 80).
+kcal_ingredient(pork_cheek, 150).
+kcal_ingredient(shrimp, 35).
+kcal_ingredient(mussel, 40).
+kcal_ingredient(chili, 15).
+kcal_ingredient(garlic, 3).
+kcal_ingredient(tomato, 30).
+kcal_ingredient(bechamel, 105).
+kcal_ingredient(minced_meat, 120).
+kcal_ingredient(pork_chop, 125).
+kcal_ingredient(pork_rib, 70).
+kcal_ingredient(sausage, 205).
+kcal_ingredient(steak, 485).
+kcal_ingredient(calamari, 50).
+kcal_ingredient(sword_fish, 120).
+kcal_ingredient(salmon, 150).
+kcal_ingredient(potato, 450).
+kcal_ingredient(eggplant, 18).
+kcal_ingredient(type_0_flour, 500).
+kcal_ingredient(water, 0).
+kcal_ingredient(sugar_and_food_coloring, 465).
+kcal_ingredient(corn, 50).
+kcal_ingredient(lettuce, 25).
+kcal_ingredient(apple, 35).
+kcal_ingredient(banana, 40).
+kcal_ingredient(strawberry, 22).
 
+% Define which ingredients are carnivorous
+ingredient_carnivore(ciauscolo).
+ingredient_carnivore(salame).
+ingredient_carnivore(ham).
+ingredient_carnivore(pork_cheek).
+ingredient_carnivore(minced_meat).
+ingredient_carnivore(pork_rib).
+ingredient_carnivore(sausage).
+ingredient_carnivore(shrimp).
+ingredient_carnivore(mussel).
+ingredient_carnivore(steak).
+ingredient_carnivore(calamari).
+ingredient_carnivore(sword_fish).
+ingredient_carnivore(salmon).
 
-% Facts related to calories and associated meals
-filtered_by_calories(Level, involtini_primavera) :- between(0, 3, Level).
-filtered_by_calories(Level, affettati_misti) :- between(0, 2, Level).
-filtered_by_calories(Level, formaggi_misti) :- between(0, 1, Level).
-filtered_by_calories(Level, tagliatelle_alla_marinara) :- between(0, 2, Level).
-filtered_by_calories(Level, rigatoni_alla_carbonara) :- between(0, 1, Level).
-filtered_by_calories(Level, trofie_cacio_e_pepe) :- between(0, 2, Level).
-filtered_by_calories(Level, spaghetti_aglio_olio_e_peperoncino) :- between(0, 3, Level).
-filtered_by_calories(Level, lasagne) :- between(0, 1, Level).
-filtered_by_calories(Level, grigliata_di_maiale_mista) :- between(0, 1, Level).
-filtered_by_calories(Level, bistecca_alla_fiorentina) :- between(0, 2, Level).
-filtered_by_calories(Level, pesce_arrosto) :- between(0, 3, Level).
-filtered_by_calories(Level, patatine_fritte) :- Level = 0.
-filtered_by_calories(Level, melanzane_grigliate) :- between(0, 3, Level).
-filtered_by_calories(Level, insalata_mista) :- between(0, 3, Level).
-filtered_by_calories(Level, pizza_margherita) :- between(0, 1, Level).
-filtered_by_calories(Level, pizza_bianca) :- between(0, 2, Level).
-filtered_by_calories(Level, water) :- between(0, 3, Level).
-filtered_by_calories(Level, coca-cola) :- between(0, 1, Level).
-filtered_by_calories(Level, fruit_salad) :- between(0, 2, Level).
+% Define which ingredients are vegetarian
+ingredient_vegetarian(carrot).
+ingredient_vegetarian(cabbage).
+ingredient_vegetarian(eggplant).
+ingredient_vegetarian(lettuce).
+ingredient_vegetarian(apple).
+ingredient_vegetarian(banana).
+ingredient_vegetarian(strawberry).
 
-% Rule to get meals filtered based on your level of calorie awareness
-calories_match(Level, Meal) :- filtered_by_calories(Level, Meal).
+% Define which ingredients cause lactose intolerance
+ingredient_with_lactose_intolerance(cow_cheese).
+ingredient_with_lactose_intolerance(sheep_cheese).
+ingredient_with_lactose_intolerance(parmesan).
+ingredient_with_lactose_intolerance(mozzarella_cheese).
+ingredient_with_lactose_intolerance(bechamel).
 
+% Define which ingredients contain gluten
+ingredient_with_gluten_intolerance(type_0_flour).
+ingredient_with_gluten_intolerance(pasta).
+ingredient_with_gluten_intolerance(puff_pastry).
 
+% Define various meals along with their courses and ingredients
+meal(involtini_primavera, appetizer, [salt, oil, carrot, cabbage, puff_pastry]).
+meal(affettati_misti, appetizer, [salt, ciauscolo, salame, ham, black_pepper]).
+meal(formaggi_misti, appetizer, [salt, cow_cheese, sheep_cheese, parmesan]).
+meal(tagliatelle_alla_marinara, first_dish, [salt, oil, pasta, shrimp, mussel]).
+meal(rigatoni_alla_carbonara, first_dish, [salt, oil, pasta, sheep_cheese, egg, black_pepper, pork_cheek]).
+meal(trofie_cacio_e_pepe, first_dish, [salt, oil, pasta, black_pepper, sheep_cheese]).
+meal(spaghetti_aglio_olio_e_peperoncino, first_dish, [salt, oil, pasta, garlic, chili]).
+meal(lasagne, first_dish, [salt, oil, carrot, pasta, parmesan, tomato, bechamel, minced_meat]).
+meal(grigliata_di_maiale_mista, second_course, [salt, pork_rib, sausage, pork_chop]).
+meal(bistecca_alla_fiorentina, second_course, [salt, oil, steak]).
+meal(pesce_arrosto, second_course, [salt, oil, shrimp, mussel, calamari, sword_fish, salmon]).
+meal(verdure_miste, second_course, [salt, cabbage, eggplant, lettuce]).
+meal(patatine_fritte, sidedish, [salt, oil, potato]).
+meal(melanzane_grigliate, sidedish, [salt, oil, eggplant]).
+meal(insalata_mista, sidedish, [salt, oil, lettuce, corn]).
+meal(pizza_margherita, main_dish, [salt, oil, cow_cheese, tomato, water, type_0_flour]).
+meal(pizza_bianca, main_dish, [salt, oil, water, type_0_flour]).
+meal(water, drink, [water]).
+meal(coca_cola, drink, [water, sugar_and_food_coloring]).
+meal(fruit_salad, dessert, [apple, banana, strawberry]).
 
-% Meal facts filtered by allergy type
-filtered_by_allergies(lactose, affettati_misti).
-filtered_by_allergies(gluten, affettati_misti).
-filtered_by_allergies(lactose_and_gluten, affettati_misti).
-filtered_by_allergies(gluten, formaggi_misti).
-filtered_by_allergies(lactose, tagliatelle_alla_marinara).
-filtered_by_allergies(lactose, spaghetti_aglio_olio_e_peperoncino).
-filtered_by_allergies(lactose, grigliata_di_maiale_mista).
-filtered_by_allergies(gluten, grigliata_di_maiale_mista).
-filtered_by_allergies(lactose_and_gluten, grigliata_di_maiale_mista).
-filtered_by_allergies(lactose, bistecca_alla_fiorentina).
-filtered_by_allergies(gluten, bistecca_alla_fiorentina).
-filtered_by_allergies(lactose_and_gluten, bistecca_alla_fiorentina).
-filtered_by_allergies(lactose, pesce_arrosto).
-filtered_by_allergies(gluten, pesce_arrosto).
-filtered_by_allergies(lactose_and_gluten, pesce_arrosto).
-filtered_by_allergies(lactose, patatine_fritte).
-filtered_by_allergies(gluten, patatine_fritte).
-filtered_by_allergies(lactose_and_gluten, patatine_fritte).
-filtered_by_allergies(lactose, melanzane_grigliate).
-filtered_by_allergies(gluten, melanzane_grigliate).
-filtered_by_allergies(lactose_and_gluten, melanzane_grigliate).
-filtered_by_allergies(lactose, insalata_mista).
-filtered_by_allergies(gluten, insalata_mista).
-filtered_by_allergies(lactose_and_gluten, insalata_mista).
-filtered_by_allergies(lactose, pizza_bianca).
-filtered_by_allergies(lactose, water).
-filtered_by_allergies(gluten, water).
-filtered_by_allergies(lactose_and_gluten, water).
-filtered_by_allergies(lactose, coca-cola).
-filtered_by_allergies(gluten, coca-cola).
-filtered_by_allergies(lactose_and_gluten, coca-cola).
-filtered_by_allergies(lactose, fruit_salad).
-filtered_by_allergies(gluten, fruit_salad).
-filtered_by_allergies(lactose_and_gluten, fruit_salad).
+% Determine if a meal is vegetarian
+vegetarian_meal(Meal, Course) :-
+    meal(Meal, Course, Ingredients),
+    forall(member(Ingredient, Ingredients),
+           (ingredient_vegetarian(Ingredient); \+ ingredient_carnivore(Ingredient))).
 
-% Rule to get filtered meals based on allergy type
-allergies_match(Allergy_Type, Meal) :- filtered_by_allergies(Allergy_Type, Meal).
+% Determine if a meal is carnivorous
+carnivorous_meal(Meal, Course) :-
+    meal(Meal, Course, Ingredients),
+    % Ensure all ingredients are either carnivorous or not vegetarian
+    forall(member(Ingredient, Ingredients),
+           (ingredient_carnivore(Ingredient); \+ ingredient_vegetarian(Ingredient))).
 
+% Define meals that contain both carnivorous and vegetarian ingredients
+omnivore_meal(Meal, Course) :-
+    meal(Meal, Course, Ingredients),
+    forall(member(Ingredient, Ingredients), ingredient(Ingredient)).
 
-% Meal facts releted to courses
-filtered_by_courses(appetizer, involtini_primavera).
-filtered_by_courses(appetizer, affettati_misti).
-filtered_by_courses(appetizer, formaggi_misti).
-filtered_by_courses(first_meal, spaghetti_aglio_olio_e_peperoncino).
-filtered_by_courses(first_meal, tagliatelle_alla_marinara).
-filtered_by_courses(first_meal, lasagne).
-filtered_by_courses(first_meal, rigatoni_alla_carbonara).
-filtered_by_courses(first_meal, trofie_cacio_e_pepe).
-filtered_by_courses(second_meal, grigliata_di_maiale_mista).
-filtered_by_courses(second_meal, bistecca_alla_fiorentina).
-filtered_by_courses(second_meal, pesce_arrosto).
-filtered_by_courses(sidedish, patatine_fritte).
-filtered_by_courses(sidedish, insalata_mista).
-filtered_by_courses(sidedish, melanzane_grigliate).
-filtered_by_courses(pizza, pizza_margherita).
-filtered_by_courses(pizza, pizza_bianca).
-filtered_by_courses(dessert, fruit_salad).
-filtered_by_courses(drink, water).
-filtered_by_courses(drink, coca_cola).
+% Find meals with gluten intolerance
+meal_with_gluten_intolerance(Meal, Course) :-
+    findall(Meal-Course,
+            (meal(Meal, Course, Ingredients),
+             member(Ingredient, Ingredients),
+             ingredient_with_gluten_intolerance(Ingredient)),
+            MealsWithGlutenIntolerance),
+    list_to_set(MealsWithGlutenIntolerance, UniqueMeals),
+    member(Meal-Course, UniqueMeals).
 
-% Rule to get filtered meals based on courses
-courses_match(Course_Type, Meal) :- filtered_by_courses(Course_Type, Meal).
+% Find meals with lactose intolerance
+meal_with_lactose_intolerance(Meal, Course) :-
+    findall(Meal-Course,
+            (meal(Meal, Course, Ingredients),
+             member(Ingredient, Ingredients),
+             ingredient_with_lactose_intolerance(Ingredient)),
+            MealsWithLactoseIntolerance),
+    list_to_set(MealsWithLactoseIntolerance, UniqueMeals),
+    member(Meal-Course, UniqueMeals).
 
+% Calculate the total caloric content of a meal
+meal_calories(Meal, Course, TotalCalories) :-
+    meal(Meal, Course, Ingredients),
+    findall(Calories, 
+            (member(Ingredient, Ingredients), 
+             kcal_ingredient(Ingredient, Kcal), 
+             Calories is Kcal), 
+            CaloriesList),
+    sum_list(CaloriesList, TotalCalories).
 
-% Rule to determine guest preferences based on category, calories, allergies, and courses
-guest_preferences(none, CalorieLevel, none, none, GuestPreferences) :-
-    once(findall(Meal, (calories_match(CalorieLevel, Meal)), GuestPreferences)).
+% Determine calorie-conscious levels based on total calories
+calorie_conscious_levels(Meal, Course, Levels) :-
+    meal_calories(Meal, Course, TotalCalories),
+    % Determine the highest applicable level based on total calories
+    ( TotalCalories > 650 -> HighestLevel = 0
+    ; TotalCalories =< 250 -> HighestLevel = 3
+    ; TotalCalories =< 450 -> HighestLevel = 2
+    ; TotalCalories =< 650 -> HighestLevel = 1
+    ),
+    % Generate all levels up to the highest applicable level
+    findall(Level, (between(0, HighestLevel, Level)), Levels).
 
-guest_preferences(none, CalorieLevel, none, Course_Type, GuestPreferences) :-
-    once(findall(Meal, (calories_match(CalorieLevel, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
+% Filter meals based on guest preferences, including category, calorie level, and allergies
+guest_preferences(Category, CalorieLevel, Allergies, Meal, Course) :-
+    % Filtra i pasti per categoria (carnivoro, vegetariano, onnivoro)
+    ( Category = carnivorous -> carnivorous_meal(Meal, Course)
+    ; Category = vegetarian -> vegetarian_meal(Meal, Course)
+    ; Category = omnivore -> omnivore_meal(Meal, Course)
+    ),
+    % Filtra i pasti per livello calorico
+    calorie_conscious_levels(Meal, Course, Levels),
+    member(CalorieLevel, Levels),
+    % Filtra i pasti per allergie
+    ( Allergies = none -> true
+    ; ( Allergies = lactose -> not(meal_with_lactose_intolerance(Meal, Course))
+      ; Allergies = gluten -> not(meal_with_gluten_intolerance(Meal, Course))
+    )
+    ).
 
-guest_preferences(none, CalorieLevel, AllergyType, none, GuestPreferences) :-
-    once(findall(Meal, (calories_match(CalorieLevel, Meal), allergies_match(AllergyType, Meal)), GuestPreferences)).
+% QUERY EXAMPLES:
 
-guest_preferences(none, CalorieLevel, AllergyType, Course_Type, GuestPreferences) :-
-    once(findall(Meal, (calories_match(CalorieLevel, Meal), allergies_match(AllergyType, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
+% guest_preferences(omnivore, 0, none, Meal, Course).
 
-guest_preferences(GuestType, CalorieLevel, none, none, GuestPreferences) :-
-    once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal)), GuestPreferences)).
+% guest_preferences(omnivore, 0, gluten, Meal, Course).
 
-guest_preferences(GuestType, CalorieLevel, none, Course_Type, GuestPreferences) :-
-    once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
+% guest_preferences(carnivorous, 2, none, Meal, Course).
 
-guest_preferences(GuestType, CalorieLevel, Allergy_Type, none, GuestPreferences) :-
-    once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal), allergies_match(Allergy_Type, Meal)), GuestPreferences)).
+% guest_preferences(carnivorous, 0, none, Meal, Course).
 
-guest_preferences(GuestType, CalorieLevel, AllergyType, Course_Type, GuestPreferences) :-
-    once(findall(Meal, (category_meals(GuestType, Meal), calories_match(CalorieLevel, Meal), allergies_match(AllergyType, Meal), courses_match(Course_Type, Meal)), GuestPreferences)).
+% guest_preferences(carnivorous, 0, lactose, Meal, Course).
 
+% guest_preferences(vegetarian, 3, none, Meal, Course).
 
-% Ingredients in a Meal
-ingredient(involtini_primavera, [salt, oil, carrot, cabbage, puff_pastry]).
-ingredient(affettati_misti, [salt, ciauscolo, salame, ham, black_pepper]).
-ingredient(formaggi_misti, [salt, cow_cheese, sheep_cheese, parmesan]).
-ingredient(tagliatelle_alla_marinara, [salt, oil, pasta, shrimp, mussel]).
-ingredient(rigatoni_alla_carbonara, [salt, oil, pasta, sheep_cheese, egg, black_pepper, pork_cheek]).
-ingredient(trofie_cacio_e_pepe, [salt, oil, pasta, black_pepper]).
-ingredient(spaghetti_aglio_olio_e_peperoncino, [salt, oil, pasta, garlic, chili]).
-ingredient(lasagne, [salt, oil, carrot, pasta, parmesan, tomato, bechamel, minced_meat]).
-ingredient(grigliata_di_maiale_mista, [salt, pork_rib, sausage, pork_chop]).
-ingredient(bistecca_alla_fiorentina, [salt, oil, steak]).
-ingredient(pesce_arrosto, [salt, oil, shrimp, mussel, calamari, sword_fish, salmon]).
-ingredient(patatine_fritte, [salt, oil, potato]).
-ingredient(melanzane_grigliate, [salt, oil, eggplant]).
-ingredient(pizza_margherita, [salt, oil, cow_cheese, tomato, water, type_0_flour]).
-ingredient(pizza_bianca, [salt, oil, water, type_0_flour]).
-ingredient(coca_cola, [water, sugar_and_food_coloring]).
-ingredient(insalata_mista, [salt, oil, lettuce, corn]).
-ingredient(fruit_salad, [apple, banana, strawberry]).
-
-
-% Rule to find the ingredients of a dish
-dish_ingredients(Meal, Ingredients) :-
-    findall(Ingredient, ingredient(Meal, Ingredient), Ingredients).
-
-% Calories for single ingredient
-kcal_in_ingredient(oil, 60).
-kcal_in_ingredient(eggplant, 18).
-kcal_in_ingredient(cows_cheese, 115).
-kcal_in_ingredient(sheeps_cheese, 135).
-kcal_in_ingredient(pasta, 300).
-kcal_in_ingredient(shrimp, 35).
-kcal_in_ingredient(ciauscolo, 70).
-kcal_in_ingredient(salame, 50).
-kcal_in_ingredient(ham, 45).
-kcal_in_ingredient(carrot, 27).
-kcal_in_ingredient(cabbage, 25).
-kcal_in_ingredient(puff_pastry, 150).
-kcal_in_ingredient(mussel, 40).
-kcal_in_ingredient(salt, 0).
-kcal_in_ingredient(type_0_flour, 500).
-kcal_in_ingredient(water, 0).
-kcal_in_ingredient(parmesan, 75).
-kcal_in_ingredient(egg, 80).
-kcal_in_ingredient(black_pepper, 25).
-kcal_in_ingredient(pork_cheek, 150).
-kcal_in_ingredient(garlic, 3).
-kcal_in_ingredient(chili, 15).
-kcal_in_ingredient(tomato, 30).
-kcal_in_ingredient(bechamel, 105).
-kcal_in_ingredient(mozzarella_cheese, 150).
-kcal_in_ingredient(minced_meat, 120).
-kcal_in_ingredient(pork_rib, 70).
-kcal_in_ingredient(sausage, 205).
-kcal_in_ingredient(pork_chop, 125).
-kcal_in_ingredient(steak, 485).
-kcal_in_ingredient(calamari, 50).
-kcal_in_ingredient(sword_fish, 120).
-kcal_in_ingredient(salmon, 150).
-kcal_in_ingredient(potato, 450).
-kcal_in_ingredient(lettuce, 25).
-kcal_in_ingredient(mais, 50).
-kcal_in_ingredient(sugar_and_food_coloring, 204).
-kcal_in_ingredient(apple, 35).
-kcal_in_ingredient(banana, 40).
-kcal_in_ingredient(strawberry, 22).
-kcal_in_ingredient(_, 0).  % Default value for any undefined ingredient
-
-% Rule to obtain the calories of a single ingredient
-ingredient_kcal(Ingredient, Kcal) :-
-    once(kcal_in_ingredient(Ingredient, Kcal)).
-
-% Calculation of the total calories of a meal given a list of ingredients
-kcal_in_meal([], 0).
-kcal_in_meal([Ingredient | Rest], TotalKcal) :-
-    kcal_in_ingredient(Ingredient, Kcal),
-    kcal_in_meal(Rest, RestKcal),
-    TotalKcal is Kcal + RestKcal.
-
-% Calculation of the total calories of a meal given the name of the meal
-meal_total_kcal(Meal, TotalKcal) :-
-    once(ingredient(Meal, Ingredients)),
-    once(kcal_in_meal(Ingredients, TotalKcal)).
-
-% Rule to obtain both the ingredients and the total calories of a dish
-meal_info(Meal, Ingredients, TotalKcal) :-
-    once(ingredient(Meal, Ingredients)),
-    once(kcal_in_meal(Ingredients, TotalKcal)).
-
-
-% QUERY example:
-
-% guest_preferences(carnivorous, 2, lactose, none, GuestPreferences).
-
-% guest_preferences(none, 0, none, none, GuestPreferences).
-
-% guest_preferences(none, 0, lactose, appetizer, GuestPreferences).
-
-% ingredient_kcal(carrot, Kcal).
-
-% meal_info(lasagne, Ingredients, TotalKcal).
+% guest_preferences(vegetarian, 1, none, Meal, Course).
