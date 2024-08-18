@@ -29,10 +29,17 @@ kebi2024:dairy_containsLactoseIntolerance rdf:type owl:ObjectProperty ;
                                           rdfs:range kebi2024:Lactose .
 
 
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_containsAllergy
-kebi2024:drink_containsAllergy rdf:type owl:ObjectProperty ;
-                               rdfs:domain kebi2024:Drink ;
-                               rdfs:range kebi2024:Allergy .
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_containsGlutenIntolerance
+kebi2024:drink_containsGlutenIntolerance rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                         rdfs:domain kebi2024:Drink ;
+                                         rdfs:range kebi2024:Gluten .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_containsLactoseIntolerance
+kebi2024:drink_containsLactoseIntolerance rdf:type owl:ObjectProperty ;
+                                          rdfs:domain kebi2024:Drink ;
+                                          rdfs:range kebi2024:Lactose .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#drink_hasIngredient
@@ -61,7 +68,8 @@ kebi2024:guest_hasCategory rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasPreferenceCourse
 kebi2024:guest_hasPreferenceCourse rdf:type owl:ObjectProperty ;
-                                   rdfs:domain kebi2024:Guest ;
+                                   rdfs:domain kebi2024:Drink ,
+                                               kebi2024:Guest ;
                                    rdfs:range kebi2024:Course .
 
 
@@ -188,6 +196,16 @@ kebi2024:AnimalOriginProduct rdf:type owl:Class ;
                              rdfs:subClassOf kebi2024:Ingredient .
 
 
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer
+kebi2024:Appetizer rdf:type owl:Class ;
+                   rdfs:subClassOf kebi2024:Course .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Carnivorous
+kebi2024:Carnivorous rdf:type owl:Class ;
+                     rdfs:subClassOf kebi2024:Category .
+
+
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category
 kebi2024:Category rdf:type owl:Class .
 
@@ -201,8 +219,18 @@ kebi2024:Dairy rdf:type owl:Class ;
                rdfs:subClassOf kebi2024:Ingredient .
 
 
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dessert
+kebi2024:Dessert rdf:type owl:Class ;
+                 rdfs:subClassOf kebi2024:Course .
+
+
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink
 kebi2024:Drink rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstDish
+kebi2024:FirstDish rdf:type owl:Class ;
+                   rdfs:subClassOf kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Food
@@ -243,6 +271,11 @@ kebi2024:Liquid rdf:type owl:Class ;
                 rdfs:subClassOf kebi2024:Ingredient .
 
 
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#MainDish
+kebi2024:MainDish rdf:type owl:Class ;
+                  rdfs:subClassOf kebi2024:Course .
+
+
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal
 kebi2024:Meal rdf:type owl:Class ;
               rdfs:subClassOf kebi2024:Food .
@@ -271,6 +304,16 @@ kebi2024:Seasoning rdf:type owl:Class ;
                    rdfs:subClassOf kebi2024:Ingredient .
 
 
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondCourse
+kebi2024:SecondCourse rdf:type owl:Class ;
+                      rdfs:subClassOf kebi2024:Course .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish
+kebi2024:Sidedish rdf:type owl:Class ;
+                  rdfs:subClassOf kebi2024:Course .
+
+
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Tuber
 kebi2024:Tuber rdf:type owl:Class ;
                rdfs:subClassOf kebi2024:Ingredient .
@@ -279,6 +322,11 @@ kebi2024:Tuber rdf:type owl:Class ;
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable
 kebi2024:Vegetable rdf:type owl:Class ;
                    rdfs:subClassOf kebi2024:Ingredient .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetarian
+kebi2024:Vegetarian rdf:type owl:Class ;
+                    rdfs:subClassOf kebi2024:Category .
 
 
 #################################################################
@@ -299,49 +347,49 @@ kebi2024:allergy_lactose rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous
 kebi2024:category_carnivorous rdf:type owl:NamedIndividual ,
-                                       kebi2024:Category ;
+                                       kebi2024:Carnivorous ;
                               kebi2024:thing_hasName "Carnivorous" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian
 kebi2024:category_vegetarian rdf:type owl:NamedIndividual ,
-                                      kebi2024:Category ;
+                                      kebi2024:Vegetarian ;
                              kebi2024:thing_hasName "Vegetarian" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_appetizer
 kebi2024:course_appetizer rdf:type owl:NamedIndividual ,
-                                   kebi2024:Course ;
+                                   kebi2024:Appetizer ;
                           kebi2024:thing_hasName "Appetizer" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_dessert
 kebi2024:course_dessert rdf:type owl:NamedIndividual ,
-                                 kebi2024:Course ;
+                                 kebi2024:Dessert ;
                         kebi2024:thing_hasName "Dessert" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish
 kebi2024:course_first-dish rdf:type owl:NamedIndividual ,
-                                    kebi2024:Course ;
+                                    kebi2024:FirstDish ;
                            kebi2024:thing_hasName "First Dish" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_main-dish
 kebi2024:course_main-dish rdf:type owl:NamedIndividual ,
-                                   kebi2024:Course ;
+                                   kebi2024:MainDish ;
                           kebi2024:thing_hasName "Main Dish" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_second-course
 kebi2024:course_second-course rdf:type owl:NamedIndividual ,
-                                       kebi2024:Course ;
+                                       kebi2024:SecondCourse ;
                               kebi2024:thing_hasName "Second Course" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_sidedish
 kebi2024:course_sidedish rdf:type owl:NamedIndividual ,
-                                  kebi2024:Course ;
+                                  kebi2024:Sidedish ;
                          kebi2024:thing_hasName "Sidedish" .
 
 

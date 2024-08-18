@@ -14,8 +14,7 @@ kebi2024:RestaurantShape a sh:NodeShape ;
         sh:path kebi2024:restaurant_hasMenu ;
         sh:node kebi2024:MenuShape ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:message "It is impossible that a Restaurant does not have a menu or you added too many menu!!" ;
+        sh:message "It is impossible that a Restaurant does not have a menu!!" ;
     ] ;
     sh:property [
         sh:path kebi2024:restaurant_hasGuest ;
@@ -33,15 +32,11 @@ kebi2024:MenuShape a sh:NodeShape ;
         sh:path kebi2024:menu_containsMeal ;
         sh:node kebi2024:MealShape ;
         sh:minCount 1 ;
-        sh:maxCount 300;
-        sh:message "Too many meals on the menu" ;
     ] ;
     sh:property [
         sh:path kebi2024:menu_containsDrink ;
         sh:node kebi2024:DrinkShape ;
         sh:minCount 1 ;
-        sh:maxCount 100 ;
-        sh:message "Too many drinks on the menu" ;
     ] ;
 .
 
@@ -58,8 +53,7 @@ kebi2024:GuestShape a sh:NodeShape ;
     sh:property [
         sh:path kebi2024:guest_hasCategory ;
         sh:node kebi2024:CategoryShape ;
-        sh:minCount 0;
-        sh:maxCount 1;
+        sh:minCount 1;
     ] ;
     
     sh:property [
@@ -84,8 +78,6 @@ kebi2024:FoodShape a sh:NodeShape ;
         sh:datatype xsd:integer ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:minInclusive 0 ;
-        sh:maxInclusive 5000 ;
     ] ;
 .
 
@@ -121,7 +113,6 @@ kebi2024:MealShape a sh:NodeShape ;
         sh:path kebi2024:meal_hasIngredient ;
         sh:node kebi2024:IngredientShape ;
         sh:minCount 1 ;
-        sh:maxCount 150 ;
     ] ;
 .
 

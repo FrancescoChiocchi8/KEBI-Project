@@ -202,15 +202,15 @@ calorie_conscious_levels(Meal, Course, Levels) :-
 
 % Filter meals based on guest preferences, including category, calorie level, and allergies
 guest_preferences(Category, CalorieLevel, Allergies, Meal, Course) :-
-    % Filtra i pasti per categoria (carnivoro, vegetariano, onnivoro)
+    % Filtered meals by Category (carnivorous, vegetarian, omnivore)
     ( Category = carnivorous -> carnivorous_meal(Meal, Course)
     ; Category = vegetarian -> vegetarian_meal(Meal, Course)
     ; Category = omnivore -> omnivore_meal(Meal, Course)
     ),
-    % Filtra i pasti per livello calorico
+    % Filtered meals by calorie_consciou_level
     calorie_conscious_levels(Meal, Course, Levels),
     member(CalorieLevel, Levels),
-    % Filtra i pasti per allergie
+    % Filtered meals by allergies
     ( Allergies = none -> true
     ; ( Allergies = lactose -> not(meal_with_lactose_intolerance(Meal, Course))
       ; Allergies = gluten -> not(meal_with_gluten_intolerance(Meal, Course))
