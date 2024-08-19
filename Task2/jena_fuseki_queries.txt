@@ -35,13 +35,14 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?meal ?category ?levelCC ?allergy ?course
 WHERE {
-  mod:SuggestMeal_57a2b6bb-185f-4483-8e28-1354a2fb766a lo:meal_hasCategory ?category .
-  mod:SuggestMeal_57a2b6bb-185f-4483-8e28-1354a2fb766a lo:meal_hasCalorieConsciousLevel ?levelCC .
-  mod:SuggestMeal_57a2b6bb-185f-4483-8e28-1354a2fb766a lo:meal_containsAllergy ?allergy .
-  mod:SuggestMeal_57a2b6bb-185f-4483-8e28-1354a2fb766a lo:meal_hasCourse ?course .
+  mod:MealsSuggestion_f4b7995f-296c-42cf-bc6d-3881f86402ac lo:guest_hasCategory ?category .
+  mod:MealsSuggestion_f4b7995f-296c-42cf-bc6d-3881f86402ac lo:guest_hasCalorieConsciousLevel ?levelCC .
+  mod:MealsSuggestion_f4b7995f-296c-42cf-bc6d-3881f86402ac lo:guest_hasAllergy ?allergy .
+  mod:MealsSuggestion_f4b7995f-296c-42cf-bc6d-3881f86402ac lo:guest_hasCoursePreference ?course .
 
   BIND(IF(?category = "Vegetarian", kebi:category_vegetarian,
-           IF(?category = "Carnivorous", kebi:category_carnivorous, ?category)) AS ?finalCategory) .
+           IF(?category = "Carnivorous", kebi:category_carnivorous,
+        	   IF(?category = "Omnivore", kebi:category_omnivore, ?category))) AS ?finalCategory) .
   
   BIND(IF(?course = "Appetizer", kebi:course_appetizer,
            IF(?course = "First Dish", kebi:course_first-dish,
@@ -58,7 +59,7 @@ WHERE {
   ?meal kebi:meal_hasLevelOfCalorieConscious ?kcal .
   FILTER(?kcal = ?levelCC)
 
-  ?meal kebi:meal_hasCategory ?finalCategory .
+  ?meal kebi:food_hasCategory ?finalCategory .
   ?meal kebi:meal_hasCourse ?finalCourse .
 
   OPTIONAL {

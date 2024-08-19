@@ -48,6 +48,12 @@ kebi2024:drink_hasIngredient rdf:type owl:ObjectProperty ;
                              rdfs:range kebi2024:Ingredient .
 
 
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#food_hasCategory
+kebi2024:food_hasCategory rdf:type owl:ObjectProperty ;
+                          rdfs:domain kebi2024:Food ;
+                          rdfs:range kebi2024:Category .
+
+
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#grain_containsGlutenIntolerance
 kebi2024:grain_containsGlutenIntolerance rdf:type owl:ObjectProperty ;
                                          rdfs:domain kebi2024:Grain ;
@@ -68,8 +74,7 @@ kebi2024:guest_hasCategory rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasPreferenceCourse
 kebi2024:guest_hasPreferenceCourse rdf:type owl:ObjectProperty ;
-                                   rdfs:domain kebi2024:Drink ,
-                                               kebi2024:Guest ;
+                                   rdfs:domain kebi2024:Guest ;
                                    rdfs:range kebi2024:Course .
 
 
@@ -90,12 +95,6 @@ kebi2024:meal_containsGlutenIntolerance rdf:type owl:ObjectProperty ;
 kebi2024:meal_containsLactoseIntolerance rdf:type owl:ObjectProperty ;
                                          rdfs:domain kebi2024:Meal ;
                                          rdfs:range kebi2024:Lactose .
-
-
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCategory
-kebi2024:meal_hasCategory rdf:type owl:ObjectProperty ;
-                          rdfs:domain kebi2024:Meal ;
-                          rdfs:range kebi2024:Category .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_hasCourse
@@ -196,16 +195,6 @@ kebi2024:AnimalOriginProduct rdf:type owl:Class ;
                              rdfs:subClassOf kebi2024:Ingredient .
 
 
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Appetizer
-kebi2024:Appetizer rdf:type owl:Class ;
-                   rdfs:subClassOf kebi2024:Course .
-
-
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Carnivorous
-kebi2024:Carnivorous rdf:type owl:Class ;
-                     rdfs:subClassOf kebi2024:Category .
-
-
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Category
 kebi2024:Category rdf:type owl:Class .
 
@@ -219,18 +208,8 @@ kebi2024:Dairy rdf:type owl:Class ;
                rdfs:subClassOf kebi2024:Ingredient .
 
 
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Dessert
-kebi2024:Dessert rdf:type owl:Class ;
-                 rdfs:subClassOf kebi2024:Course .
-
-
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Drink
 kebi2024:Drink rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#FirstDish
-kebi2024:FirstDish rdf:type owl:Class ;
-                   rdfs:subClassOf kebi2024:Course .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Food
@@ -271,11 +250,6 @@ kebi2024:Liquid rdf:type owl:Class ;
                 rdfs:subClassOf kebi2024:Ingredient .
 
 
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#MainDish
-kebi2024:MainDish rdf:type owl:Class ;
-                  rdfs:subClassOf kebi2024:Course .
-
-
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Meal
 kebi2024:Meal rdf:type owl:Class ;
               rdfs:subClassOf kebi2024:Food .
@@ -304,16 +278,6 @@ kebi2024:Seasoning rdf:type owl:Class ;
                    rdfs:subClassOf kebi2024:Ingredient .
 
 
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#SecondCourse
-kebi2024:SecondCourse rdf:type owl:Class ;
-                      rdfs:subClassOf kebi2024:Course .
-
-
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Sidedish
-kebi2024:Sidedish rdf:type owl:Class ;
-                  rdfs:subClassOf kebi2024:Course .
-
-
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Tuber
 kebi2024:Tuber rdf:type owl:Class ;
                rdfs:subClassOf kebi2024:Ingredient .
@@ -322,11 +286,6 @@ kebi2024:Tuber rdf:type owl:Class ;
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetable
 kebi2024:Vegetable rdf:type owl:Class ;
                    rdfs:subClassOf kebi2024:Ingredient .
-
-
-###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#Vegetarian
-kebi2024:Vegetarian rdf:type owl:Class ;
-                    rdfs:subClassOf kebi2024:Category .
 
 
 #################################################################
@@ -347,49 +306,55 @@ kebi2024:allergy_lactose rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_carnivorous
 kebi2024:category_carnivorous rdf:type owl:NamedIndividual ,
-                                       kebi2024:Carnivorous ;
+                                       kebi2024:Category ;
                               kebi2024:thing_hasName "Carnivorous" .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_omnivore
+kebi2024:category_omnivore rdf:type owl:NamedIndividual ,
+                                    kebi2024:Category ;
+                           kebi2024:thing_hasName "Omnivore" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#category_vegetarian
 kebi2024:category_vegetarian rdf:type owl:NamedIndividual ,
-                                      kebi2024:Vegetarian ;
+                                      kebi2024:Category ;
                              kebi2024:thing_hasName "Vegetarian" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_appetizer
 kebi2024:course_appetizer rdf:type owl:NamedIndividual ,
-                                   kebi2024:Appetizer ;
+                                   kebi2024:Course ;
                           kebi2024:thing_hasName "Appetizer" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_dessert
 kebi2024:course_dessert rdf:type owl:NamedIndividual ,
-                                 kebi2024:Dessert ;
+                                 kebi2024:Course ;
                         kebi2024:thing_hasName "Dessert" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_first-dish
 kebi2024:course_first-dish rdf:type owl:NamedIndividual ,
-                                    kebi2024:FirstDish ;
+                                    kebi2024:Course ;
                            kebi2024:thing_hasName "First Dish" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_main-dish
 kebi2024:course_main-dish rdf:type owl:NamedIndividual ,
-                                   kebi2024:MainDish ;
+                                   kebi2024:Course ;
                           kebi2024:thing_hasName "Main Dish" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_second-course
 kebi2024:course_second-course rdf:type owl:NamedIndividual ,
-                                       kebi2024:SecondCourse ;
+                                       kebi2024:Course ;
                               kebi2024:thing_hasName "Second Course" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#course_sidedish
 kebi2024:course_sidedish rdf:type owl:NamedIndividual ,
-                                  kebi2024:Sidedish ;
+                                  kebi2024:Course ;
                          kebi2024:thing_hasName "Sidedish" .
 
 
@@ -437,6 +402,9 @@ kebi2024:guest_guest2 rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_0-type-flour
 kebi2024:ingredient_0-type-flour rdf:type owl:NamedIndividual ,
                                           kebi2024:Grain ;
+                                 kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                           kebi2024:category_omnivore ,
+                                                           kebi2024:category_vegetarian ;
                                  kebi2024:grain_containsGlutenIntolerance kebi2024:allergy_gluten ;
                                  kebi2024:food_hasKcal 500 ;
                                  kebi2024:thing_hasName "Flour type 0" .
@@ -445,6 +413,8 @@ kebi2024:ingredient_0-type-flour rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_apple
 kebi2024:ingredient_apple rdf:type owl:NamedIndividual ,
                                    kebi2024:Fruit ;
+                          kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                    kebi2024:category_vegetarian ;
                           kebi2024:food_hasKcal 35 ;
                           kebi2024:thing_hasName "Apple" .
 
@@ -452,6 +422,8 @@ kebi2024:ingredient_apple rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_banana
 kebi2024:ingredient_banana rdf:type owl:NamedIndividual ,
                                     kebi2024:Fruit ;
+                           kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                     kebi2024:category_vegetarian ;
                            kebi2024:food_hasKcal 40 ;
                            kebi2024:thing_hasName "Banana" .
 
@@ -460,6 +432,9 @@ kebi2024:ingredient_banana rdf:type owl:NamedIndividual ,
 kebi2024:ingredient_bechamel rdf:type owl:NamedIndividual ,
                                       kebi2024:Dairy ;
                              kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                             kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                       kebi2024:category_omnivore ,
+                                                       kebi2024:category_vegetarian ;
                              kebi2024:food_hasKcal 105 ;
                              kebi2024:thing_hasName "Bechamel" .
 
@@ -467,6 +442,9 @@ kebi2024:ingredient_bechamel rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_black-pepper
 kebi2024:ingredient_black-pepper rdf:type owl:NamedIndividual ,
                                           kebi2024:Seasoning ;
+                                 kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                           kebi2024:category_omnivore ,
+                                                           kebi2024:category_vegetarian ;
                                  kebi2024:food_hasKcal 25 ;
                                  kebi2024:thing_hasName "Black Pepper" .
 
@@ -474,6 +452,8 @@ kebi2024:ingredient_black-pepper rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_cabbage
 kebi2024:ingredient_cabbage rdf:type owl:NamedIndividual ,
                                      kebi2024:Vegetable ;
+                            kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                      kebi2024:category_vegetarian ;
                             kebi2024:food_hasKcal 25 ;
                             kebi2024:thing_hasName "Cabbage" .
 
@@ -481,6 +461,8 @@ kebi2024:ingredient_cabbage rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_calamari
 kebi2024:ingredient_calamari rdf:type owl:NamedIndividual ,
                                       kebi2024:Seafood ;
+                             kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                       kebi2024:category_omnivore ;
                              kebi2024:food_hasKcal 50 ;
                              kebi2024:thing_hasName "Calamari" .
 
@@ -488,6 +470,8 @@ kebi2024:ingredient_calamari rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_carrot
 kebi2024:ingredient_carrot rdf:type owl:NamedIndividual ,
                                     kebi2024:Vegetable ;
+                           kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                     kebi2024:category_vegetarian ;
                            kebi2024:food_hasKcal 27 ;
                            kebi2024:thing_hasName "Carrot" .
 
@@ -495,6 +479,9 @@ kebi2024:ingredient_carrot rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_chili
 kebi2024:ingredient_chili rdf:type owl:NamedIndividual ,
                                    kebi2024:Seasoning ;
+                          kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                    kebi2024:category_omnivore ,
+                                                    kebi2024:category_vegetarian ;
                           kebi2024:food_hasKcal 15 ;
                           kebi2024:thing_hasName "Chili" .
 
@@ -502,6 +489,8 @@ kebi2024:ingredient_chili rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_ciauscolo
 kebi2024:ingredient_ciauscolo rdf:type owl:NamedIndividual ,
                                        kebi2024:Meat ;
+                              kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                        kebi2024:category_omnivore ;
                               kebi2024:food_hasKcal 70 ;
                               kebi2024:thing_hasName "Ciauscolo" .
 
@@ -510,6 +499,9 @@ kebi2024:ingredient_ciauscolo rdf:type owl:NamedIndividual ,
 kebi2024:ingredient_cows-cheese rdf:type owl:NamedIndividual ,
                                          kebi2024:Dairy ;
                                 kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                                kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                          kebi2024:category_omnivore ,
+                                                          kebi2024:category_vegetarian ;
                                 kebi2024:food_hasKcal 115 ;
                                 kebi2024:thing_hasName "Cow's Cheese" .
 
@@ -517,6 +509,9 @@ kebi2024:ingredient_cows-cheese rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_egg
 kebi2024:ingredient_egg rdf:type owl:NamedIndividual ,
                                  kebi2024:AnimalOriginProduct ;
+                        kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                  kebi2024:category_omnivore ,
+                                                  kebi2024:category_vegetarian ;
                         kebi2024:food_hasKcal 80 ;
                         kebi2024:thing_hasName "Egg" .
 
@@ -524,6 +519,8 @@ kebi2024:ingredient_egg rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_eggplant
 kebi2024:ingredient_eggplant rdf:type owl:NamedIndividual ,
                                       kebi2024:Vegetable ;
+                             kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                       kebi2024:category_vegetarian ;
                              kebi2024:food_hasKcal 18 ;
                              kebi2024:thing_hasName "Eggplant" .
 
@@ -531,6 +528,9 @@ kebi2024:ingredient_eggplant rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_garlic
 kebi2024:ingredient_garlic rdf:type owl:NamedIndividual ,
                                     kebi2024:Seasoning ;
+                           kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                     kebi2024:category_omnivore ,
+                                                     kebi2024:category_vegetarian ;
                            kebi2024:food_hasKcal 3 ;
                            kebi2024:thing_hasName "Garlic" .
 
@@ -538,6 +538,8 @@ kebi2024:ingredient_garlic rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_ham
 kebi2024:ingredient_ham rdf:type owl:NamedIndividual ,
                                  kebi2024:Meat ;
+                        kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                  kebi2024:category_omnivore ;
                         kebi2024:food_hasKcal 45 ;
                         kebi2024:thing_hasName "Ham" .
 
@@ -545,6 +547,8 @@ kebi2024:ingredient_ham rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_lettuce
 kebi2024:ingredient_lettuce rdf:type owl:NamedIndividual ,
                                      kebi2024:Vegetable ;
+                            kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                      kebi2024:category_vegetarian ;
                             kebi2024:food_hasKcal 25 ;
                             kebi2024:thing_hasName "Lettuce" .
 
@@ -552,6 +556,8 @@ kebi2024:ingredient_lettuce rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mais
 kebi2024:ingredient_mais rdf:type owl:NamedIndividual ,
                                   kebi2024:Vegetable ;
+                         kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                   kebi2024:category_vegetarian ;
                          kebi2024:food_hasKcal 50 ;
                          kebi2024:thing_hasName "Mais" .
 
@@ -559,6 +565,8 @@ kebi2024:ingredient_mais rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_minced-meat
 kebi2024:ingredient_minced-meat rdf:type owl:NamedIndividual ,
                                          kebi2024:Meat ;
+                                kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                          kebi2024:category_omnivore ;
                                 kebi2024:food_hasKcal 120 ;
                                 kebi2024:thing_hasName "Minced Meat" .
 
@@ -567,6 +575,9 @@ kebi2024:ingredient_minced-meat rdf:type owl:NamedIndividual ,
 kebi2024:ingredient_mozzarella-cheese rdf:type owl:NamedIndividual ,
                                                kebi2024:Dairy ;
                                       kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                                      kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                                kebi2024:category_omnivore ,
+                                                                kebi2024:category_vegetarian ;
                                       kebi2024:food_hasKcal 100 ;
                                       kebi2024:thing_hasName "Mozzarella Cheese" .
 
@@ -574,13 +585,18 @@ kebi2024:ingredient_mozzarella-cheese rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_mussel
 kebi2024:ingredient_mussel rdf:type owl:NamedIndividual ,
                                     kebi2024:Seafood ;
+                           kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                     kebi2024:category_omnivore ;
                            kebi2024:food_hasKcal 40 ;
                            kebi2024:thing_hasName "Mussel" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_oil
 kebi2024:ingredient_oil rdf:type owl:NamedIndividual ,
-                                 kebi2024:Vegetable ;
+                                 kebi2024:Seasoning ;
+                        kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                  kebi2024:category_omnivore ,
+                                                  kebi2024:category_vegetarian ;
                         kebi2024:food_hasKcal 60 ;
                         kebi2024:thing_hasName "Oil" .
 
@@ -589,6 +605,9 @@ kebi2024:ingredient_oil rdf:type owl:NamedIndividual ,
 kebi2024:ingredient_parmesan rdf:type owl:NamedIndividual ,
                                       kebi2024:Dairy ;
                              kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                             kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                       kebi2024:category_omnivore ,
+                                                       kebi2024:category_vegetarian ;
                              kebi2024:food_hasKcal 75 ;
                              kebi2024:thing_hasName "Parmesan" .
 
@@ -596,6 +615,9 @@ kebi2024:ingredient_parmesan rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pasta
 kebi2024:ingredient_pasta rdf:type owl:NamedIndividual ,
                                    kebi2024:Grain ;
+                          kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                    kebi2024:category_omnivore ,
+                                                    kebi2024:category_vegetarian ;
                           kebi2024:grain_containsGlutenIntolerance kebi2024:allergy_gluten ;
                           kebi2024:food_hasKcal 300 ;
                           kebi2024:thing_hasName "Pasta" .
@@ -604,6 +626,8 @@ kebi2024:ingredient_pasta rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-cheek
 kebi2024:ingredient_pork-cheek rdf:type owl:NamedIndividual ,
                                         kebi2024:Meat ;
+                               kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                         kebi2024:category_omnivore ;
                                kebi2024:food_hasKcal 150 ;
                                kebi2024:thing_hasName "Pork Cheek" .
 
@@ -611,6 +635,8 @@ kebi2024:ingredient_pork-cheek rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-chop
 kebi2024:ingredient_pork-chop rdf:type owl:NamedIndividual ,
                                        kebi2024:Meat ;
+                              kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                        kebi2024:category_omnivore ;
                               kebi2024:food_hasKcal 125 ;
                               kebi2024:thing_hasName "Pork Chop" .
 
@@ -618,6 +644,8 @@ kebi2024:ingredient_pork-chop rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_pork-rib
 kebi2024:ingredient_pork-rib rdf:type owl:NamedIndividual ,
                                       kebi2024:Meat ;
+                             kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                       kebi2024:category_omnivore ;
                              kebi2024:food_hasKcal 70 ;
                              kebi2024:thing_hasName "Pork Rib" .
 
@@ -625,6 +653,9 @@ kebi2024:ingredient_pork-rib rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_potato
 kebi2024:ingredient_potato rdf:type owl:NamedIndividual ,
                                     kebi2024:Tuber ;
+                           kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                     kebi2024:category_omnivore ,
+                                                     kebi2024:category_vegetarian ;
                            kebi2024:food_hasKcal 450 ;
                            kebi2024:thing_hasName "Potato" .
 
@@ -632,6 +663,9 @@ kebi2024:ingredient_potato rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_puff-pastry
 kebi2024:ingredient_puff-pastry rdf:type owl:NamedIndividual ,
                                          kebi2024:Grain ;
+                                kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                          kebi2024:category_omnivore ,
+                                                          kebi2024:category_vegetarian ;
                                 kebi2024:grain_containsGlutenIntolerance kebi2024:allergy_gluten ;
                                 kebi2024:food_hasKcal 150 ;
                                 kebi2024:thing_hasName "Puff Pastry" .
@@ -640,6 +674,8 @@ kebi2024:ingredient_puff-pastry rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salame
 kebi2024:ingredient_salame rdf:type owl:NamedIndividual ,
                                     kebi2024:Meat ;
+                           kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                     kebi2024:category_omnivore ;
                            kebi2024:food_hasKcal 50 ;
                            kebi2024:thing_hasName "Salame" .
 
@@ -647,6 +683,8 @@ kebi2024:ingredient_salame rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salmon
 kebi2024:ingredient_salmon rdf:type owl:NamedIndividual ,
                                     kebi2024:Seafood ;
+                           kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                     kebi2024:category_omnivore ;
                            kebi2024:food_hasKcal 150 ;
                            kebi2024:thing_hasName "Salmon" .
 
@@ -654,6 +692,9 @@ kebi2024:ingredient_salmon rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_salt
 kebi2024:ingredient_salt rdf:type owl:NamedIndividual ,
                                   kebi2024:Seasoning ;
+                         kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                   kebi2024:category_omnivore ,
+                                                   kebi2024:category_vegetarian ;
                          kebi2024:food_hasKcal 0 ;
                          kebi2024:thing_hasName "Salt" .
 
@@ -661,6 +702,8 @@ kebi2024:ingredient_salt rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sausage
 kebi2024:ingredient_sausage rdf:type owl:NamedIndividual ,
                                      kebi2024:Meat ;
+                            kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                      kebi2024:category_omnivore ;
                             kebi2024:food_hasKcal 205 ;
                             kebi2024:thing_hasName "Sausage" .
 
@@ -669,6 +712,9 @@ kebi2024:ingredient_sausage rdf:type owl:NamedIndividual ,
 kebi2024:ingredient_sheeps-cheese rdf:type owl:NamedIndividual ,
                                            kebi2024:Dairy ;
                                   kebi2024:dairy_containsLactoseIntolerance kebi2024:allergy_lactose ;
+                                  kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                            kebi2024:category_omnivore ,
+                                                            kebi2024:category_vegetarian ;
                                   kebi2024:food_hasKcal 135 ;
                                   kebi2024:thing_hasName "Sheep's Cheese" .
 
@@ -676,6 +722,8 @@ kebi2024:ingredient_sheeps-cheese rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_shrimp
 kebi2024:ingredient_shrimp rdf:type owl:NamedIndividual ,
                                     kebi2024:Seafood ;
+                           kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                     kebi2024:category_omnivore ;
                            kebi2024:food_hasKcal 35 ;
                            kebi2024:thing_hasName "Shrimp" .
 
@@ -683,6 +731,8 @@ kebi2024:ingredient_shrimp rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_steak
 kebi2024:ingredient_steak rdf:type owl:NamedIndividual ,
                                    kebi2024:Meat ;
+                          kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                    kebi2024:category_omnivore ;
                           kebi2024:food_hasKcal 485 ;
                           kebi2024:thing_hasName "Steak" .
 
@@ -690,6 +740,8 @@ kebi2024:ingredient_steak rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_strawberry
 kebi2024:ingredient_strawberry rdf:type owl:NamedIndividual ,
                                         kebi2024:Fruit ;
+                               kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                         kebi2024:category_vegetarian ;
                                kebi2024:food_hasKcal 22 ;
                                kebi2024:thing_hasName "Strawberry" .
 
@@ -697,6 +749,9 @@ kebi2024:ingredient_strawberry rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sugar-and-food-coloring
 kebi2024:ingredient_sugar-and-food-coloring rdf:type owl:NamedIndividual ,
                                                      kebi2024:Liquid ;
+                                            kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                                      kebi2024:category_omnivore ,
+                                                                      kebi2024:category_vegetarian ;
                                             kebi2024:food_hasKcal 60 ;
                                             kebi2024:thing_hasName "Sugar and Food Coloring" .
 
@@ -704,6 +759,8 @@ kebi2024:ingredient_sugar-and-food-coloring rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_sword-fish
 kebi2024:ingredient_sword-fish rdf:type owl:NamedIndividual ,
                                         kebi2024:Seafood ;
+                               kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                         kebi2024:category_omnivore ;
                                kebi2024:food_hasKcal 120 ;
                                kebi2024:thing_hasName "Sword Fish" .
 
@@ -711,6 +768,8 @@ kebi2024:ingredient_sword-fish rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_tomato
 kebi2024:ingredient_tomato rdf:type owl:NamedIndividual ,
                                     kebi2024:Vegetable ;
+                           kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                     kebi2024:category_vegetarian ;
                            kebi2024:food_hasKcal 30 ;
                            kebi2024:thing_hasName "Tomato" .
 
@@ -718,6 +777,9 @@ kebi2024:ingredient_tomato rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_water
 kebi2024:ingredient_water rdf:type owl:NamedIndividual ,
                                    kebi2024:Liquid ;
+                          kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                    kebi2024:category_omnivore ,
+                                                    kebi2024:category_vegetarian ;
                           kebi2024:food_hasKcal 0 ;
                           kebi2024:thing_hasName "Water" .
 
@@ -725,7 +787,8 @@ kebi2024:ingredient_water rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_affettati-misti
 kebi2024:meal_affettati-misti rdf:type owl:NamedIndividual ,
                                        kebi2024:Meal ;
-                              kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                              kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                        kebi2024:category_omnivore ;
                               kebi2024:meal_hasCourse kebi2024:course_appetizer ;
                               kebi2024:meal_hasIngredient kebi2024:ingredient_ciauscolo ,
                                                           kebi2024:ingredient_ham ,
@@ -740,7 +803,8 @@ kebi2024:meal_affettati-misti rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_bistecca-alla-fiorentina
 kebi2024:meal_bistecca-alla-fiorentina rdf:type owl:NamedIndividual ,
                                                 kebi2024:Meal ;
-                                       kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                                       kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                                 kebi2024:category_omnivore ;
                                        kebi2024:meal_hasCourse kebi2024:course_second-course ;
                                        kebi2024:meal_hasIngredient kebi2024:ingredient_oil ,
                                                                    kebi2024:ingredient_salt ,
@@ -754,7 +818,8 @@ kebi2024:meal_bistecca-alla-fiorentina rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_formaggi-misti
 kebi2024:meal_formaggi-misti rdf:type owl:NamedIndividual ,
                                       kebi2024:Meal ;
-                             kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                             kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                       kebi2024:category_omnivore ,
                                                        kebi2024:category_vegetarian ;
                              kebi2024:meal_hasCourse kebi2024:course_appetizer ;
                              kebi2024:meal_hasIngredient kebi2024:ingredient_cows-cheese ,
@@ -769,7 +834,8 @@ kebi2024:meal_formaggi-misti rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_fruit-salad
 kebi2024:meal_fruit-salad rdf:type owl:NamedIndividual ,
                                    kebi2024:Meal ;
-                          kebi2024:meal_hasCategory kebi2024:category_vegetarian ;
+                          kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                    kebi2024:category_vegetarian ;
                           kebi2024:meal_hasCourse kebi2024:course_dessert ;
                           kebi2024:meal_hasIngredient kebi2024:ingredient_apple ,
                                                       kebi2024:ingredient_banana ,
@@ -785,7 +851,8 @@ kebi2024:meal_fruit-salad rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_grigliata-di-maiale-mista
 kebi2024:meal_grigliata-di-maiale-mista rdf:type owl:NamedIndividual ,
                                                  kebi2024:Meal ;
-                                        kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                                        kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                                  kebi2024:category_omnivore ;
                                         kebi2024:meal_hasCourse kebi2024:course_second-course ;
                                         kebi2024:meal_hasIngredient kebi2024:ingredient_pork-chop ,
                                                                     kebi2024:ingredient_pork-rib ,
@@ -800,7 +867,8 @@ kebi2024:meal_grigliata-di-maiale-mista rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_insalata-mista
 kebi2024:meal_insalata-mista rdf:type owl:NamedIndividual ,
                                       kebi2024:Meal ;
-                             kebi2024:meal_hasCategory kebi2024:category_vegetarian ;
+                             kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                       kebi2024:category_vegetarian ;
                              kebi2024:meal_hasCourse kebi2024:course_sidedish ;
                              kebi2024:meal_hasIngredient kebi2024:ingredient_lettuce ,
                                                          kebi2024:ingredient_mais ,
@@ -817,7 +885,8 @@ kebi2024:meal_insalata-mista rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_involtini-primavera
 kebi2024:meal_involtini-primavera rdf:type owl:NamedIndividual ,
                                            kebi2024:Meal ;
-                                  kebi2024:meal_hasCategory kebi2024:category_vegetarian ;
+                                  kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                            kebi2024:category_vegetarian ;
                                   kebi2024:meal_hasCourse kebi2024:course_appetizer ;
                                   kebi2024:meal_hasIngredient kebi2024:ingredient_cabbage ,
                                                               kebi2024:ingredient_carrot ,
@@ -835,7 +904,8 @@ kebi2024:meal_involtini-primavera rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_lasagne
 kebi2024:meal_lasagne rdf:type owl:NamedIndividual ,
                                kebi2024:Meal ;
-                      kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                      kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                kebi2024:category_omnivore ;
                       kebi2024:meal_hasCourse kebi2024:course_first-dish ;
                       kebi2024:meal_hasIngredient kebi2024:ingredient_bechamel ,
                                                   kebi2024:ingredient_minced-meat ,
@@ -853,7 +923,8 @@ kebi2024:meal_lasagne rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_melanzane-grigliate
 kebi2024:meal_melanzane-grigliate rdf:type owl:NamedIndividual ,
                                            kebi2024:Meal ;
-                                  kebi2024:meal_hasCategory kebi2024:category_vegetarian ;
+                                  kebi2024:food_hasCategory kebi2024:category_omnivore ,
+                                                            kebi2024:category_vegetarian ;
                                   kebi2024:meal_hasCourse kebi2024:course_sidedish ;
                                   kebi2024:meal_hasIngredient kebi2024:ingredient_eggplant ,
                                                               kebi2024:ingredient_oil ,
@@ -869,7 +940,8 @@ kebi2024:meal_melanzane-grigliate rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_patatine-fritte
 kebi2024:meal_patatine-fritte rdf:type owl:NamedIndividual ,
                                        kebi2024:Meal ;
-                              kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                              kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                        kebi2024:category_omnivore ,
                                                         kebi2024:category_vegetarian ;
                               kebi2024:meal_hasCourse kebi2024:course_sidedish ;
                               kebi2024:meal_hasIngredient kebi2024:ingredient_oil ,
@@ -883,7 +955,8 @@ kebi2024:meal_patatine-fritte rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pesce-arrosto
 kebi2024:meal_pesce-arrosto rdf:type owl:NamedIndividual ,
                                      kebi2024:Meal ;
-                            kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                            kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                      kebi2024:category_omnivore ;
                             kebi2024:meal_hasCourse kebi2024:course_second-course ;
                             kebi2024:meal_hasIngredient kebi2024:ingredient_calamari ,
                                                         kebi2024:ingredient_oil ,
@@ -901,7 +974,8 @@ kebi2024:meal_pesce-arrosto rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-bianca
 kebi2024:meal_pizza-bianca rdf:type owl:NamedIndividual ,
                                     kebi2024:Meal ;
-                           kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                           kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                     kebi2024:category_omnivore ,
                                                      kebi2024:category_vegetarian ;
                            kebi2024:meal_hasCourse kebi2024:course_main-dish ;
                            kebi2024:meal_hasIngredient kebi2024:ingredient_0-type-flour ,
@@ -917,7 +991,8 @@ kebi2024:meal_pizza-bianca rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_pizza-margherita
 kebi2024:meal_pizza-margherita rdf:type owl:NamedIndividual ,
                                         kebi2024:Meal ;
-                               kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                               kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                         kebi2024:category_omnivore ,
                                                          kebi2024:category_vegetarian ;
                                kebi2024:meal_hasCourse kebi2024:course_main-dish ;
                                kebi2024:meal_hasIngredient kebi2024:ingredient_0-type-flour ,
@@ -934,7 +1009,8 @@ kebi2024:meal_pizza-margherita rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_rigatoni-alla-carbonara
 kebi2024:meal_rigatoni-alla-carbonara rdf:type owl:NamedIndividual ,
                                                kebi2024:Meal ;
-                                      kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                                      kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                                kebi2024:category_omnivore ;
                                       kebi2024:meal_hasCourse kebi2024:course_first-dish ;
                                       kebi2024:meal_hasIngredient kebi2024:ingredient_black-pepper ,
                                                                   kebi2024:ingredient_egg ,
@@ -951,7 +1027,8 @@ kebi2024:meal_rigatoni-alla-carbonara rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_spaghetti-aglio-olio-e-peperoncino
 kebi2024:meal_spaghetti-aglio-olio-e-peperoncino rdf:type owl:NamedIndividual ,
                                                           kebi2024:Meal ;
-                                                 kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                                                 kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                                           kebi2024:category_omnivore ,
                                                                            kebi2024:category_vegetarian ;
                                                  kebi2024:meal_hasCourse kebi2024:course_first-dish ;
                                                  kebi2024:meal_hasIngredient kebi2024:ingredient_chili ,
@@ -969,7 +1046,8 @@ kebi2024:meal_spaghetti-aglio-olio-e-peperoncino rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_tagliatelle-alla-marinara
 kebi2024:meal_tagliatelle-alla-marinara rdf:type owl:NamedIndividual ,
                                                  kebi2024:Meal ;
-                                        kebi2024:meal_hasCategory kebi2024:category_carnivorous ;
+                                        kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                                  kebi2024:category_omnivore ;
                                         kebi2024:meal_hasCourse kebi2024:course_first-dish ;
                                         kebi2024:meal_hasIngredient kebi2024:ingredient_mussel ,
                                                                     kebi2024:ingredient_oil ,
@@ -986,7 +1064,8 @@ kebi2024:meal_tagliatelle-alla-marinara rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_trofie-cacio-e-pepe
 kebi2024:meal_trofie-cacio-e-pepe rdf:type owl:NamedIndividual ,
                                            kebi2024:Meal ;
-                                  kebi2024:meal_hasCategory kebi2024:category_carnivorous ,
+                                  kebi2024:food_hasCategory kebi2024:category_carnivorous ,
+                                                            kebi2024:category_omnivore ,
                                                             kebi2024:category_vegetarian ;
                                   kebi2024:meal_hasCourse kebi2024:course_first-dish ;
                                   kebi2024:meal_hasIngredient kebi2024:ingredient_black-pepper ,
