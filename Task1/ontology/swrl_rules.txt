@@ -1,0 +1,33 @@
+GuestIsAtRiskForFoodGluten
+
+kebi2024:Guest(?guest) ^ kebi2024:guest_hasAllergy(?guest, ?allergy) ^ kebi2024:Meal(?meal) ^ kebi2024:meal_containsGlutenIntolerance(?meal, ?allergy) -> kebi2024:guest_isAtRiskForFood(?guest, ?meal)
+
+
+GuestIsAtRiskForFoodLactose
+
+kebi2024:Guest(?guest) ^ kebi2024:guest_hasAllergy(?guest, ?allergy) ^ kebi2024:Meal(?meal) ^ kebi2024:meal_containsLactoseIntolerance(?meal, ?allergy) -> kebi2024:guest_isAtRiskForFood(?guest, ?meal)
+
+
+MealContainsGlutenIntolerance
+
+kebi2024:Meal(?meal) ^ kebi2024:meal_hasIngredient(?meal, ?ingredient) ^ kebi2024:Ingredient(?ingredient) ^ kebi2024:grain_containsGlutenIntolerance(?ingredient, ?gluten) -> kebi2024:meal_containsGlutenIntolerance(?meal, ?gluten)
+
+
+MealContainsLactoseIntolerance
+
+kebi2024:Meal(?meal) ^ kebi2024:meal_hasIngredient(?meal, ?ingredient) ^ kebi2024:Ingredient(?ingredient) ^ kebi2024:dairy_containsLactoseIntolerance(?ingredient, ?dairy) -> kebi2024:meal_containsLactoseIntolerance(?meal, ?dairy)
+
+
+Rule for guest than doesn't have any allergy
+
+kebi2024:Guest(?guest) ^ kebi2024:guest_hasCategory(?guest, ?category) ^ kebi2024:guest_hasLevelOfCalorieConscious(?guest, ?level) ^ kebi2024:guest_hasPreferenceCourse(?guest, ?course) ^ kebi2024:Category(?category) ^ kebi2024:Allergy(?allergy) ^ kebi2024:Meal(?meal) ^ kebi2024:food_hasCategory(?meal, ?category) ^ kebi2024:meal_hasLevelOfCalorieConscious(?meal, ?level) ^ kebi2024:meal_hasCourse(?meal, ?course) -> kebi2024:guest_canEat(?guest, ?meal)
+
+
+Rule for inferring meals to eat - gluten intolerance
+
+kebi2024:Guest(?guest) ^ kebi2024:guest_hasCategory(?guest, ?category) ^ kebi2024:guest_hasAllergy(?guest, ?allergy) ^ kebi2024:guest_hasLevelOfCalorieConscious(?guest, ?level) ^ kebi2024:guest_hasPreferenceCourse(?guest, ?course) ^ kebi2024:Category(?category) ^ kebi2024:Allergy(?allergy) ^ kebi2024:Meal(?meal) ^ kebi2024:food_hasCategory(?meal, ?category) ^ kebi2024:meal_notContainsGlutenIntolerance(?meal, ?allergy) ^ kebi2024:meal_hasLevelOfCalorieConscious(?meal, ?level) ^ kebi2024:meal_hasCourse(?meal, ?course) -> kebi2024:guest_canEat(?guest, ?meal)
+
+
+Rule for inferring meals to eat - lactose intolerance
+
+kebi2024:Guest(?guest) ^ kebi2024:guest_hasCategory(?guest, ?category) ^ kebi2024:guest_hasAllergy(?guest, ?allergy) ^ kebi2024:guest_hasLevelOfCalorieConscious(?guest, ?level) ^ kebi2024:guest_hasPreferenceCourse(?guest, ?course) ^ kebi2024:Category(?category) ^ kebi2024:Allergy(?allergy) ^ kebi2024:Meal(?meal) ^ kebi2024:food_hasCategory(?meal, ?category) ^ kebi2024:meal_notContainsLactoseIntolerance(?meal, ?allergy) ^ kebi2024:meal_hasLevelOfCalorieConscious(?meal, ?level) ^ kebi2024:meal_hasCourse(?meal, ?course) -> kebi2024:guest_canEat(?guest, ?meal)

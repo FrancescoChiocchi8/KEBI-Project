@@ -60,6 +60,12 @@ kebi2024:grain_containsGlutenIntolerance rdf:type owl:ObjectProperty ;
                                          rdfs:range kebi2024:Gluten .
 
 
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_canEat
+kebi2024:guest_canEat rdf:type owl:ObjectProperty ;
+                      rdfs:domain kebi2024:Guest ;
+                      rdfs:range kebi2024:Meal .
+
+
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_hasAllergy
 kebi2024:guest_hasAllergy rdf:type owl:ObjectProperty ;
                           rdfs:domain kebi2024:Guest ;
@@ -107,6 +113,18 @@ kebi2024:meal_hasCourse rdf:type owl:ObjectProperty ;
 kebi2024:meal_hasIngredient rdf:type owl:ObjectProperty ;
                             rdfs:domain kebi2024:Meal ;
                             rdfs:range kebi2024:Ingredient .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_notContainsGlutenIntolerance
+kebi2024:meal_notContainsGlutenIntolerance rdf:type owl:ObjectProperty ;
+                                           rdfs:domain kebi2024:Meal ;
+                                           rdfs:range kebi2024:Gluten .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#meal_notContainsLactoseIntolerance
+kebi2024:meal_notContainsLactoseIntolerance rdf:type owl:ObjectProperty ;
+                                            rdfs:domain kebi2024:Meal ;
+                                            rdfs:range kebi2024:Lactose .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#menu_containsDrink
@@ -397,6 +415,15 @@ kebi2024:guest_guest2 rdf:type owl:NamedIndividual ,
                                                                 2 ,
                                                                 3 ;
                       kebi2024:thing_hasName "Lorenzo Jovanotti" .
+
+
+###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#guest_guest3
+kebi2024:guest_guest3 rdf:type owl:NamedIndividual ,
+                               kebi2024:Guest ;
+                      kebi2024:guest_hasCategory kebi2024:category_omnivore ;
+                      kebi2024:guest_hasPreferenceCourse kebi2024:course_second-course ;
+                      kebi2024:guest_hasLevelOfCalorieConscious 3 ;
+                      kebi2024:thing_hasName "Cristiano Ronaldo" .
 
 
 ###  http://www.semanticweb.org/francesco.chiocchi-nicolo.rossini/kebi2024#ingredient_0-type-flour
@@ -793,6 +820,8 @@ kebi2024:meal_affettati-misti rdf:type owl:NamedIndividual ,
                               kebi2024:meal_hasIngredient kebi2024:ingredient_ciauscolo ,
                                                           kebi2024:ingredient_ham ,
                                                           kebi2024:ingredient_salame ;
+                              kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
+                              kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                               kebi2024:food_hasKcal 190 ;
                               kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                        1 ,
@@ -809,6 +838,8 @@ kebi2024:meal_bistecca-alla-fiorentina rdf:type owl:NamedIndividual ,
                                        kebi2024:meal_hasIngredient kebi2024:ingredient_oil ,
                                                                    kebi2024:ingredient_salt ,
                                                                    kebi2024:ingredient_steak ;
+                                       kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
+                                       kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                                        kebi2024:food_hasKcal 545 ;
                                        kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                                 1 ;
@@ -825,6 +856,7 @@ kebi2024:meal_formaggi-misti rdf:type owl:NamedIndividual ,
                              kebi2024:meal_hasIngredient kebi2024:ingredient_cows-cheese ,
                                                          kebi2024:ingredient_parmesan ,
                                                          kebi2024:ingredient_sheeps-cheese ;
+                             kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
                              kebi2024:food_hasKcal 325 ;
                              kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                       1 ;
@@ -840,6 +872,8 @@ kebi2024:meal_fruit-salad rdf:type owl:NamedIndividual ,
                           kebi2024:meal_hasIngredient kebi2024:ingredient_apple ,
                                                       kebi2024:ingredient_banana ,
                                                       kebi2024:ingredient_strawberry ;
+                          kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
+                          kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                           kebi2024:food_hasKcal 97 ;
                           kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                    1 ,
@@ -858,6 +892,8 @@ kebi2024:meal_grigliata-di-maiale-mista rdf:type owl:NamedIndividual ,
                                                                     kebi2024:ingredient_pork-rib ,
                                                                     kebi2024:ingredient_salt ,
                                                                     kebi2024:ingredient_sausage ;
+                                        kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
+                                        kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                                         kebi2024:food_hasKcal 400 ;
                                         kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                                  1 ;
@@ -874,6 +910,8 @@ kebi2024:meal_insalata-mista rdf:type owl:NamedIndividual ,
                                                          kebi2024:ingredient_mais ,
                                                          kebi2024:ingredient_oil ,
                                                          kebi2024:ingredient_salt ;
+                             kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
+                             kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                              kebi2024:food_hasKcal 135 ;
                              kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                       1 ,
@@ -893,6 +931,7 @@ kebi2024:meal_involtini-primavera rdf:type owl:NamedIndividual ,
                                                               kebi2024:ingredient_oil ,
                                                               kebi2024:ingredient_puff-pastry ,
                                                               kebi2024:ingredient_salt ;
+                                  kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                                   kebi2024:food_hasKcal 262 ;
                                   kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                            1 ,
@@ -929,6 +968,8 @@ kebi2024:meal_melanzane-grigliate rdf:type owl:NamedIndividual ,
                                   kebi2024:meal_hasIngredient kebi2024:ingredient_eggplant ,
                                                               kebi2024:ingredient_oil ,
                                                               kebi2024:ingredient_salt ;
+                                  kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
+                                  kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                                   kebi2024:food_hasKcal 78 ;
                                   kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                            1 ,
@@ -947,6 +988,8 @@ kebi2024:meal_patatine-fritte rdf:type owl:NamedIndividual ,
                               kebi2024:meal_hasIngredient kebi2024:ingredient_oil ,
                                                           kebi2024:ingredient_potato ,
                                                           kebi2024:ingredient_salt ;
+                              kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
+                              kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                               kebi2024:food_hasKcal 510 ;
                               kebi2024:meal_hasLevelOfCalorieConscious 0 ;
                               kebi2024:thing_hasName "Patatine Fritte" .
@@ -963,6 +1006,8 @@ kebi2024:meal_pesce-arrosto rdf:type owl:NamedIndividual ,
                                                         kebi2024:ingredient_salmon ,
                                                         kebi2024:ingredient_salt ,
                                                         kebi2024:ingredient_sword-fish ;
+                            kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_gluten ;
+                            kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                             kebi2024:food_hasKcal 455 ;
                             kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                      1 ,
@@ -981,6 +1026,7 @@ kebi2024:meal_pizza-bianca rdf:type owl:NamedIndividual ,
                            kebi2024:meal_hasIngredient kebi2024:ingredient_0-type-flour ,
                                                        kebi2024:ingredient_oil ,
                                                        kebi2024:ingredient_salt ;
+                           kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                            kebi2024:food_hasKcal 560 ;
                            kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                     1 ,
@@ -1018,6 +1064,7 @@ kebi2024:meal_rigatoni-alla-carbonara rdf:type owl:NamedIndividual ,
                                                                   kebi2024:ingredient_pasta ,
                                                                   kebi2024:ingredient_pork-cheek ,
                                                                   kebi2024:ingredient_salt ;
+                                      kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                                       kebi2024:food_hasKcal 705 ;
                                       kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                                1 ;
@@ -1036,6 +1083,7 @@ kebi2024:meal_spaghetti-aglio-olio-e-peperoncino rdf:type owl:NamedIndividual ,
                                                                              kebi2024:ingredient_oil ,
                                                                              kebi2024:ingredient_pasta ,
                                                                              kebi2024:ingredient_salt ;
+                                                 kebi2024:meal_notContainsGlutenIntolerance kebi2024:allergy_lactose ;
                                                  kebi2024:food_hasKcal 378 ;
                                                  kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                                           1 ,
@@ -1054,6 +1102,7 @@ kebi2024:meal_tagliatelle-alla-marinara rdf:type owl:NamedIndividual ,
                                                                     kebi2024:ingredient_pasta ,
                                                                     kebi2024:ingredient_salt ,
                                                                     kebi2024:ingredient_shrimp ;
+                                        kebi2024:meal_notContainsLactoseIntolerance kebi2024:allergy_lactose ;
                                         kebi2024:food_hasKcal 435 ;
                                         kebi2024:meal_hasLevelOfCalorieConscious 0 ,
                                                                                  1 ,
@@ -1129,7 +1178,13 @@ kebi2024:restaurant_our-restaurant rdf:type owl:NamedIndividual ,
 
 kebi2024:guest rdf:type swrl:Variable .
 
+kebi2024:category rdf:type swrl:Variable .
+
 kebi2024:allergy rdf:type swrl:Variable .
+
+kebi2024:level rdf:type swrl:Variable .
+
+kebi2024:course rdf:type swrl:Variable .
 
 kebi2024:meal rdf:type swrl:Variable .
 
@@ -1138,6 +1193,182 @@ kebi2024:ingredient rdf:type swrl:Variable .
 kebi2024:dairy rdf:type swrl:Variable .
 
 kebi2024:gluten rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Rule for inferring meals to eat - gluten intolerance" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate kebi2024:Guest ;
+                           swrl:argument1 kebi2024:guest
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate kebi2024:guest_hasCategory ;
+                                      swrl:argument1 kebi2024:guest ;
+                                      swrl:argument2 kebi2024:category
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate kebi2024:guest_hasAllergy ;
+                                                 swrl:argument1 kebi2024:guest ;
+                                                 swrl:argument2 kebi2024:allergy
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate kebi2024:guest_hasLevelOfCalorieConscious ;
+                                                            swrl:argument1 kebi2024:guest ;
+                                                            swrl:argument2 kebi2024:level
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate kebi2024:guest_hasPreferenceCourse ;
+                                                                       swrl:argument1 kebi2024:guest ;
+                                                                       swrl:argument2 kebi2024:course
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                  swrl:classPredicate kebi2024:Category ;
+                                                                                  swrl:argument1 kebi2024:category
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                             swrl:classPredicate kebi2024:Allergy ;
+                                                                                             swrl:argument1 kebi2024:allergy
+                                                                                           ] ;
+                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                            rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                        swrl:classPredicate kebi2024:Meal ;
+                                                                                                        swrl:argument1 kebi2024:meal
+                                                                                                      ] ;
+                                                                                            rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                       rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                   swrl:propertyPredicate kebi2024:food_hasCategory ;
+                                                                                                                   swrl:argument1 kebi2024:meal ;
+                                                                                                                   swrl:argument2 kebi2024:category
+                                                                                                                 ] ;
+                                                                                                       rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                  rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                              swrl:propertyPredicate kebi2024:meal_notContainsGlutenIntolerance ;
+                                                                                                                              swrl:argument1 kebi2024:meal ;
+                                                                                                                              swrl:argument2 kebi2024:allergy
+                                                                                                                            ] ;
+                                                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                             rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                                                                                         swrl:propertyPredicate kebi2024:meal_hasLevelOfCalorieConscious ;
+                                                                                                                                         swrl:argument1 kebi2024:meal ;
+                                                                                                                                         swrl:argument2 kebi2024:level
+                                                                                                                                       ] ;
+                                                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                        rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                    swrl:propertyPredicate kebi2024:meal_hasCourse ;
+                                                                                                                                                    swrl:argument1 kebi2024:meal ;
+                                                                                                                                                    swrl:argument2 kebi2024:course
+                                                                                                                                                  ] ;
+                                                                                                                                        rdf:rest rdf:nil
+                                                                                                                                      ]
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate kebi2024:guest_canEat ;
+                           swrl:argument1 kebi2024:guest ;
+                           swrl:argument2 kebi2024:meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Rule for guest than doesn't have any allergy" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate kebi2024:Guest ;
+                           swrl:argument1 kebi2024:guest
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate kebi2024:guest_hasCategory ;
+                                      swrl:argument1 kebi2024:guest ;
+                                      swrl:argument2 kebi2024:category
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate kebi2024:guest_hasLevelOfCalorieConscious ;
+                                                 swrl:argument1 kebi2024:guest ;
+                                                 swrl:argument2 kebi2024:level
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate kebi2024:guest_hasPreferenceCourse ;
+                                                            swrl:argument1 kebi2024:guest ;
+                                                            swrl:argument2 kebi2024:course
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                       swrl:classPredicate kebi2024:Category ;
+                                                                       swrl:argument1 kebi2024:category
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                  swrl:classPredicate kebi2024:Allergy ;
+                                                                                  swrl:argument1 kebi2024:allergy
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                             swrl:classPredicate kebi2024:Meal ;
+                                                                                             swrl:argument1 kebi2024:meal
+                                                                                           ] ;
+                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                            rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                        swrl:propertyPredicate kebi2024:food_hasCategory ;
+                                                                                                        swrl:argument1 kebi2024:meal ;
+                                                                                                        swrl:argument2 kebi2024:category
+                                                                                                      ] ;
+                                                                                            rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                       rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                                                                   swrl:propertyPredicate kebi2024:meal_hasLevelOfCalorieConscious ;
+                                                                                                                   swrl:argument1 kebi2024:meal ;
+                                                                                                                   swrl:argument2 kebi2024:level
+                                                                                                                 ] ;
+                                                                                                       rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                  rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                              swrl:propertyPredicate kebi2024:meal_hasCourse ;
+                                                                                                                              swrl:argument1 kebi2024:meal ;
+                                                                                                                              swrl:argument2 kebi2024:course
+                                                                                                                            ] ;
+                                                                                                                  rdf:rest rdf:nil
+                                                                                                                ]
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate kebi2024:guest_canEat ;
+                           swrl:argument1 kebi2024:guest ;
+                           swrl:argument2 kebi2024:meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "" ;
